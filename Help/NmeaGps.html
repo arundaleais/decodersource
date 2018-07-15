@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="GPS">
+    <title>NMEA GPS Sentences</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>NMEA GPS Sentences<br>
+    </h3>
+    <span style="font-weight: bold;"></span><br>
+    The NMEA sentences which are decoded (V145 Feb 2017) are<br>
+    <br>
+    <table width="865" height="48" cellspacing="2" cellpadding="2"
+      border="0">
+      <tbody>
+        <tr>
+          <td valign="top">$GPZDA</td>
+          <td valign="top">GPS Date &amp; Time<br>
+          </td>
+          <td valign="top">Time Stamp<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">$GPGGA</td>
+          <td valign="top">GPS Fix Data<br>
+          </td>
+          <td valign="top">Position<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">$GPRMC<br>
+          </td>
+          <td valign="top">GPS GNSS Data<br>
+          </td>
+          <td valign="top">Time &amp; Position<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">$PGHP<br>
+          </td>
+          <td valign="top">Proprietary Message GH Internal<br>
+          </td>
+          <td valign="top">Time Stamp<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">$AITAG<br>
+          </td>
+          <td valign="top">Marine Com Proprietary AIS Message <br>
+          </td>
+          <td valign="top">Time Stamp<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">!AIALR<br>
+          </td>
+          <td valign="top">Set Alarm State<br>
+          </td>
+          <td valign="top">Encapsulated NMEA - Used by me for testing<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">!AIABM<br>
+          </td>
+          <td valign="top">AIS Addressed Binary Message<br>
+          </td>
+          <td valign="top"><br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">!AIABM<br>
+          </td>
+          <td valign="top">AIS Broadcast Binary Message<br>
+          </td>
+          <td valign="top"><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+    The default tags are the type of NMEA sentence (eg $GPZDA).<br>
+    Note if trying to output tag values (including CSV), the Tag Value
+    is only output when the MMSI changes, as GPS sentences will not have
+    a MMSI, you will not get any output until an AIS sentence with an
+    MMSI is output, unless the MMSI change option is unticked.<br>
+    <br>
+    As with all tagged output, the decoder will only output the latest
+    Tag value, if more than one message with the same Tag has been
+    received, since the previous Tag was output.<br>
+    <br>
+    If you require to see all messages, you should use NMEA output.<br>
+    <br>
+  </body>
+</html>

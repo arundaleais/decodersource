@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Settings, UDP-Tags-Range">
+    <meta name="MS-HKWD" content="UDP Output">
+    <meta name="MS-HKWD" content="Tag">
+    <meta name="MS-HKWD" content="Range">
+    <title>UDP Tags and Range</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>UDP Tags and Range Setting<br>
+    </h3>
+    This demonstrates how to receive NMEA data, and output the Decoded
+    data by UDP to another program. Only ships within a defined
+    geographic area are output.<br>
+    <b><img alt="" src="pics/ais_decoder_v3_options_udptagsrange.gif"><br>
+      Initial Settings</b><br>
+    UDP input on port 29421<br>
+    Field Tags are set to decode Ships data that is required to be
+    output.<br>
+    Tag ranges are set to only output Vessels within a Geographic area<br>
+    Vessels are output in batches every minute, containing data received
+    within the previous 15 minutes.<br>
+    GIS filtering ensures that no data will be output unless the Vessel
+    has output a position report as it may only have output a static
+    data report. <br>
+    Input Filter is Synchronised to Output Tags<br>
+    Data is being output both to a file and UDP to a server.<br>
+    <br>
+    <b>Example of UDP Output</b><br>
+    (line may be wrapped by browser)<br>
+    212946000,17/02/2011 11:18:59,PUCCINI,54.136330,0.273500,155.0,11.1<br>
+    235004970,17/02/2011 11:18:55,,54.234660,0.157333,332.0,15.3<br>
+    235053623,17/02/2011 11:18:57,CLONLEE,54.351330,-0.226333,327.0,15.6<br>
+    235059422,17/02/2011 11:18:39,NE GUARDIAN
+    III,54.391570,-0.089543,1.0,19.7<br>
+    244242000,17/02/2011 11:18:52,,54.185170,-0.070167,328.0,9.6<br>
+    <br>
+  </body>
+</html>

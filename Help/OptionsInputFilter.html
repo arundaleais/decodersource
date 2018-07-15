@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Filter">
+    <title>Options - Input Filter</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Options - Input Filter</h3>
+    For a NMEA sentence to pass through the filter, it has to reach the
+    end of a number of checks. A message failing at one level will fail
+    completely.<br>
+    <br>
+    <div style="text-align: center;"><img alt=""
+        src="pics/ais_decoder_v3_options_inputfilter.gif">&nbsp; <img
+        alt="" src="pics/ais_decoder_v3_options_inputfilter_binary.gif">
+    </div>
+    <br>
+    <b>Reject Shore Stations</b> (if ticked) will reject any MMSI's
+    starting with 00.<br>
+    <br>
+    <b>MyShip</b> (if ticked) will NOT reject AIS !AIVDO sentences.
+    These sentences are NOT transmitted by a vessels AIS transponder but
+    are present on the vessels NMEA bus. The vessels position will be
+    transmitted as a !AIVDM sentence. Typically !AIVDO sentences contain
+    the vessels position. this is so a Chart Plotter (or AisDecoder)
+    used on a vessel can differentiate between MyShip and other Ships.<br>
+    AisDecoder uses !AIVDO to output MyShip's position and the range and
+    bearing of other ships from MyShip.<br>
+    <br>
+    Each level is indented (to the right) from the previous level. When
+    you tick one level, if there are any more levels, you will be
+    presented with another set of tick boxes. If you do not tick any
+    boxes on any one level, the whole of the level will be removed, in
+    which case all messages ticked on the previous level will be
+    accepted. You do not have to tick sub items - they are assumed to be
+    ticked.<br>
+    <br>
+    If a binary message is selected (see message 6 above) the tick boxes
+    will expand (as required) to allow you select the DAC, followed by
+    the Function, and if applicable the Function Identifier. <br>
+    <br>
+    <div style="text-align: center;"><img alt=""
+        src="pics/ais_decoder_v3_options_inputfilter_mmsi.gif"><br>
+      <div style="text-align: left;">At the bottom of the filter there
+        is the option to accept only messages sent <span
+          style="font-weight: bold;">from</span> a number of specified
+        MMSI, and/or <span style="font-weight: bold;">to</span> a
+        number of specified MMSI's.<br>
+        <br>
+        <div style="text-align: center;"><img alt=""
+            src="pics/ais_decoder_v3_options_inputfilter_nmea.gif"></div>
+        Some NMEA $ sentences may be filtered. If <b>only</b> NMEA $
+        Sentences is ticked, all NMEA sentences will be output. The GPS
+        NMEA sentences $GPZDA, $GPGGA and &amp; $GPRMC sentences are
+        decoded and their values available for tagging. These may be
+        used (for example) to extract NMEA time stamps.<br>
+        <br>
+        <div style="text-align: center;"><img alt=""
+            src="pics/ais_decoder_v3_control_inputfilter_nmea.gif"></div>
+        The complete Filter tree is displayed on the <a>Control/Stats
+          Window</a>, with all redundant options removed. Only sentences
+        at the ends of each branch will be allowed through for output.
+        In the above example it will be all AIS and NMEA $ sentences.<br>
+      </div>
+    </div>
+  </body>
+</html>

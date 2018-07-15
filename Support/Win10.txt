@@ -1,0 +1,23 @@
+Here is what you need to know to make it work:
+1.Windows can run 32bit things in 64bit environments.
+2.You cannot have a 64bit thing call a 32bit thing.
+3.Windows ships a 32bit cmd prompt.
+4.Windows ships a 32bit regsrv32.
+
+To use CAPICOM you need to:
+1.Download CAPICOM – http://www.microsoft.com/en-us/download/details.aspx?id=25281
+2.Install CAPICOM
+3.Register CAPICOM
+	Open an administrative command prompt
+	cd to “C:\Program Files (x86)\Microsoft CAPICOM 2.1.0.2 SDK\Lib\X86”
+	copy CAPICOM.DLL %windir%\syswow64
+%windir%\syswow64\regsvr32.exe %windir%\syswow64\capicom.dll
+	“exit” the command prompt
+
+ActiveLock
+%windir%\syswow64\regsvr32.exe %windir%\syswow64\Activelock3.6.dll
+
+Microsoft Windows Common Controls 6.0 (SP6)
+%windir%\syswow64\regsvr32.exe %windir%\syswow64\mscomctl.OCX
+
+ 

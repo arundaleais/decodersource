@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Statistics">
+    <meta name="MS-HKWD" content="Input">
+    <meta name="MS-HKWD" content="Filter">
+    <meta name="MS-HKWD" content="Version">
+    <meta name="MS-HKWD" content="Window">
+    <meta name="MS-HKWD" content="Message File">
+    <title>Control/Stats Window</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Control/Stats Window<br>
+    </h3>
+    <img alt="" src="pics/ais_decoder_v3_control_running.gif"><br>
+    <br>
+    <br>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr align="center">
+          <td colspan="3" rowspan="1" style="vertical-align: top;"><span
+              style="font-weight: bold;">Control</span><br>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" rowspan="6" style="vertical-align: top;"><img
+              alt="" src="pics/ais_decoder_v3_control_control.gif"></td>
+          <td style="vertical-align: top;"><a name="start"></a>Start </td>
+          <td style="vertical-align: top;">commences decoding NMEA
+            sentences </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Pause </td>
+          <td style="vertical-align: top;">continues receiving sentences
+            but holds them in a buffer until pressed again, when
+            processing will recommence. This enables you to pause
+            scrolling screens without loosing incoming messages </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Stop </td>
+          <td style="vertical-align: top;">stops all processing </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Options </td>
+          <td style="vertical-align: top;">displays the <a
+              href="OptionsWindow.html">Options Window </a> </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Update </td>
+          <td style="vertical-align: top;">will be enabled if there is a
+            new update available for download </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Help </td>
+          <td style="vertical-align: top;">displays this file </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr align="center">
+          <td colspan="3" rowspan="1" style="vertical-align: top;"><span
+              style="font-weight: bold;">Time</span><br>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2" style="vertical-align: top; width: 10%;"><img
+              style="width: 342px; height: 41px;" alt=""
+              src="pics/ais_decoder_v3_control_time.gif"></td>
+          <td style="vertical-align: top;">UTC<br>
+          </td>
+          <td style="vertical-align: top;">Display UTC time<a>. The
+              Input Log time is always UTC<br>
+            </a></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Local Time<br>
+          </td>
+          <td style="vertical-align: top;">Display Local Time<a><br>
+            </a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="text-align: center;">
+      &nbsp; <br>
+    </div>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr align="center">
+          <td colspan="3" rowspan="1" style="vertical-align: top;"><span
+              style="font-weight: bold;">Source</span> </td>
+        </tr>
+        <tr>
+          <td colspan="1" rowspan="4" style="vertical-align: top;"><img
+              alt=""
+              src="pics/ais_decoder_v3_control_externalsource.gif"></td>
+          <td style="vertical-align: top;">UDP</td>
+          <td style="vertical-align: top;">decodes input from the UDP
+            input port set on the <a href="OptionsWindow.html">Options
+              Window</a></td>
+        </tr>
+        <tr>
+          <td valign="top">TCP</td>
+          <td valign="top">
+            <table style="text-align: left; width: 100%;"
+              cellspacing="2" cellpadding="2" border="1">
+              <tbody>
+                <tr>
+                  <td style="vertical-align: top;">decodes input from
+                    the TCP input port set on the <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/OptionsWindow.html">Options
+                      Window</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Serial</td>
+          <td style="vertical-align: top;">decodes input from the Serial
+            Com port set on the <a href="OptionsWindow.html">Options
+              Window</a></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">File<br>
+          </td>
+          <td style="vertical-align: top;">decodes <a
+              href="ControlInputFile.html">input from a File</a>
+            accessible from the PC/ The file will be asked when the
+            Start Button&nbsp;<img
+              src="pics/ais_decoder_v3_control_control_start.gif" alt=""
+              width="67" height="29"> is clicked<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <div style="text-align: center;">
+      <br>
+    </div>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr align="center">
+          <td colspan="2" rowspan="1" style="vertical-align: top;"><span
+              style="font-weight: bold;">Display</span><br>
+            <div style="text-align: center;"> <img style="width: 415px;
+                height: 132px;" alt=""
+                src="pics/ais_decoder_v3_control_display.gif"><br>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Nmea Input</td>
+          <td style="vertical-align: top;">displays the NMEA sentences
+            before decoding in the <a href="NmeaWindow.html">Nmea Input
+              Window</a><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Summary</td>
+          <td style="vertical-align: top;">displays the Decoded message
+            summary before input filtering, after input filtering or on
+            being output from the scheduler in the <a
+              href="SummaryWindow.html">Summary Window </a></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Detail</td>
+          <td style="vertical-align: top;">displays all messages as they
+            are being received or after filtering in the <a
+              href="DetailWindow.html">Detail Window</a>. By clicking on
+            a message in the summary display, the detail of the selected
+            message only will be displayed. This will stop any display
+            of message detail if previously selected</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Output<br>
+          </td>
+          <td style="vertical-align: top;">displays the output currently
+            being sent to either a file or to the UDP port. FTP displays
+            the communication between your PC and a FTP server. see <a
+              href="OutputWindows.html">Output Windows</a><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">GIS button</td>
+          <td style="vertical-align: top;">GIS (Geographic Information
+            System, eg Google Earth) displays the current Tagged Output
+            file using the application associated with the file
+            extension. see <a href="GisWindow.html">GIS Button</a><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <div style="text-align: center;">
+      <br>
+    </div>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr style="font-weight: bold;" align="center">
+          <td colspan="2" rowspan="1" style="vertical-align: top;">Input
+            Filter<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">
+            <div style="text-align: center;"> <img style="width: 238px;
+                height: 170px;" alt=""
+                src="pics/ais_decoder_v3_control_inputfilter.gif"><br>
+            </div>
+          </td>
+          <td colspan="1" rowspan="1" style="vertical-align: top;">Displays
+            a summary of the <a href="OptionsInputFilter.html">Input
+              Filter</a><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <div style="text-align: center;">
+      <br>
+    </div>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr align="center">
+          <td colspan="2" rowspan="1" style="vertical-align: top;"><span
+              style="font-weight: bold;">Version Button</span><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">
+            <div style="text-align: center;"> <img alt=""
+                src="pics/ais_decoder_v3_control_version.gif"><br>
+            </div>
+          </td>
+          <td style="vertical-align: top;">Displays the current version,
+            click to view version history<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="File Output">
+    <meta name="MS-HKWD" content="UDP Output">
+    <meta name="MS-HKWD" content="Time Stamp">
+    <meta name="MS-HKWD" content="GIS">
+    <meta name="MS-HKWD" content="Tag">
+    <meta name="MS-HKWD" content="Range">
+    <meta name="MS-HKWD" content="CSV Output">
+    <title>Output Channels</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Output Channels<br>
+    </h3>
+    There are two output channels.<br>
+    One outputs to a <a href="OutputToFile.html"><span
+        style="text-decoration: underline;">File</span></a>, the other
+    outputs <a href="OutputToClientPC.html">To your Network</a>.<br>
+    <div style="text-align: center;"><img style="width: 351px; height:
+        123px;" alt=""
+        src="pics/ais_decoder_v3_options_outputchannels.gif"><br>
+    </div>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr align="center">
+          <td colspan="2" rowspan="1" style="vertical-align: top;"><span
+              style="font-weight: bold;">Output Options - Common to both
+              Channels</span><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Display Output<br>
+          </td>
+          <td style="vertical-align: top;">Displays the data in a
+            separate Window as it is being output.<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">NMEA<br>
+          </td>
+          <td style="vertical-align: top;">Output NMEA data<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Time Stamp<br>
+          </td>
+          <td style="vertical-align: top;">Optionally Time Stamp the
+            NMEA data output<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">CSV<br>
+          </td>
+          <td style="vertical-align: top;">Output data as CSV<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Head<br>
+          </td>
+          <td style="vertical-align: top;">Output a header line at the
+            start of the file<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Delimiter<br>
+          </td>
+          <td style="vertical-align: top;">Specify a CSV delimiter
+            (default is comma)<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Tagged<br>
+          </td>
+          <td style="vertical-align: top;">Output Template File with
+            Tags replaced by Tag Values<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">GIS filtered<br>
+          </td>
+          <td style="vertical-align: top;">Only output MMSI if vessel's
+            position is known<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Scheduled<br>
+          </td>
+          <td style="vertical-align: top;">Output received sentences at
+            scheduled intervals<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Range Filtered<br>
+          </td>
+          <td style="vertical-align: top;">Apply range filtering to
+            output data<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    The options for both channels are the same excepting<br>
+    <br>
+    If you output to a
+    <b> file</b> you can select an output file name and you can <a
+      href="ShellOnFileClose.html">Shell on File Close</a> to a Command
+    procedure (script or batch file)<br>
+    <img src="pics/ais_decoder_v3_options_outputfile.gif" alt=""
+      width="177" height="92"><br>
+    You have an additional option of sending the file created to a <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/OutputToWebServer.html">Web
+      Server</a> using <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/OptionsFtpServer.html">FTP</a><br>
+    <img src="pics/ais_decoder_v3_options_outputftp.gif" alt=""
+      width="173" height="122"><br>
+    <br>
+    If you output <b>UDP</b> to the network you must set up a UDP port.<br>
+    <img src="pics/ais_decoder_v3_options_outputudp.gif" alt=""
+      width="170" height="70"><br>
+    <br>
+    AisDecoder has no provision for outputting TCP, you can easily use
+    my <a href="http://arundale.com/docs/ais/nmearouter.html">NmeaRouter</a>
+    to convert the UDP output to TCP.<br>
+    <br>
+    <br>
+  </body>
+</html>

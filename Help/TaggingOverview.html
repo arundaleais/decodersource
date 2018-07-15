@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Tag">
+    <title>Tagging Overview</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Tagging Overview<br>
+    </h3>
+    <div style="text-align: center;"><img style="width: 343px; height:
+        153px;" alt="" src="pics/AisDecoderDiagram.bmp"><br>
+    </div>
+    Tagging an AIS message field enables the decoded data in the field
+    to be identified and output individually by the name of the tag.<br>
+    Every Field in every individual AIS message type may be Tagged with
+    a name.<br>
+    <br>
+    All AIS messages have some fields that are common to all message
+    types. For example every AIS message has the MMSI number of the
+    sender.<br>
+    Some fields appear in more than one AIS message but not in all (for
+    example Speed), and some fields are totally unique to one AIS
+    message type.<br>
+    AisDecoder regards every different binary message type as a
+    different AIS message type. This means you can apply a different tag
+    to every field in every DAC,FI and ID combination.<br>
+    <br>
+    When a field of decoded AIS message is output it is identified by
+    the name of the Tag.<br>
+    <br>
+    Although all AIS message fields have a default Tag name, you can
+    (and probably will) give the field your own name.<br>
+    <br>
+    Because the output layout is arranged by the name of the Tag, if you
+    wish a field that exists in more than one AIS message type to appear
+    in the same position when output, you must give the field in each
+    AIS message the same Tag name.<br>
+    <br>
+    Currently AisDecoder decodes around 1500 different AIS message
+    fields, so mapping these fields to your output layout may not be
+    trivial. It all depends on the data you wish to output.<br>
+    <br>
+    See also <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/SelectingOutputFields.html">Selecting
+      Output Fields</a>, <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/CreatingTags.html">Creating
+      Tags</a>, <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/DeletingTags.html">Deleting
+      Tags</a>, <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/OutputtingTaggedFields.html">Outputting
+
+      Fields and Tags, </a><a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/OutputTemplateFiles.html">Template
+      Files</a>
+  </body>
+</html>

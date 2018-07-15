@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <meta name="MS-HKWD" content="Log">
+  <title>Options - Log File</title>
+  <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+</head>
+
+<body>
+<h3>Options - Input Log File</h3>
+
+<table style="text-align: left; width: 100%; height: 100%;" cellspacing="2"
+cellpadding="2" border="1">
+  <tbody>
+    <tr style="font-weight: bold;" align="center">
+      <td colspan="2" rowspan="1" style="vertical-align: top;"><br>
+        <img style="width: 122px; height: 193px;" alt=""
+        src="pics/ais_decoder_v3_options_logfile.gif"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Log File Source</td>
+      <td style="vertical-align: top;">determines whether Received, Processed
+        or Filtered NMEA sentences are written to the log file (nmea.log).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Format</td>
+      <td style="vertical-align: top;">determines whether the logged NMEA
+        sentences have a time stamp appended to the sentence. All incoming
+        sentences have a UTC time stamp (obtained from the PC's clock)
+        appended, as the scheduler needs to know when the sentence was
+        received.  If NMEA only is selected, this time stamp is removed prior
+        to being written out to the log file</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Rollover</td>
+      <td style="vertical-align: top;">Messages are appended to the log file
+        (nmea.log) as they are received. This is NOT reset each time you start
+        the decoder, so the file can get very large. If you wish you can have
+        the log file "Roll Over" to a new file at midnight every day. If you
+        select Log File Rollover, the log file will be named nmea_yyyymmdd.log,
+        where yyyymmdd is the current Year, Month, and Day</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<span style="font-weight: bold;">Notes</span><br>
+See <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/FilesandDirectories.html">Files
+and Directories</a> to find the absolute location of all files<br>
+<br>
+If the <a href="ControlStatsWindow.html#Input_Source">Input Source</a> to the
+decoder is a file, the Log File Source must be Processed or Filtered for any
+output as no data will actually be Received.<br>
+<br>
+If the Input Source is <span style="font-weight: bold;">not</span> a file, the
+log file name will be nmea.log and will be output in the \Logs folder<br>
+<br>
+If the Input Source is a file, the log file name will be the same as the input
+file with .log appended and will be output to the same folder as the input
+file.<br>
+<br>
+</body>
+</html>

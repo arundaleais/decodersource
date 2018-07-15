@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Settings,Google">
+    <meta name="MS-HKWD" content="Google">
+    <meta name="MS-HKWD" content="KML Output">
+    <title>Google Maps Setting</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Google Maps Setting<br>
+    </h3>
+    Creates an Output XML file formatted for display by Google Maps<br>
+    <b><br>
+      Initial Settings</b><br>
+    UDP input on port 29421<br>
+    Field Tags are set to decode Ships data that is required to be
+    displayed on Google Maps.<br>
+    Input Filter is Synchronised to Output Tags<br>
+    File Output is Tagged with GIS filtering<br>
+    A new file is Scheduled for output every one minute<br>
+    The Tag Template file to merge AIS data into XML format is data.xml<br>
+    <br>
+    <b>You may also</b><br>
+    <font size="-1"><span style="font-family: Verdana;"><span
+          style="font-family: Verdana;">The file created may also be
+          uploaded to a Web Server for display on Google Earth by
+          anyone. <br>
+        </span></span></font><br>
+    <b>Example</b> - These use the templates produced by my <a
+      href="http://arundale.com/docs/ais/spxl_website_guide.html">Data
+      Analysis Program</a>, the principle is identical.<br>
+    <br>
+    The XML or KML files have to be integrated with Google Maps to
+    create a meaningful ("rendered") display on your website.<br>
+    The original way Google rendered your ships on their map
+    necessitated you placing a XML file on your (or ISP's) server,
+    registering with Google, and creating a custom webpage. It is the
+    custom webpage you view to see your ships on Google's map. To view
+    my current XML list of ships overlaid on Google maps<br>
+    click <a style="font-weight: bold;"
+      href="http://arundale.com/docs/ais/sp_google.html">View XML file
+      rendering</a>.<br>
+    <br>
+    <b>Example XML Source</b><br>
+    <font size="-2">&lt;markers&gt;<br>
+      &lt;marker lat="53.648310" lon="-0.208423" name="FS PHILIPPINE"
+      dx="0.000" dy="0.000" type="Tanker-carrying DG,HS,MP,IMO haz or
+      pollutant X"
+      ais="228320800!9310305!FMDU!IMMINGHAM!0222:0930!0.0!79.0!!Under
+      way sailing (Rule 25)!140!23!8.8!22/02/2011 17:40:57!Ship and
+      Voyage Report"/&gt;<br>
+      &lt;marker lat="54.035500" lon="0.206833" name="" dx="0.000"
+      dy="0.000" type="" ais="250000962!!!!:!13.3!135.0!!Under way using
+      engine (Rule 23(a) or Rule 25(e))!!!!22/02/2011 17:40:57!"/&gt;<br>
+      &lt;marker lat="53.738860" lon="-0.260938" name="" dx="0.000"
+      dy="0.000" type="" ais="304970000!!!!:!0.0!285.0!!Under way using
+      engine (Rule 23(a) or Rule 25(e))!!!!22/02/2011 17:41:03!"/&gt;<br>
+      &lt;marker lat="54.441670" lon="0.698505" name="" dx="0.000"
+      dy="0.000" type="" ais="419504000!!!!:!11.0!139.0!!Under way using
+      engine (Rule 23(a) or Rule 25(e))!!!!22/02/2011 17:40:59!"/&gt;<br>
+      &lt;/markers&gt;</font><br>
+    <br>
+    Google now have another method which which allows you to see your
+    ships overlaid on their map, without you needing a custom webpage
+    data. This requires a KML file and will not work with a XML file,
+    the KML file does need to be on a webserver. The same method (using
+    a KML file) is used to render your data using Google Earth rather
+    than Google maps. To use a KML file you simply upload the KML file
+    and in your browser enter <br>
+    http://maps.google.com/maps?q=<span style="color: rgb(51, 51, 255);">mywebsiteurl<span
+        style="color: rgb(0, 0, 0);">.<br>
+        For example to view my current data click </span></span><a
+      style="font-weight: bold;"
+href="http://maps.google.com/maps?q=http://arundale.com/docs/ais/data.kml?">http://maps.google.com/maps?q=http://arundale.com/docs/ais/data.kml</a><br>
+    <br>
+    If you have looked at both the XML and KML renditions, you will have
+    noticed the XML version contains much more information about the
+    ships than the KML version. This is because XML version I have of
+    the actual webpage I an using is to make it compatible with the
+    widely used sample webpage vbship4.zip which can be downloaded from
+    the files section (vbscripts) of the <a
+      href="http://groups.yahoo.com/group/shipplotter/files/VB%20Scripts/">ShipPlotter
+
+
+
+      forum</a>. The KML version I have kept simple so that you can see
+    the wood from the trees. You can alter this later.<br>
+    <span style="text-decoration: underline;"> <br>
+    </span><span style="font-weight: bold;"><span style="font-weight:
+        bold;"></span></span><span style="font-weight: bold;"></span><br>
+    <br>
+  </body>
+</html>

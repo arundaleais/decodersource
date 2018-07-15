@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Web Server">
+    <meta name="MS-HKWD" content="FTP">
+    <title>Output To Web Server</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Output To Web Server<br>
+    </h3>
+    <span style="font-weight: bold;">Overview</span><br>
+    <br>
+    When you access the Internet on your PC, your browser downloads a
+    file residing on a Webserver to your PC, and having received the
+    file, displays the contents of the file.<br>
+    <ul>
+      <li>The browser downloads the file</li>
+      <li>The browser formats the data in the file and displays this
+        data</li>
+    </ul>
+    The data in the file MUST conform to certain rules (HTML format) in
+    order to successfully display the data<br>
+    In this scenario Google Earth can be considered as just another
+    browser.<br>
+    <br>
+    To enable the world on the internet to view your data, this data
+    must reside on a file and be accessible from the internet. To be
+    accessible to the world, the data on your PC must reside in a file
+    on your PC and then be transferred (uploaded) to a Webserver.<br>
+    <ul>
+      <li>A file must be created at regular intervals, if the contents
+        are changing</li>
+      <li>This file on your PC must be formatted suitable for browsers</li>
+      <li>The file must be transferred to a Web server (uploaded)</li>
+    </ul>
+    In AisDecoder these 3 stages are accomplished as follows<br>
+    <ul>
+      <li>The scheduler holds the data until the file is required <br>
+      </li>
+      <li>The encoded (AIS) data is decoded into plain English,
+        formatted by tagging the data and written out to the output
+        file.</li>
+      <li>A FTP server uploads the output file to a (web) server<br>
+      </li>
+    </ul>
+    All 3 steps must be carried out in order correctly for the upload to
+    be successful.<br>
+    <br>
+    To schedule the output ensure the <a href="SchedulingOutput.html">Scheduler</a>
+    is set up to your requirements<br>
+    <img alt="" src="pics/ais_decoder_v3_options_scheduler.gif"><br>
+    <br>
+    To Output to a Web Server you must <a href="OutputToFile.html">Output
+
+      to a File</a> first using a template file.<br>
+    <br>
+    The <a href="OutputTemplateFiles.html">Template file</a> will
+    contain the basic format of your webpage<br>
+    &nbsp;&nbsp;&nbsp; For example a simple web page could contain<br>
+    &nbsp;&nbsp;&nbsp; &lt;html&gt;&lt;body&gt;Vessel Name is
+    [vesselname]&lt;/body&gt;&lt;/html&gt; <br>
+    &nbsp;&nbsp;&nbsp; If the tag <b>[vesselname]</b> is replaced with
+    <b>Jane</b>, when the above web page is viewed with a web browser
+    you would see<br>
+    &nbsp;&nbsp;&nbsp; Vessel Name is <b>Jane</b>.<br>
+    &nbsp;&nbsp;&nbsp; If viewed with Notepad you would see<br>
+    &nbsp;&nbsp;&nbsp; &lt;html&gt;&lt;body&gt;Vessel Name is <b>Jane</b>&lt;/body&gt;&lt;/html&gt;<br>
+    All browsers contain an option to view the plain text (or source) of
+    the page being displayed.<br>
+    If you navigate to the Arundale\Ais Decoder\Templates and open any
+    of the Templates with Notepad you can view more complex templates,
+    which demonstrate more complex merging of Decoded AIS data with HTML
+    template files.<br>
+    <br>
+    Select the Template to use<br>
+    <img style="width: 127px; height: 58px;" alt=""
+      src="pics/ais_decoder_v3_options_tags.gif"><br>
+    <br>
+    To use this <a href="OutputTemplateFiles.html">Tag Template file</a>
+    select Tagged in the File Output section<br>
+    Also select GIS filtered if using <a href="GoogleEarthSetting.html">Google
+
+
+      Earth</a> and tick the Scheduled box<br>
+    <img alt="" src="pics/ais_decoder_v3_options_outputweb.gif"><br>
+    To output a compressed file use a KMZ extension<br>
+    <br>
+    After you have entered your own server details<br>
+    <img style="width: 126px; height: 99px;" alt=""
+      src="pics/ais_decoder_v3_options_ftpserver.gif"><br>
+    &nbsp;The Output file will be sent by the <a
+      href="SchedulingOutput.html">scheduler</a> to the Web Server using
+    <a href="OptionsFtpServer.html">FTP</a> <br>
+    <img style="width: 173px; height: 122px;" alt=""
+      src="pics/ais_decoder_v3_options_outputftp.gif"><br>
+    <br>
+    There are a number of <a href="ExampleSettings.html">Initialisation
+      Files</a> that will pre-set most of these settings.<br>
+  </body>
+</html>

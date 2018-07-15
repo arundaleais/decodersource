@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Schedule">
+    <title>Options - Scheduler</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Options - Scheduler<br>
+    </h3>
+    <div style="text-align: center;"><img alt=""
+        src="pics/ais_decoder_v3_options_scheduler.gif"><br>
+      <br>
+    </div>
+    <table style="text-align: left; width: 100%; height: 100%;"
+      cellspacing="2" cellpadding="2" border="1">
+      <tbody>
+        <tr style="font-weight: bold;" align="center">
+          <td colspan="2" rowspan="1" style="vertical-align: top;">Options
+-
+            Scheduler<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Minutes</td>
+          <td style="vertical-align: top;">are how often the Scheduler
+            will
+            output messages. This is in whole minutes, if 0 no output
+            will be
+            scheduled.<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Time to Live</td>
+          <td style="vertical-align: top;">is the number of minutes
+            messages remain in the Scheduler's buffer before
+            removal</td>
+        </tr>
+        <tr>
+          <td valign="top">Output on MMSI change </td>
+          <td valign="top">If ticked the latest Tag values
+            will be output whenever the MMSI changes. This is the normal
+            behaviour.<br>
+            If unticked the Tags/CSV will be output after each message
+            rather
+            than on change of MMSI. This is to allow, when reading a log
+            file, to
+            output the history of one vessel.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    The output
+    is triggered be the arrival of a new message into the Scheduler's
+    buffer and NOT by the PC's clock.<br>
+    The output can be used to <a href="ShellOnFileClose.html">trigger a
+      script</a> to process the <a href="OutputToFile.html">Output File</a>.
+    This can be used to add the decoded data to a database.<br>
+    <br>
+    The Scheduler outputs AIS messages in MMSI order.<br>
+    <br>
+    If messages are
+    duplicated, only the last received message is output.<br>
+    <br>
+    If you are using the output of the decoder to display live
+    vessel position data, the Time To Live will be the time the vessel
+    will
+    remain on the <a href="GisWindow.html">GIS display</a>, after the
+    last
+    message from the vessel was
+    received, before being removed from the GIS display. <br>
+    <br>
+    See also <a href="OptionsTags.html">MMSI change</a><br>
+    <br>
+  </body>
+</html>

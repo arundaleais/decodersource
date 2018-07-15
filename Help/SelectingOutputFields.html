@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Field">
+    <meta name="MS-HKWD" content="Tag">
+    <title>Selecting Output Fields</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Selecting and Tagging Output Fields<br>
+    </h3>
+    Each AIS message consists of a number of fields, for example AIS
+    message 1 contains MMSI, Longitude &amp; Latitude <span
+      style="font-style: italic;">plus a number of other fields.</span>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr align="center">
+          <td colspan="3" rowspan="1" style="vertical-align: top;"><span
+              style="font-weight: bold;">Fields</span><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top; font-weight: bold;">Field Name<br>
+          </td>
+          <td style="vertical-align: top; font-weight: bold;">Field
+            Value<br>
+          </td>
+          <td style="vertical-align: top; font-weight: bold;">Field
+            Description<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">MMSI<br>
+          </td>
+          <td style="vertical-align: top;">249379000<br>
+          </td>
+          <td style="vertical-align: top;"><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Longitude<br>
+          </td>
+          <td style="vertical-align: top;">0.301626<br>
+          </td>
+          <td style="vertical-align: top;">0° 18.0975' N<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Latitude<br>
+          </td>
+          <td style="vertical-align: top;">54.773910<br>
+          </td>
+          <td style="vertical-align: top;">55° 46.4346' N <br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    &nbsp;<span style="font-style: italic;"></span><br>
+    To identify these fields uniquely, these fields must be named with a
+    "Tag"<br>
+    All Decoded AIS Message fields can be viewed in the <a
+      href="DetailWindow.html">Detail Window</a> on which you select the
+    fields you wish to output.<br>
+    <br>
+    The Default names for these fields are<br>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr style="font-weight: bold;" align="center">
+          <td colspan="3" rowspan="1" style="vertical-align: top;">Default
+
+
+            Tags<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top; font-weight: bold;">Name Tag<br>
+          </td>
+          <td style="vertical-align: top; font-weight: bold;">Value Tag<br>
+          </td>
+          <td style="vertical-align: top; font-weight: bold;">Description
+
+
+            Tag<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">mmsi_1<br>
+          </td>
+          <td style="vertical-align: top;">mmsi_2<br>
+          </td>
+          <td style="vertical-align: top;">mmsi_3<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">lon_1<br>
+          </td>
+          <td style="vertical-align: top;">lon_2<br>
+          </td>
+          <td style="vertical-align: top;">lon_3<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">lat_1<br>
+          </td>
+          <td style="vertical-align: top;">lat_2<br>
+          </td>
+          <td style="vertical-align: top;">last_3<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    If you create a template file, which is a plain text file,&nbsp;
+    containing this one line:-<br>
+    <span style="font-weight: bold;">Name is &lt;lon_1&gt;, Value is
+      &lt;lon_2&gt;, Description is &lt;lon_3&gt;</span><br>
+    <br>
+    The Decoder will output:-<br>
+    <span style="font-weight: bold;">Name is Longitude, Value is
+      0.301626, Description is 0° 18.0975' N</span><br
+      style="font-weight: bold;">
+    <br>
+    You can see the tags &lt;lon_1&gt;, &lt;lon_2&gt; and &lt;lon_3&gt;
+    in the template have been replaced with the actual values in the AIS
+    message fields.<br>
+    <br>
+    Note that in this example as &lt;lon_1&gt; will always translate to
+    Name, in practice you can reduce the processing by making the
+    template:<br>
+    <b>Longitude is &lt;lon_2&gt;</b><br>
+    which will output <span style="font-weight: bold;">Longitude is
+      0.301626</span><br>
+    or if you prefer the formatted longitude<br>
+    <b>Longitude is &lt;lon_3&gt;</b><br>
+    which will output <span style="font-weight: bold;">Longitude is 0°
+      18.0975' N</span><br>
+    <br>
+    In a similar manner you can select and organise all output in the
+    format of your choice.&nbsp; <br>
+    <br>
+    See also <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/OutputTemplateFiles.html">Template
+
+      Files</a>, <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/TaggingOverview.html">Tagging
+
+      -Overview</a>, <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/CreatingTags.html">Creating
+
+      Tags</a>, <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/DeletingTags.html">Deleting
+
+      Tags</a>, <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/OutputtingTaggedFields.html">Outputting
+
+
+      Fields and Tags</a><br>
+    <br>
+  </body>
+</html>

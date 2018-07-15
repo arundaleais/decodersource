@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Settings,CSV">
+    <meta name="MS-HKWD" content="CSV Output">
+    <title>CSV Setting</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>CSV Setting<br>
+    </h3>
+    <b>Initial Settings</b><br>
+    UDP input on port 29421<br>
+    Log all NMEA input to nmea.log (with time stamp)<br>
+    Displays All Received NMEA Sentences<br>
+    Displays Summary of Received AIS messages<br>
+    Click on Received AIS message to display fully decoded textual
+    content<br>
+    <br>
+    The Decoder will output all decoded value fields as CSV, if CSV
+    output is selected and <span style="font-weight: bold;">NO</span>
+    field Tags are selected.<br>
+    If any fields are tagged, only the tagged fields will be output.<br>
+    <br>
+    If no fields are tagged the Output Format is:-<br>
+    The same as on the Detail Window except for clarity the created
+    time,NMEA sentence and the payload are omitted.<br>
+    <br>
+    <br>
+    <span style="font-weight: bold;"><font size="-1"><span
+          style="font-family: Verdana;"><a
+            name="CSV_Output_All_Fields_-_File"></a>CSV Output All
+          Fields - File<br>
+        </span></font></span><font size="-2"><span style="font-family:
+        Verdana;">(Browser may wrap lines)<br>
+        23/02/2011
+10:43:36,,!AIVDM,1,1,,1,0,235475000,235,0,0,0.0,0,-0.294167,53.746000,39.0,272,33,0,0,0,0,0,4,1394<br>
+        23/02/2011
+10:43:36,,!AIVDM,1,1,,1,0,235475000,235,0,0,0.0,0,-0.294167,53.746000,39.0,272,33,0,0,0,0,0,4,1394<br>
+        23/02/2011
+10:43:36,AMANDINE,!AIVDM,2,2,4,5,0,253047000,253,1,9424871,LXAM,AMANDINE,71,146,49,195,15,15,30,1,02,23,07,00,7.2,KILLINGHOLME,0,0<br>
+        23/02/2011
+10:43:36,,!AIVDM,1,1,,1,0,232079000,232,0,0,15.8,0,0.257683,53.836980,335.0,332,38,0,0,1,0,0,0,2253<br>
+        23/02/2011
+10:43:36,CORAGGIO,!AIVDM,1,1,,1,0,247188200,247,0,0,0.1,0,-0.230233,53.666580,144.0,144,35,0,0,0,0,0,1,10,43<br>
+        23/02/2011
+10:43:37,,!AIVDM,1,1,,1,0,232003329,232,0,-128,3.4,0,0.625418,53.970200,20.0,511,38,0,0,0,0,0,7,18<br>
+        23/02/2011 10:43:37,AMUR
+2524,!AIVDM,1,1,,1,0,273324000,273,0,-127,6.7,0,0.452878,54.147750,150.0,156,39,0,0,0,0,0,0,2294<br>
+        23/02/2011
+10:43:37,,!AIVDM,1,1,,1,0,236263000,236,0,16,13.7,0,0.400488,54.035790,324.0,323,38,0,0,1,0,0,2,1450<br>
+        23/02/2011 10:43:37,SIGAS
+CHAMPION,!AIVDM,1,1,,1,0,564120000,564,0,0,11.4,0,-0.137148,54.574670,327.0,326,39,0,0,0,0,0,5,1<br>
+        23/02/2011
+10:43:37,,!AIVDM,1,1,,1,0,308583000,308,0,-127,2.5,0,0.548317,54.574230,175.0,176,40,0,0,1,0,1,1,24,60</span></font><span
+      style="font-weight: bold;"><font size="-1"><span
+          style="font-family: Verdana;"><br>
+        </span></font></span><span style="font-weight: bold;"><font
+        size="-1"><span style="font-family: Verdana;"><a
+            name="CSV_Output_All_Fields_-_Display"></a>CSV Output All
+          Fields - Display</span></font></span><font size="-2"><span
+        style="font-family: Verdana;"></span></font><br>
+    <span style="font-weight: bold;"><font size="-1"><span
+          style="font-family: Verdana;"><img style="width: 829px;
+            height: 199px;" alt="" src="pics/sp_csv_output_all.gif"></span></font></span><br>
+    <span style="font-weight: bold;"><font size="-1"><span
+          style="font-family: Verdana;"><br>
+        </span></font></span><span style="font-weight: bold;"><font
+        size="-1"><span style="font-family: Verdana;"></span></font></span><span
+      style="font-weight: bold;"><font size="-1"><span
+          style="font-family: Verdana;"><a
+            name="CSV_Output_Selected_Fields_-_File"></a>CSV Decoded
+          Output Selected Fields - File<br>
+        </span></font></span><font size="-2"><span style="font-family:
+        Verdana;">(Browser may wrap lines)<br>
+      </span></font><font size="-2"><span style="font-family: Verdana;">247188200,CORAGGIO,53°
+
+        39.9950' N,0° 13.8140' W,0.0,144.0<br>
+        253047000,,53° 40.1143' N,0° 13.9960' W,0.0,324.0<br>
+        253310000,,53° 39.9479' N,0° 13.8860' W,0.0,144.0<br>
+        273324000,AMUR 2524,54° 11.4175' N,0° 24.2075' E,6.7,148.0<br>
+        308282000,TOISA DEFIANT,54° 15.6109' N,0° 19.2650' E,11.1,335.0<br>
+        308583000,OCEAN SPRITE,54° 35.5371' N,0° 32.7160' E,2.0,176.0<br>
+        319402000,STOLT SHEARWATER,54° 2.4300' N,0° 26.7200'
+        E,10.1,147.0<br>
+        477720300,STAR SEA BULKER,53° 38.2599' N,0° 11.7100' W,0.0,33.0<br>
+        518408000,SWAN DIANA,54° 11.1028' N,0° 0.0398' E,7.7,316.0<br>
+        564120000,SIGAS CHAMPION,54° 30.0817' N,0° 3.4236' W,11.1,328.0</span></font><span
+      style="font-weight: bold;"><font size="-1"><span
+          style="font-family: Verdana;"><br>
+        </span></font></span><span style="font-weight: bold;"><font
+        size="-1"><span style="font-family: Verdana;"><a
+            name="CSV_Output_Selected_Fields_-_Display"></a>CSV Output
+          Selected Fields - Display<br>
+          <img style="width: 528px; height: 199px;" alt=""
+            src="pics/sp_csv_output.gif"></span></font></span><br>
+  </body>
+</html>

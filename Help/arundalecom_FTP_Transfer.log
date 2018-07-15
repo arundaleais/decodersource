@@ -1,0 +1,189 @@
+ftp> Connected to ftp.arundale.com.
+open ftp.arundale.com
+220---------- Welcome to Pure-FTPd [privsep] [TLS] ----------
+220-You are user number 2 of 50 allowed.
+220-Local time is now 05:12. Server port: 21.
+220-IPv6 connections are also welcome on this server.
+220 You will be disconnected after 15 minutes of inactivity.
+User (ftp.arundale.com:(none)): 
+331 User stfinge1 OK. Password required
+
+230 OK. Current restricted directory is /
+ftp> Hash mark printing On  ftp: (2048 bytes/hash mark) .
+ftp> hash
+ Volume in drive C has no label.
+ Volume Serial Number is 98C8-9684
+
+ Directory of C:\Users\Admin\Documents\ais\DecoderSource\Help
+
+05/01/2018  10:12    <DIR>          .
+05/01/2018  10:12    <DIR>          ..
+24/02/2017  12:25         1,152,773 AisDecoder.chm
+05/02/2017  12:51            12,861 AisDecoder.hhc
+19/02/2011  10:42               203 AisDecoder.hhk
+05/02/2017  11:19             2,120 AisDecoder.hhp
+11/02/2011  17:18               508 AisDecoder.stp
+24/02/2017  12:23           221,571 AisDecoderHelp.html
+24/02/2017  12:23         1,305,102 AisDecoderHelp.pdf
+04/02/2017  13:31             3,060 AisDecoderHelpHHC.csv
+04/02/2017  14:17            10,710 AisDecoderHelpHHC.ods
+04/02/2017  13:42            27,878 AisDecoderHelpHHC.pdf
+04/02/2017  13:19             7,717 AisDecoderHelpHHC.txt
+05/01/2018  10:12                 0 arundalecom_FTP_Transfer.log
+05/01/2018  10:11                64 arundalecom_upload.bat
+05/01/2018  10:12               185 arundalecom_upload.txt
+15/02/2017  10:02             2,091 AspxSetting.html
+17/02/2017  09:28             1,554 BinaryMessages.html
+04/02/2017  09:49               426 Blank.html
+01/02/2017  09:25               238 BlankAmaya.html
+05/12/2015  11:53            23,783 changes_after_v112 .html
+05/12/2015  11:54            54,212 changes_after_v112.pdf
+17/02/2017  10:14             9,973 CharacterEncoding.html
+17/02/2017  08:59             2,657 Command.html
+05/02/2017  11:19             1,070 ControlInputFile.html
+05/02/2017  09:10            10,008 ControlStatsWindow.html
+16/02/2017  12:51             3,326 CreatingTags.html
+15/02/2017  16:33             4,600 CsvOutput.html
+15/02/2017  09:59             5,508 CsvSetting.html
+24/02/2017  12:24             2,036 Default.html
+15/02/2017  09:56               898 DefaultSetting.html
+16/02/2017  12:47             1,620 DeletingTags.html
+05/02/2017  12:32             2,645 DetailWindow.html
+15/02/2017  09:44             6,438 ExampleSettings.html
+15/02/2017  10:00             3,758 Excel Setting.html
+24/07/2017  08:03             8,292 FAQ.txt
+04/02/2017  14:22             3,399 Features.html
+24/02/2017  10:10             1,221 FilesandDirectories.html
+30/01/2017  16:15             2,225 FunctioalDescription.html
+04/02/2017  14:20               842 GettingStarted.html
+05/02/2017  12:39             1,524 GisWindow.html
+24/02/2017  10:21            11,247 Glossary.html
+17/02/2017  10:32             5,405 GoogleEarthConfiguring.html
+15/02/2017  09:57             3,452 GoogleEarthSetting.html
+04/02/2017  14:27             1,662 GoogleEarthView.html
+17/02/2017  09:48             5,034 GoogleMapsSetting.html
+30/01/2017  16:15               741 HowTo.html
+15/02/2017  16:53             4,630 HtmlOutput.html
+15/02/2017  16:43             1,126 HtmlOutputExample.html
+15/02/2017  10:02             5,323 HtmlSetting.html
+19/02/2011  10:42               203 Index.hhk
+15/02/2017  16:59             1,547 KmlOutput.html
+15/02/2017  17:01               976 KmzOutput.html
+11/11/2016  19:55             1,620 logfiledate.vbs
+17/02/2017  08:12               537 Miscellaneous.html
+01/12/2013  16:38           217,088 MMSI to GLL.doc
+18/10/2017  13:23             3,052 MultipleCopies.html
+04/02/2017  16:02             2,214 NetworkInput.html
+17/02/2017  09:02             3,159 NmeaGps.html
+15/02/2017  16:26             3,204 NmeaOutput.html
+05/02/2017  12:02             1,354 NmeaWindow.html
+15/02/2017  09:20             2,244 OptionsAllSettings.html
+15/02/2017  09:02             3,570 OptionsFtpServer.html
+06/02/2017  10:38             3,616 OptionsInputFilter.html
+06/02/2017  09:40             2,871 OptionsLogFile.html
+15/02/2017  09:23             1,698 OptionsOther.html
+06/02/2017  11:13             4,747 OptionsOutput FieldsAndTags.html
+15/02/2017  09:15             8,034 OptionsOutput.html
+15/02/2017  17:08            18,265 OptionsOutputDates.html
+14/02/2017  12:28             1,958 OptionsOutputTagsAndRange.html
+14/02/2017  12:42             2,981 OptionsScheduler.html
+05/02/2017  13:19             2,941 OptionsSettings.html
+14/02/2017  12:52             1,599 OptionsTags.html
+05/02/2017  12:46             4,623 OptionsWindow.html
+15/02/2017  10:05             3,846 Output.html
+15/02/2017  16:06             1,939 OutputFormat.html
+15/02/2017  10:23             4,961 OutputMethod.html
+15/02/2017  15:08             3,581 OutputOptions.html
+16/02/2017  13:23             2,883 OutputRangeFiltering.html
+17/02/2017  10:14             3,228 OutputTemplateFiles.html
+16/02/2017  12:33             4,112 OutputtingTaggedFields.html
+15/02/2017  15:23             2,282 OutputToClientPC.html
+15/02/2017  10:26             1,763 OutputToFile.html
+15/02/2017  16:05             4,806 OutputToWebServer.html
+05/02/2017  12:35             2,319 OutputWindows.html
+04/02/2017  14:21               810 Overview.html
+04/02/2017  14:33               880 PhysicalConnection.html
+22/12/2017  08:52    <DIR>          Pics
+04/02/2017  14:24             2,523 QuickStart.html
+16/02/2017  13:27             3,132 RangeFilteredNmea.html
+30/01/2017  16:15             1,326 RangeFilteredTagged.html
+01/02/2017  10:35             1,216 RangeFromMyShip.csv
+22/02/2017  10:01            17,552 RangeFromMyShip.html
+04/09/2013  07:14            23,413 rangefrommyship.ini
+22/02/2017  09:53             4,251 RangeFromMyShip.ini.zip
+30/01/2017  12:52            23,556 RangeFromMyShip.odt
+01/02/2017  09:08            63,208 RangeFromMyShip.pdf
+01/02/2017  09:30             6,218 RangeFromMyShip.txt
+16/02/2017  13:30             2,845 SchedulingOutput.html
+16/02/2017  12:54             5,843 SelectingOutputFields.html
+04/02/2017  14:36             5,037 SerialInput.html
+13/11/2016  10:58            18,964 shell.ini
+11/11/2016  09:54                50 shellcommand.cmd
+13/11/2016  10:50                30 shellcommand_vbs.cmd
+17/07/2017  11:37            87,850 ShellOnFileClose(1).pdf
+24/02/2017  10:02            11,458 ShellOnFileClose.html
+13/11/2016  11:45            24,280 ShellOnFileClose.odt
+13/11/2016  11:46            50,815 ShellOnFileClose.pdf
+22/02/2017  17:29             8,620 ShellOnFileClose.zip
+13/11/2016  11:21            18,968 shell_vbs.ini
+15/02/2017  10:03             4,072 spnmeaSetting.html
+05/02/2017  11:19             3,910 Statistics.html
+05/02/2017  12:15             1,132 SummaryWindow.html
+11/02/2011  12:27             7,870 Table of Contents.hhc
+10/10/2014  14:35            19,968 Tagged Output FTP toServer.doc
+16/02/2017  12:53             2,735 TaggingOverview.html
+08/09/2017  08:55             1,586 TcpInput.html
+27/08/2014  08:53            28,160 Time Stamps.doc
+05/02/2017  11:59             9,268 Time Stamps.html
+27/10/2016  13:25            22,821 Time Stamps.odt
+27/10/2016  13:25            69,614 Time Stamps.pdf
+22/09/2017  16:14             2,257 UdpBroadcast.html
+15/02/2017  10:01             2,024 UdpTagsandRangeSetting.html
+04/02/2017  11:50             1,568 UsbInput.html
+17/02/2017  09:23             4,826 UserProfiles.html
+16/02/2017  12:56             1,935 VesselNames.html
+             123 File(s)      3,834,128 bytes
+               3 Dir(s)  1,883,271,389,184 bytes free
+ftp> !dir
+cd /public_html/docs/ais/help
+250 OK. Current directory is /public_html/docs/ais/help
+ftp> dir
+200 PORT command successful
+150 Connecting to port 51835
+drwxr-xr-x    3 stfinge1   stfinge1         4096 Feb 24  2017 .
+drwxr-xr-x    4 stfinge1   stfinge1        20480 Jan  5 05:11 ..
+-rw-r--r--    1 stfinge1   stfinge1       101360 Jan  5 05:12 AisDecoder.chm
+-rw-r--r--    1 stfinge1   stfinge1         4251 Jan  3 08:05 RangeFromMyShip.ini.zip
+-rw-r--r--    1 stfinge1   stfinge1         8620 Jan  3 08:05 ShellOnFileClose.zip
+-rw-r--r--    1 stfinge1   stfinge1         4251 Feb 22  2017 download.zip
+drwxr-xr-x    2 stfinge1   stfinge1         4096 Feb 20  2017 pics
+226-Options: -a -l 
+226 7 matches total
+ftp: 524 bytes received in Seconds Kbytes/sec.
+ftp> 0.00524000.00binary
+200 TYPE is now 8-bit binary
+ftp> put AisDecoder.chm
+200 PORT command successful
+150 Connecting to port 51836
+##################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################
+226-File successfully transferred
+226 11.660 seconds (measured here), 96.55 Kbytes per second
+ftp: 1152773 bytes sent in Seconds Kbytes/sec.
+ftp> 10.08114.37put RangeFromMyShip.ini.zip
+200 PORT command successful
+150 Connecting to port 51837
+##
+226-File successfully transferred
+226 0.328 seconds (measured here), 12.64 Kbytes per second
+ftp: 4251 bytes sent in Seconds Kbytes/sec.
+ftp> 0.01531.38put ShellOnFileClose.zip
+200 PORT command successful
+150 Connecting to port 51838
+####
+226-File successfully transferred
+226 0.393 seconds (measured here), 21.44 Kbytes per second
+ftp: 8620 bytes sent in Seconds Kbytes/sec.
+ftp> 0.04210.24ftp> 
+bye
+221-Goodbye. You uploaded 1139 and downloaded 0 kbytes.
+221 Logout.

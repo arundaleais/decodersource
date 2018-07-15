@@ -1,0 +1,12 @@
+Line 23: Class MSFlexGridLib.MSFlexGrid of control DetailDisplay was not a loaded control class.
+Line 29: The property name _ExtentX in DetailDisplay is invalid.
+Line 30: The property name _ExtentY in DetailDisplay is invalid.
+Line 31: The property name _Version in DetailDisplay is invalid.
+Line 32: The property name Rows in DetailDisplay is invalid.
+Line 33: The property name Cols in DetailDisplay is invalid.
+Line 34: The property name FixedCols in DetailDisplay is invalid.
+Line 35: The property name Redraw in DetailDisplay is invalid.
+Line 36: The property name AllowBigSelection in DetailDisplay is invalid.
+Line 37: The property name FocusRect in DetailDisplay is invalid.
+Line 38: The property name ScrollBars in DetailDisplay is invalid.
+Line 39: The property name AllowUserResizing in DetailDisplay is invalid.

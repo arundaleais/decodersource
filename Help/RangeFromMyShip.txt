@@ -1,0 +1,211 @@
+Filter by Range from MyShip
+Outputting Decoded Data – a brief introduction.
+Decoded data can be formatted in 3 basic ways.
+1. Every field of every sentence is output as CSV by setting the Output Option to CSV.
+2. You can restrict the number of fields output by creating tags, for each type of sentence, in whch case only those fields which have been mapped to a named tag
+will be output, as a CSV record.
+3. You can create a Template file which contains the tags. These tags will be substituted with the relevant values when the template file is output.
+In addition you can set a minimum and maximum value for any tag. The decoded data will only be output if ALL min & max conditions have been met.
+Vessel Range Filtering
+The last Position if received from either OwnShip or OtherShip is cached by MMSI.
+The cached Positions are retrieved by means of Tags. The values of these tags can be seen on the Detail display for the MMSI. The
+MyShip values are displayed at the bottom of the detailed display after the MyShip data has been received.
+The Range from MyShip is calculated as the Great Circle Distance between MyShip Lat/lon and the From MMSI Lat/Lon.
+MMSI of distance TO is determined by
+!AIxxx (with any talker ID – eg VDM) Sentences containing a from Lat/Lon which are:-
+1,2,3 Position Report
+4,11 Base Station
+9 Standard SAR Position Report
+17 GNSS
+18 Standard Class B Position Report
+19 Extended Class B Position Report
+21 AtoN Position Report
+27 Long Range Position Report
+MyShip position is determined from any of the above !AIVDO sentences.
+Because the sentence that is decoded is the received sentence, the Range is the distance from the received from MMSI and MyShip.
+To not generate a distance from say Base Stations, or AtoNs these messages should be filtered out using the input filter. Even if these
+messages are filtered out, the last position of the Received From MMSI is still cached. Therefore if a message is received from a MMSI
+that does not contain a Position report (eg Message 5), the Range reported will be the range when the previous position was last
+reported. In this case the Age of the last position will be –ve (if the last position of MyShip was after the last position of OtherShip).
+This can be confusing, but AisDecoder has to deal with data from a log file not real-time data. With real-time data the age is from the
+current time, so the age will always be +ve, with a log file the OtherShip’s position can be more recent than the time MyShip’s
+position is logged.
+If MyShip or OtherShip’s position is not known, the Range is assumed to be 0.000 Nm.
+The Minimum Range is 0.001 Nm. If the minimum range tag is set to 0.001, the Range test fails, therefore MyShip will also fail as the Range will be 0.000 so the !
+AIVDO sentence will not be output.
+A message containing a position report within the Min & Max range set on Options > Output Tags and Range > myshiprange_2 will be
+output.
+Change the Min or Max Range by Left Clicking on the appropriate Min or Max range box on Options > Output Tags and Range >
+myshiprange_2.
+If a message from an MMSI does not contain a position report, the last position report from the same MMSI (if any) is assumed to be
+the last position.
+If a Position Report from a MMSI has not been previously received and the current sentence does not contain a position report (eg
+Message 5 – Static and voyage related data). the current sentence will not be output. The previous position report must be within the
+permitted range.
+You can delete any CSV output Tag and all linked Fields by Options > Output Tags and Range > Left Click required Tag.
+You set up new Message fields and linked Tags by On the Summary display Click on any vessel with the required AIS message No
+This will display the Detail of the decoded message then Left Click on the Cell (Line & Column) of the data for which you wish to
+create a Tag and Link to the Tag. This will create both a Tag (if it does not already exiat) and a link from the message field to the Tag.
+RangeFromMyShip.ini
+This initialisation file (was Aida.ini) uses method 2 above for outputting the decoded data.
+I have set up the Input Filter to only allow Vessel type messages, Red are not invcluded
+1,2,3 Position Report
+4,11 Base Station
+9 Standard SAR Position Report
+17 GNSS
+18 Standard Class B Position Report
+19 Extended Class B Position Report
+21 AtoN Position Report
+27 Long Range Position Report
+The File Output (unselected) when input into Excel is as below
+~MMSI Received Time
+Vessel
+Name Latitude
+Longitud
+e
+Course
+Over
+Ground
+(COG)
+Speed
+Over
+Ground
+(SOG)
+IMO
+Numbe
+r
+True
+Headin
+g
+(HDG)
+Bea
+m
+Lengt
+h
+Destinati
+on Ship Type Latitude
+Longitud
+e RangeAge
+2463460
+00
+20130824
+15:28:07
+CAPEWATE
+R
+54.3863
+4 -0.21023 322 12 321
+54.2830
+7
+-
+0.38911 8.81 104
+2350035
+60
+20130824
+15:28:12
+NORDSTRA
+ND
+54.3074
+8 -0.26755 142.1 11.1 143
+54.2830
+7
+-
+0.38911 4.5 1
+2463460
+00
+20130824
+15:28:16
+CAPEWATE
+R
+54.3867
+3 -0.21076 321.9 12 321
+54.2830
+7
+-
+0.38911 8.81 2
+2350035
+60
+20130824
+15:28:21
+NORDSTRA
+ND
+54.3071
+9
+-0.26717 142.2 11.1 143 54.2830 - 4.51 3
+8 0.38911
+2463460
+00
+20130824
+15:28:25
+CAPEWATE
+R
+54.3871
+3 -0.21129 321.5 12 321
+54.2830
+8
+-
+0.38911 8.81 1
+2350035
+60
+20130824
+15:28:31
+NORDSTRA
+ND
+54.3067
+4 -0.26658 142.6 11.1 143
+54.2830
+8
+-
+0.38911 4.52 1
+2463460
+00
+20130824
+15:28:36
+CAPEWATE
+R
+54.3876
+3 -0.21195 321.1 12 320
+54.2830
+8
+-
+0.38911 8.82 0
+2463460
+00
+20130824
+15:28:37 CAPEWATER
+94238
+41 16 100 TEES
+Tanker-all
+ships of
+this type
+54.2830
+8
+-
+0.38911 8.82 0
+2350035
+60
+20130824
+15:28:42
+NORDSTRA
+ND
+54.3062
+8 -0.266 143 11 143
+54.2830
+8
+-
+0.38911 4.53 3
+2463460
+00
+20130824
+15:28:45
+CAPEWATE
+R
+54.3880
+2 -0.2125 320.2 12 321
+54.2830
+8
+-
+0.38911 8.82 0
+This can easily be changed by adding or deleting the Tag
+The UDP output is in the same format, excepting there is no Header and the Delimiter is changed.
+Note that Range Filtering must be enabled for the range selected for the tags to be actioned.
+Hopefully the rest of the settings are either not used or pretty obvious.

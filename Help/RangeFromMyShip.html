@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Range">
+    <meta name="MS-HKWD" content="MyShip">
+    <title>Range from MyShip</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+</style>
+  </head>
+  <body>
+    <h3>Filter by Range from MyShip<br>
+    </h3>
+    <span style="font-weight:bold;"><br>
+      Outputting Decoded Data – a brief introduction.</span><br>
+    Decoded data can be formatted in 3 basic ways.<br>
+    &nbsp;&nbsp;&nbsp; 1.&nbsp;&nbsp; &nbsp; Every field of every
+    sentence is output as CSV by setting the Output Option to CSV.<br>
+    &nbsp;&nbsp;&nbsp; 2. &nbsp;&nbsp;&nbsp; You can restrict the number
+    of fields output by creating tags, for each type of sentence, in
+    which case only those fields which have been mapped to a named tag
+    will be output, as a CSV record.<br>
+    &nbsp;&nbsp;&nbsp; 3.&nbsp;&nbsp;&nbsp; You can create a Template
+    file which contains the tags. These tags will be substituted with
+    the relevant values when the template file is output.<br>
+    In addition you can set a minimum and maximum value for any tag. The
+    decoded data will only be output if ALL min &amp; max conditions
+    have been met.<br>
+    <br>
+    <span style="font-weight:bold;">Vessel Range Filtering</span><br>
+    The last Position if received from either OwnShip or OtherShip is
+    cached by MMSI.<br>
+    The cached Positions are retrieved by means of Tags. The values of
+    these tags can be seen on the Detail display for the MMSI. The<br>
+    MyShip values are displayed at the bottom of the detailed display
+    after the MyShip data has been received.<br>
+    The Range from MyShip is calculated as the Great Circle Distance
+    between MyShip Lat/lon and the From MMSI Lat/Lon.<br>
+    MMSI of distance TO is determined by<br>
+    &nbsp;&nbsp;&nbsp; !AIxxx (with any talker ID – eg VDM) Sentences
+    containing a from Lat/Lon which are:-<br>
+    &nbsp;&nbsp;&nbsp; 1,2,3&nbsp;&nbsp;&nbsp; Position Report<br>
+    &nbsp;&nbsp;&nbsp; 4,11 &nbsp;&nbsp;&nbsp; Base Station<br>
+    &nbsp;&nbsp;&nbsp; 9 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; Standard
+    SAR Position Report<br>
+    &nbsp;&nbsp;&nbsp; 17 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; GNSS<br>
+    &nbsp;&nbsp;&nbsp; 18&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Standard
+    Class B Position Report<br>
+    &nbsp;&nbsp;&nbsp; 19&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Extended
+    Class B Position Report<br>
+    &nbsp;&nbsp;&nbsp; 21&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AtoN
+    Position Report<br>
+    &nbsp;&nbsp;&nbsp; 27&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Long
+    Range Position Report<br>
+    MyShip position is determined from any of the above !AIVDO
+    sentences.<br>
+    <br>
+    Because the sentence that is decoded is the received sentence, the
+    Range is the distance from the received from MMSI and MyShip.<br>
+    To not generate a distance from say Base Stations, or AtoNs these
+    messages should be filtered out using the input filter. Even if
+    these<br>
+    messages are filtered out, the last position of the Received From
+    MMSI is still cached. Therefore if a message is received from a MMSI<br>
+    that does not contain a Position report (eg Message 5), the Range
+    reported will be the range when the previous position was last<br>
+    reported. In this case the Age of the last position will be –ve (if
+    the last position of MyShip was after the last position of
+    OtherShip).<br>
+    This can be confusing, but AisDecoder has to deal with data from a
+    log file not real-time data. With real-time data the age is from the<br>
+    current time, so the age will always be +ve, with a log file the
+    OtherShip’s position can be more recent than the time MyShip’s<br>
+    position is logged.<br>
+    <br>
+    If MyShip or OtherShip’s position is not known, the Range is assumed
+    to be 0.000 Nm.<br>
+    The Minimum Range is 0.001 Nm. If the minimum range tag is set to
+    0.001, the Range test fails, therefore MyShip will also fail as the
+    Range will be 0.000 so the !AIVDO sentence will not be output.<br>
+    A message containing a position report within the Min &amp; Max
+    range set on Options &gt; Output Tags and Range &gt; myshiprange_2
+    will be<br>
+    output.<br>
+    <br>
+    Change the Min or Max Range by Left Clicking on the appropriate Min
+    or Max range box on Options &gt; Output Tags and Range &gt;<br>
+    myshiprange_2.<br>
+    If a message from an MMSI does not contain a position report, the
+    last position report from the same MMSI (if any) is assumed to be<br>
+    the last position.<br>
+    If a Position Report from a MMSI has not been previously received
+    and the current sentence does not contain a position report (eg<br>
+    Message 5 – Static and voyage related data). the current sentence
+    will not be output. The previous position report must be within the<br>
+    permitted range.<br>
+    You can delete any CSV output Tag and all linked Fields by Options
+    &gt; Output Tags and Range &gt; Left Click required Tag.<br>
+    You set up new Message fields and linked Tags by On the Summary
+    display Click on any vessel with the required AIS message No<br>
+    This will display the Detail of the decoded message then Left Click
+    on the Cell (Line &amp; Column) of the data for which you wish to<br>
+    create a Tag and Link to the Tag. This will create both a Tag (if it
+    does not already exiat) and a link from the message field to the
+    Tag.<br>
+    <br>
+    <span style="font-weight:bold;"><a name="RangeFromM" id="RangeFromM"
+        href="rangefrommyship.ini">Sample Initialisation File</a></span><br>
+    This initialisation file (was Aida.ini) uses method 2 above for
+    outputting the decoded data.
+    <p style="font-size: 10pt">To use this file you should download <a
+        href="http://arundale.com/docs/ais/help/RangeFromMyShip.ini.zip">RangeFromMyShip.ini.zip</a>,
+      saving the .ini file (within the zip archive) in the same folder
+      as your other <a href="FilesandDirectories.html">initialisation
+        files</a>.</p>
+    <p>I have set up the Input Filter to only allow Vessel type
+      messages, Red are not included<br>
+      &nbsp;&nbsp;&nbsp; 1,2,3&nbsp;&nbsp;&nbsp; Position Report<br>
+      &nbsp;&nbsp;&nbsp; 4,11&nbsp;&nbsp;&nbsp;&nbsp; Base Station<br>
+      &nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Standard SAR Position Report<br>
+      &nbsp;&nbsp;&nbsp; 17&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; GNSS<br>
+      &nbsp;&nbsp;&nbsp; 18&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Standard Class B Position Report<br>
+      &nbsp;&nbsp;&nbsp; 19&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      Extended Class B Position Report<br>
+      &nbsp;&nbsp;&nbsp; 21&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AtoN
+      Position Report<br>
+      &nbsp;&nbsp;&nbsp; 27&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Long
+      Range Position Report<br>
+      The File Output (unselected) when input into Excel is as below<br>
+      Note the heading line is prefixed with a tilde (~) the enable the
+      heading to be filtered out if processing the output file into a
+      database<br>
+    </p>
+    <p><span style="font-weight:bold;">Sample Output</span> (using
+      RangeFromMyShip.ini)&nbsp;<br>
+      <meta http-equiv="CONTENT-TYPE" content="text/html;
+        charset=windows-1252">
+    </p>
+    <table frame="void" rules="none" cellspacing="0" border="0">
+      <colgroup><col width="78"> <col width="127"> <col width="105"> <col
+          width="67"> <col width="70"> <col width="173"> <col
+          width="169"> <col width="88"> <col width="129"> <col
+          width="47"> <col width="53"> <col width="80"> <col
+          width="178"> <col width="67"> <col width="70"> <col
+          width="51"> <col width="36"> </colgroup> <tbody>
+        <tr>
+          <td width="78" height="17" align="left">~MMSI</td>
+          <td width="127" align="left">Received Time</td>
+          <td width="105" align="left">Vessel Name</td>
+          <td width="67" align="left">Latitude</td>
+          <td width="70" align="left">Longitude</td>
+          <td width="173" align="left">Course Over Ground(COG)</td>
+          <td width="169" align="left">Speed Over Ground(SOG)</td>
+          <td width="88" align="left">IMO Number</td>
+          <td width="129" align="left">True Heading(HDG)</td>
+          <td width="47" align="left">Beam</td>
+          <td width="53" align="left">Length</td>
+          <td width="80" align="left">Destination</td>
+          <td width="178" align="left">Ship Type</td>
+          <td width="67" align="left">Latitude</td>
+          <td width="70" align="left">Longitude</td>
+          <td width="51" align="left">Range</td>
+          <td width="36" align="left">Age</td>
+        </tr>
+        <tr>
+          <td height="17" align="right">246346000</td>
+          <td align="left">20130824 15:28:07</td>
+          <td align="left">CAPEWATER</td>
+          <td align="right">54.38634</td>
+          <td align="right">-0.21023</td>
+          <td align="right">322</td>
+          <td align="right">12</td>
+          <td align="left"><br>
+          </td>
+          <td align="right">321</td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="right">54.28307</td>
+          <td align="right">-0.38911</td>
+          <td align="right">8.81</td>
+          <td align="right">104</td>
+        </tr>
+        <tr>
+          <td height="17" align="right">235003560</td>
+          <td align="left">20130824 15:28:12</td>
+          <td align="left">NORDSTRAND</td>
+          <td align="right">54.30748</td>
+          <td align="right">-0.26755</td>
+          <td align="right">142.1</td>
+          <td align="right">11.1</td>
+          <td align="left"><br>
+          </td>
+          <td align="right">143</td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="right">54.28307</td>
+          <td align="right">-0.38911</td>
+          <td align="right">4.5</td>
+          <td align="right">1</td>
+        </tr>
+        <tr>
+          <td height="17" align="right">246346000</td>
+          <td align="left">20130824 15:28:16</td>
+          <td align="left">CAPEWATER</td>
+          <td align="right">54.38673</td>
+          <td align="right">-0.21076</td>
+          <td align="right">321.9</td>
+          <td align="right">12</td>
+          <td align="left"><br>
+          </td>
+          <td align="right">321</td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="right">54.28307</td>
+          <td align="right">-0.38911</td>
+          <td align="right">8.81</td>
+          <td align="right">2</td>
+        </tr>
+        <tr>
+          <td height="17" align="right">235003560</td>
+          <td align="left">20130824 15:28:21</td>
+          <td align="left">NORDSTRAND</td>
+          <td align="right">54.30719</td>
+          <td align="right">-0.26717</td>
+          <td align="right">142.2</td>
+          <td align="right">11.1</td>
+          <td align="left"><br>
+          </td>
+          <td align="right">143</td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="right">54.28308</td>
+          <td align="right">-0.38911</td>
+          <td align="right">4.51</td>
+          <td align="right">3</td>
+        </tr>
+        <tr>
+          <td height="17" align="right">246346000</td>
+          <td align="left">20130824 15:28:25</td>
+          <td align="left">CAPEWATER</td>
+          <td align="right">54.38713</td>
+          <td align="right">-0.21129</td>
+          <td align="right">321.5</td>
+          <td align="right">12</td>
+          <td align="left"><br>
+          </td>
+          <td align="right">321</td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="right">54.28308</td>
+          <td align="right">-0.38911</td>
+          <td align="right">8.81</td>
+          <td align="right">1</td>
+        </tr>
+        <tr>
+          <td height="17" align="right">235003560</td>
+          <td align="left">20130824 15:28:31</td>
+          <td align="left">NORDSTRAND</td>
+          <td align="right">54.30674</td>
+          <td align="right">-0.26658</td>
+          <td align="right">142.6</td>
+          <td align="right">11.1</td>
+          <td align="left"><br>
+          </td>
+          <td align="right">143</td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="right">54.28308</td>
+          <td align="right">-0.38911</td>
+          <td align="right">4.52</td>
+          <td align="right">1</td>
+        </tr>
+        <tr>
+          <td height="17" align="right">246346000</td>
+          <td align="left">20130824 15:28:36</td>
+          <td align="left">CAPEWATER</td>
+          <td align="right">54.38763</td>
+          <td align="right">-0.21195</td>
+          <td align="right">321.1</td>
+          <td align="right">12</td>
+          <td align="left"><br>
+          </td>
+          <td align="right">320</td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="right">54.28308</td>
+          <td align="right">-0.38911</td>
+          <td align="right">8.82</td>
+          <td align="right">0</td>
+        </tr>
+        <tr>
+          <td height="17" align="right">246346000</td>
+          <td align="left">20130824 15:28:37</td>
+          <td align="left">CAPEWATER</td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="right">9423841</td>
+          <td align="left"><br>
+          </td>
+          <td align="right">16</td>
+          <td align="right">100</td>
+          <td align="left">TEES</td>
+          <td align="left">Tanker-all ships of this type</td>
+          <td align="right">54.28308</td>
+          <td align="right">-0.38911</td>
+          <td align="right">8.82</td>
+          <td align="right">0</td>
+        </tr>
+        <tr>
+          <td height="17" align="right">235003560</td>
+          <td align="left">20130824 15:28:42</td>
+          <td align="left">NORDSTRAND</td>
+          <td align="right">54.30628</td>
+          <td align="right">-0.266</td>
+          <td align="right">143</td>
+          <td align="right">11</td>
+          <td align="left"><br>
+          </td>
+          <td align="right">143</td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="right">54.28308</td>
+          <td align="right">-0.38911</td>
+          <td align="right">4.53</td>
+          <td align="right">3</td>
+        </tr>
+        <tr>
+          <td height="17" align="right">246346000</td>
+          <td align="left">20130824 15:28:45</td>
+          <td align="left">CAPEWATER</td>
+          <td align="right">54.38802</td>
+          <td align="right">-0.2125</td>
+          <td align="right">320.2</td>
+          <td align="right">12</td>
+          <td align="left"><br>
+          </td>
+          <td align="right">321</td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="left"><br>
+          </td>
+          <td align="right">54.28308</td>
+          <td align="right">-0.38911</td>
+          <td align="right">8.82</td>
+          <td align="right">0</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    This can easily be changed by adding or deleting Tags<br>
+    The UDP output is in the same format, excepting there is no Header
+    and the Delimiter is changed.<br>
+    Note that Range Filtering must be enabled for the range selected for
+    the tags to be actioned.<br>
+    Hopefully the rest of the settings are either not used or pretty
+    obvious.<br>
+  </body>
+</html>

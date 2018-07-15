@@ -1,0 +1,143 @@
+The Formatted Lat/Lon (37° 15.0062' N) is not acceped by by GIS software.
+Use the un-formatted lat/log in column 2 for the Field (37.250103)
+
+The Options Button is "Greyed Out"
+
+Can I import a NMEA text file ?
+
+What files does AisDecoder use ?
+Look at Options > Show Files gives the physical location of (most) files
+
+Download and install (you do not need to uninstall the previous version)
+Look at Options > Show Files - which gives the physical location of (most) files
+Locate the current initialisation file
+Place the attached initialisation file in the same directory
+In the Options Window > Click Open New > Select the attached file
+ 
+Save the current profile first then stop AisDecoder so that I get a clean startup file with the profile you are currently using
+I have a problem with AisDecoder starting
+Please locate AisDecoderStartup.log and email it to me
+The file should be in the %USERPROFILE%\Local Settings\Temp directory
+Which dependent on your setup will be somewhere like c:\Documents and Settings\Username\Local Settings\Temp
+The folder may be hidden and search may not find the file !
+This file folder can also be located  from
+Control Panel > System > Advanced > Environment Variables > TEMP
+
+Please email me the Startup Log which you can find by
+Ticking Options > Show Files
+and (if it is Defined) also the Error Log file
+
+I have a problem setting up AisDecoder to do what I want to do
+Please email me the .ini file you are currently using
+It's location can be found from Options > Show Files
+and explain what you are trying to do.
+
+AisDecoder will not install
+Please locate the file "Setup Log [install date] #[sequence no].txt and email it to me
+The file should be in the %USERPROFILE%\Local Settings\Temp directory
+Which dependent on your setup will be somewhere like c:\Documents and Settings\Username\Local Settings\Temp
+The folder may be hidden and search may not find the file !
+This file folder can also be located  from
+Control Panel > System > Advanced > Environment Variables > TEMP
+Which will be in the same folder as the Startup Log (see above)
+
+
+Key Required in ..\jna\Application Data\Arundale\Licences Sent\Username\
+Please save the attached file as C:\temp\AisDecoder3.1.all
+Then restart AisDecoder
+At the moment the only difference is it will enable you to generate overlays
+
+How do I map DAC 0 (test) to another DAC ?
+
+1.	Exit AisDecoder completely
+2.	Open TestDac.ZIP which contains 2 files 
+3.	Click on TestDacOn.reg
+4.	
+TestDacOff.reg
+
+If you just click on one or the other, they will automatically make/modify registry entries which will turn on or off mapping from one DAC to another.
+
+If you open the files up with Notepad, you'll see how it works.
+Any changes must be in exactly the same format.
+
+Note the registry settings will only take effect when you next start AisDecoder.
+Also you must have Administrator Privileges to invoke the Registry Editor
+
+Initilisation file in not found
+To Force an initialisation file
+Open a DOs Command window
+C:\Documents and Settings\jna>"%ProgramFiles%\arundale\Ais Decoder\AisDecoder.exe" /ini="c:\%appdata%\Arundale\Ais Decoder\Settings\default.ini"
+
+When decoding large files the speed of processing becomes relevant. In particular ANY dynamic display window (Input, Output, NMEA etc) will seriously affect the processing speed.
+Also only do the minimum amount of processing you need to achieve the output you require.
+Use the Input filter to remove any sentence types you are not interested in.
+If you are interested in only 1 MMSI use the MMSI Input filter.
+Do not output any field you do not require.
+
+The Reg file EditOptions.reg is attached which should override the Administrator Block on the Options Button.
+As your virus checker will probably blows out the .reg file, the .reg file is zipped up as editoptions.zip, the Password is email (lowercase)
+If you wish to verify the contents, save EditOptions.reg to disk and open with notepad.
+If you still cannot get it through your firewall, let me know and I'll upload it to my website so you can FTP it.
+The Reg hack needs to be in place when the program is started, as it only checks when the program is loading.
+Please let me know if it now does what you wish.
+
+Trailing @ in Text Fields - Changed in V136 (corrections in V137)
+
+If a text field (including vessel names) has been filled with Nulls (@) rather than spaces when the text was created by the vessel sending the message, the vessel name will be "Vessel Name@@@@@@"
+
+For clarity, I used to remove any trailing @ but is was pointed out to me that this is contrary to the ITU specification for text fields, which is why I have altered it, otherwise a user cannot see what was actually transmitted.
+
+In a text field, a null (@) should now be displayed as @ EXCEPT when the vessel name is cached. When the vessel name is cached any trailing spaces and any trailing @ will be removed for clarity. No other text fields will be reformatted by changing @ to space or truncating the field length.
+
+However in the actual decoded vessel name field (msg 5 & 24) the @ will NOT be removed, so a user can see what is actually transmitted.
+
+There is also a very specific case where if a text field is filled with 6 bits to ensure the message length is on an 8 bit boundary then the text message will have one @ appended to it, even if one was not transmitted. This is a peculiarity caused by the way text fields have been implemented by the ITU.
+
+If you wan	t to remove trailing @ for display purposes then that is up to you, but bear in mind the @ symbol is also a valid text character. So if the vessel's name was me@mydomain.com the @ should still be rendered.
+
+Windows 10 
+Error 339	(mesbah)	see Yacht Source\Capicom\Capicom.txt
+Component ComDlg32.ocx or one of its dependancies not correctly registered:
+a file is missing or invalid
+Using File Explorer
+Navigate to folder c:\Windows\syswow64
+Check that file ComDlg32.ocx exists
+Back and navigate to folder C:\Windows\system32
+Find cmd.exe
+Right click and run as administrator
+Allow changes
+To the prompt C:\WINDOWS\system32>
+Type
+%windir%\syswow64\regsvr32.exe %windir%\syswow64\comdlg32.ocx
+You should get a message "C:\WINDOWS\syswow64\comdlg32.ocx succeeded"
+
+Is it possible to suppress the rejection of NMEA AIS sentences where the NMEA fill character count (before the *) is over 5.
+Attached is a Zip file containing a NmeaFillBitsError.zip file which contains two files.
+DisableNmeaFillBitsError.reg	- Suppresses rejection of Nmea Fill Bit errors
+EnableNmeaFillBitsError.reg	- Re-enables error checking
+(note: Virus scanners will reject the .reg file)
+If you click the .reg file Windows will activate the registry editor which make a registry entry that will disable/enable checking in V143 onwards.
+
+To find the error.log file (only created if there have been any reportable errors)
+1.    Get a DOS command prompt
+2.    Type set appdata
+3.    The directory location of %APPDATA% is displayed and will be something like
+        C:\Documents and Settings\User Name\Application Data
+4.    The error.log file is created in %APPDATA% \Arundale\Ais Decoder\Logs\ and will be something like
+        C:\Documents and Settings\User Name\Application Data\Arundale\Ais Decoder\Logs\error.log
+
+AisDecoder Runtime Error 429 - ActiveX Component Can't Create Object
+
+1.	Right click on installer after download to file. Select “Troubleshoot compatibility”, then “Try recommended settings”
+
+2.	Installing as administrator (if its not) , and (on windows 7, when you click to run the program, right click and disable UAC (user access control).
+	
+3.	When trying to enter FTP password
+	Download Capicom (see Yacht Source\Capicom\Capicom.txt)
+
+The baud rate detection works by looking for a <CR><LF> bit stream (0000110100001010)
+The maximum length of a valid NMEA data sentence is 82 characters including the mandatory <CR><LF> sentence terminator. It will continue cycling until this is found.
+Some devices, incorrectly, do not output a <CR><LF> terminator (for example raspberry pi or SDR chips incorrectly programmed; or serial to network converters outputting UDP datagrams without requiring a <CR><LF> terminator).
+
+
+	

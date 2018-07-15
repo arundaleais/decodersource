@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Settings,Google">
+    <meta name="MS-HKWD" content="Google">
+    <meta name="MS-HKWD" content="KML Output">
+    <meta name="MS-HKWD" content="KMZ Output">
+    <title>Google Earth Setting</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Google Earth Setting<br>
+    </h3>
+    <img alt="" src="pics/ais_decoder_v3_options_googleearth.gif"><br>
+    Creates KMZ file for display on local PC using <a
+      href="http://www.google.com/earth/index.html"><font size="-1"><span
+          style="font-family: Verdana;"><span style="font-family:
+            Verdana;"></span></span></font><font size="-1">Google Earth</font></a><br>
+    <font size="-1"><span style="font-family: Verdana;"><span
+          style="font-family: Verdana;"></span></span></font>Once a file
+    has been created you may click the <a href="GisWindow.html">GIS
+      button</a> to view your Vessels on Google Earth<br>
+    <br>
+    <b>Settings</b><br>
+    <img alt="" src="pics/ais_decoder_v3_control_input_udp.gif"><br>
+    UDP input on port 29421<br>
+    <img alt=""
+      src="pics/ais_decoder_v3_control_outputfieldsandtags.gif"><br>
+    Field Tags are set to decode Ships data that is required to be
+    displayed on Google Earth. <br>
+    <img alt="" src="pics/ais_decoder_v3_control_outputtagsandrange.gif"><br>
+    Input Filter is Synchronised to Output Tags<br>
+    <img alt="" src="pics/ais_decoder_v3_options_scheduler.gif"><br>
+    The update interval is 1 minute and vessels will be displayed for 15
+    minutes after the last message has been received.<br>
+    <img alt="" src="pics/ais_decoder_v3_options_tagtemplatefile.gif"><br>
+    The Tag Template file being used is \Templates\GoogleEarth.kml<br>
+    <img alt="" src="pics/googleearth_output_file.gif"><br>
+    This Output File will be created using Tags (specified in the Output
+    Tags and Range)<br>
+    GIS filtering ensures no vessel is output unless a Latitude and
+    Longitude has been received.<br>
+    A new file is Scheduled for output every one minute<br>
+    The Output File will be \Output\GoogleEarth.kmz<br>
+    <br>
+    Start the decoding (press the start button)<br>
+    The GIS button will become available when the kmz file has been
+    created<br>
+    <img style="width: 60px; height: 46px;" alt=""
+      src="pics/ais_decoder_v3_control_gis.gif"><br>
+    Press the GIS button<br>
+    <img style="width: 200px; height: 139px;" alt=""
+      src="pics/googleearth_200.gif"><br>
+    Google Earth will display the vessels.<br>
+    <br>
+    <span style="font-weight: bold;">See also</span><br>
+    <font size="-1"><span style="font-family: Verdana;"><span
+          style="font-family: Verdana;"></span></span></font><a
+      href="OutputToWebServer.html">Uploaded To Web Server</a> <font
+      size="-1"><span style="font-family: Verdana;"><span
+          style="font-family: Verdana;">for display on the internet.<br>
+        </span></span></font><a href="GoogleEarthConfiguring.html">Configuring
+Google
+
+      Earth</a> to Automatically refresh<br>
+    <br>
+  </body>
+</html>

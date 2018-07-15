@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="User">
+    <meta name="MS-HKWD" content="Profiles">
+    <title>User Profiles</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+-->
+  </style>
+  </head>
+  <body>
+    <h3>User Profiles<br>
+    </h3>
+    If you are the only user on your PC and you installed AisDecoder you
+    do not need to worry about Profiles.<br>
+    <br>
+    When the Ais Decoder Setup program is run these files (which I have
+    included to to "start you off") are now placed into the "All Users"
+    profile. <br>
+    <br>
+    <table width="100%" cellspacing="2" cellpadding="2" border="0">
+      <tbody>
+        <tr>
+          <td valign="top">default.ini</td>
+          <td valign="top">Initial Startup File<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">aspx.ini</td>
+          <td valign="top">Microsoft IIS ASPX Web server Output<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">CsvAll.ini</td>
+          <td valign="top">Outputs all fields (decoded) of all AIS
+            messages to a file<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">CsvUdpTags.ini</td>
+          <td valign="top">Outputs selected fields (decoded) to local a
+            UDP Server (eg a GIS program such as OpenCPN)<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">Excel.ini</td>
+          <td valign="top">Outputs selected fields as an Excel file<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">GoogleEarth.ini</td>
+          <td valign="top">Outputs a KMZ file and uploads to a Web
+            server that displays the data on Google Earth <br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">GoogleMaps.ini</td>
+          <td valign="top">Outputs a KML file and uploads to a Web
+            server that displays the data on Google Maps<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top"> Html.ini</td>
+          <td valign="top">Outputs a HTML files that will display a
+            formatted list on a Web browser<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">opencpn.ini</td>
+          <td valign="top">Outputs UDP data for a vessels in a given
+            area to OpenCPN<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">spnmea.ini</td>
+          <td valign="top">Outputs decoded NMEA data that can be
+            inputted to ShipPlotter<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">UdpTagsRange.ini</td>
+          <td valign="top">Outputs decoded data that is range checked<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    The <span style="font-weight: bold;">first</span> time AisDecoder
+    is run by any user, <span style="font-weight: bold;">all </span>files
+
+
+
+    currently existing in&nbsp; "\All Users\Application
+    Data\Arundale\AisDecoder" are copied to "Current User\Application
+    Data\Arundale\AisDecoder". This will include all the above list of
+    sample files as well as any additional files the Administrator may
+    have placed in the All Users profile.<br>
+    Although the Current User does have access to their own files, by
+    default, files in \Application Data\ are hidden, unless you are an
+    Administrator.<br>
+    If the current user requires directory access to any of the
+    AisDecoder folders or files, create a shortcut in the user's "My
+    Documents".<br>
+    <br>
+    After re-installing a new version of AisDecoder (or you have
+    Administrator privilege), when you first run the new version, you
+    will be prompted as to whether you require any of the above sample
+    files which differ from those in your own profile, being
+    overwritten.<br>
+    If you are not an administrator, they will be overwritten anyway.<br>
+    <br>
+    The first time a user runs a new version, default.ini is always
+    overwritten in the Current Users profile.<br>
+    <br>
+    Any user who is not an Administrator, will not be able to access the
+    Options Window so can only change settings on the Control/Stats
+    Window, and cannot save these settings and will not be prompted on
+    exit.<br>
+    <br>
+    The uninstaller will only remove the downloaded files (in All
+    Users), the "Current User" files will be automatically removed if
+    you delete the "Current User" profile.<br>
+    <br>
+  </body>
+</html>

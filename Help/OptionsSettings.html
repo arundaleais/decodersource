@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <title>Options - Settings</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Options - Input<br>
+    </h3>
+    <div style="text-align: center;"><br>
+    </div>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr style="font-weight: bold;" align="center">
+          <td colspan="2" rowspan="1" style="vertical-align: top;"><br>
+            <img style="width: 129px; height: 192px;" alt=""
+              src="pics/ais_decoder_v3_options_googleearth_input.gif"><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">UDP </td>
+          <td style="vertical-align: top;">the input Port that will be
+            used for UDP input. For more information see <a
+              href="NetworkInput.html">Network Input</a> </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">TCP </td>
+          <td>the input Host and Port that will be used for TCP input.
+            For more information see Network Input. For more information
+            see <a href="NetworkInput.html">Network Input</a>. TCP will
+            try to connect both as a Client and a Host until a
+            connection is made.<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Serial </td>
+          <td style="vertical-align: top;">Sets the serial port and
+            speed. For AIS the speed will normally be 38,400 and for GPS
+            NMEA normally 4,800. For more information see <a
+              href="SerialInput.html">Serial</a> or <a
+              href="UsbInput.html">USB</a> Data Input </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    Notes<br>
+    Each Input source is buffered separately. If the buffer exceeds 1k
+    the buffered bytes are displayed, see below.<br>
+    <img src="pics/ais_decoder_v3_control_externalsource.gif" alt=""
+      width="115" height="94"><br>
+    If the buffer size exceeds a predefined limit, the green will turn
+    red and the input will be suspended until there is 20% free, when
+    input processing will re-commence. This will normally only occur at
+    very high data rates or if the PC is running at 100% CPU
+    utilisation.<br>
+    Please note processing output to be displayed is very CPU intensive
+    and can rapidly cause 100% CPU usage. In particular do not display
+    the Detailed Window, except at low receive rates. You cam monitor
+    the effect of different configurations using System Monitor
+    (Ctrl+Alt+Del).<br>
+    <br>
+  </body>
+</html>

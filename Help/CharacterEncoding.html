@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Character Encoding">
+    <title>Output Character Encoding</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Output Character Encoding<br>
+    </h3>
+    Characters are output using the normal 7 bit ASCII codes (32-127)
+    for printable characters<br>
+    All decoded data (Column 2 in the Detail Window) uses these codes.<br>
+    <br>
+    Formatted Data (Column 3 in the Detail Window) may use the codes in
+    the table 1 below<br>
+    <br>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr style="font-weight: bold;" align="center">
+          <td colspan="5" rowspan="1" style="vertical-align: top;">Table
+            1 - Decoded Character Set<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top; font-weight: bold;">Character<br>
+          </td>
+          <td style="vertical-align: top; font-weight: bold;">English<br>
+          </td>
+          <td style="vertical-align: top; font-weight: bold;">ASCII Code<br>
+          </td>
+          <td style="vertical-align: top; font-weight: bold;">Output
+            Code<br>
+          </td>
+          <td style="vertical-align: top; font-weight: bold;">Comments<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top; font-weight: bold;"> ° </td>
+          <td style="vertical-align: top;">Degree Sign<br>
+          </td>
+          <td style="vertical-align: top;">176<br>
+          </td>
+          <td style="vertical-align: top;">176<br>
+          </td>
+          <td style="vertical-align: top;"><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">&nbsp;<span
+              style="font-weight: bold;">‰</span></td>
+          <td style="vertical-align: top;">Per Thousand<br>
+          </td>
+          <td style="vertical-align: top;">137<br>
+          </td>
+          <td style="vertical-align: top;">137<br>
+          </td>
+          <td style="vertical-align: top;">Not used<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><b>&nbsp;%%</b> </td>
+          <td style="vertical-align: top;">Per Thousand </td>
+          <td style="vertical-align: top;">037,037 </td>
+          <td style="vertical-align: top;">%% </td>
+          <td style="vertical-align: top;">Is Used for clarity<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    Table 2 and table 3 contain the characters that will be replaced in
+    any Tagged Data prior substitution tags in the template file. No
+    substitution is carried out if a Template file is not being used.<br>
+    &nbsp;<br>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr align="center">
+          <td colspan="5" rowspan="1" style="vertical-align: top;"><span
+              style="font-weight: bold;">Table 2 - HTML,&nbsp; HTM, XML,
+              ASPX Character Replacements</span><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top; font-weight: bold;">Character<br>
+          </td>
+          <td style="vertical-align: top; font-weight: bold;">English<br>
+          </td>
+          <td style="vertical-align: top; font-weight: bold;">ASCII CODE<br>
+          </td>
+          <td style="vertical-align: top; font-weight: bold;">Output
+            Code<br>
+          </td>
+          <td style="vertical-align: top;"><span style="font-weight:
+              bold;">Comments</span><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top; font-weight: bold;"> ° </td>
+          <td style="vertical-align: top;">Degree Sign<br>
+          </td>
+          <td style="vertical-align: top;">176<br>
+          </td>
+          <td style="vertical-align: top;">&amp;#176;<br>
+          </td>
+          <td style="vertical-align: top;"><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top; font-weight: bold;">&nbsp;‰</td>
+          <td style="vertical-align: top;">Per Thousand<br>
+          </td>
+          <td style="vertical-align: top;">137<br>
+          </td>
+          <td style="vertical-align: top;">&amp;#8240; </td>
+          <td style="vertical-align: top;"><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top; font-weight: bold;">&amp;<br>
+          </td>
+          <td style="vertical-align: top;">Ampersand<br>
+          </td>
+          <td style="vertical-align: top;">038<br>
+          </td>
+          <td style="vertical-align: top;">&amp;amp;<br>
+          </td>
+          <td style="vertical-align: top;">Reserved in XML<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top; font-weight: bold;">&lt;<br>
+          </td>
+          <td style="vertical-align: top;">Less than<br>
+          </td>
+          <td style="vertical-align: top;">060<br>
+          </td>
+          <td style="vertical-align: top;">&amp;lt;<br>
+          </td>
+          <td style="vertical-align: top;">Reserved in XML<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top; font-weight: bold;">&gt;<br>
+          </td>
+          <td style="vertical-align: top;">Greater than<br>
+          </td>
+          <td style="vertical-align: top;">062<br>
+          </td>
+          <td style="vertical-align: top;">&amp;gt;<br>
+          </td>
+          <td style="vertical-align: top;">Reserved in XML<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top; font-weight: bold;">"<br>
+          </td>
+          <td style="vertical-align: top;">Quote<br>
+          </td>
+          <td style="vertical-align: top;">034<br>
+          </td>
+          <td style="vertical-align: top;">&amp;quot;<br>
+          </td>
+          <td style="vertical-align: top;">Reserved in XML<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top; font-weight: bold;">'<br>
+          </td>
+          <td style="vertical-align: top;">Apostrophe<br>
+          </td>
+          <td style="vertical-align: top;">039<br>
+          </td>
+          <td style="vertical-align: top;">&amp;apos;<br>
+          </td>
+          <td style="vertical-align: top;">Reserved in XML<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr align="center">
+          <td colspan="5" rowspan="1" style="vertical-align: top;"><span
+              style="font-weight: bold;">Table 3 - Additional KML, KMZ
+              Character Replacements</span><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top; font-weight: bold;">Character<br>
+          </td>
+          <td style="vertical-align: top; font-weight: bold;">English<br>
+          </td>
+          <td style="vertical-align: top; font-weight: bold;">ASCII CODE<br>
+          </td>
+          <td style="vertical-align: top; font-weight: bold;">Output
+            Code<br>
+          </td>
+          <td style="vertical-align: top;"><span style="font-weight:
+              bold;">Comments</span><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top; font-weight: bold;">=<br>
+          </td>
+          <td style="vertical-align: top;">Equals<br>
+          </td>
+          <td style="vertical-align: top;">061<br>
+          </td>
+          <td style="vertical-align: top;">&amp;#061;<br>
+          </td>
+          <td style="vertical-align: top;">Reserved in Google Earth<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <span style="font-weight: bold;">Example UDP CSV output with one tag
+      set<br>
+      <br>
+      <img style="width: 569px; height: 53px;" alt=""
+        src="pics/udp_tags.jpg"><br>
+      Template file is not used because output is CSV</span><span
+      style="font-weight: bold;"></span><span style="font-weight: bold;"><br>
+    </span><img style="width: 166px; height: 212px;" alt=""
+      src="pics/udp_csv_options.jpg"><img style="width: 528px; height:
+      157px;" alt="" src="pics/udp_csv_output.jpg"><br>
+    <span style="font-weight: bold;">HEX Dump</span><br>
+    <img style="width: 637px; height: 117px;" alt=""
+      src="pics/udp_csv_sniff.jpg"><br>
+    <span style="font-weight: bold;">If Tagged output was selected -
+      template file would be used<br>
+      <img style="width: 168px; height: 216px;" alt=""
+        src="pics/udp_tagged_options.jpg"><br>
+      If Template file only contains &lt;lon_3&gt; and NOT named </span><span
+      style="font-weight: bold;">HTML,&nbsp; HTM, XML, ASPX, KML or KMZ</span><br>
+    <span style="font-weight: bold;">Output would be the same as above.<br>
+      <img style="width: 528px; height: 157px;" alt=""
+        src="pics/udp_csv_output.jpg"><br>
+      If same Template file WAS named </span><span style="font-weight:
+      bold;">HTML,&nbsp; HTM, XML, ASPX, KML or KMZ<br>
+      Output would be<br>
+      <img style="width: 528px; height: 150px;" alt=""
+        src="pics/udp_tagged_output.jpg"><br>
+      <span style="font-weight: bold;">HEX Dump</span><br>
+    </span><img style="width: 633px; height: 156px;" alt=""
+      src="pics/udp_tagged_sniff.jpg"><br>
+  </body>
+</html>

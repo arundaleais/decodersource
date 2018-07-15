@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Settings,Excel">
+    <meta name="MS-HKWD" content="Excel">
+    <title>Excel</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Excel<br>
+    </h3>
+    Creates a CSV file suitable for import into an Excel spreadsheet,
+    containing common navigational fields<br>
+    <br>
+    <b>Initial Settings</b><br>
+    <img style="width: 175px; height: 189px;" alt=""
+      src="pics/excel_output_settings.gif"><br>
+    A header line is output<br>
+    Field Tags are set to decode common navigational vessels' data<br>
+    Only those Tags which have been added to the Output Fields and Tags
+    are output, because Tagged is not selected. If Tagged was selected,
+    these fields would be merged with the Template file.<br>
+    Every sentence is output individually because scheduled has not been
+    ticked.<br>
+    UDP input on port 29421<br>
+    Input Filter is Synchronised to Output Tags<br>
+    Displays NMEA data as received<br>
+    Outputs CSV data to output.csv<br>
+    Displays CSV data that is output<br>
+    <br>
+    <b>You may also</b><br>
+    Click on any received message summary to display complete decoded
+    data<br>
+    Turn off all the displays (click the X on the window)<br>
+    <br>
+    <b>Notes</b> <br>
+    You should not set Tagged output, it should be CSV output otherwise
+    the values output may be re-formatted, which could result in some <a
+      href="CharacterEncoding.html">characters</a> being formatted
+    incorrectly.<br>
+    <br>
+    <b>Sample Output</b> - Imported into Excel<br>
+    <img style="width: 914px; height: 340px;" alt=""
+      src="pics/excel_excel.gif"><br>
+    Notes on Excel formatting<br>
+    MMSI - Set as Numeric with 0 decimal places<br>
+    Time Stamp - Use Custom Format to display both Date and Time
+    including Seconds<br>
+    Headings are the same as Column 1 on the Detail Window<br>
+    If you wished Latitude and Longitude in decimal notation, set tag up
+    from column 2 on the Detail Window (column 3 is formatted).<br>
+    <br>
+    <b>CSV file before import into Excel</b><br>
+    (lines may be wrapped by your browser)<br>
+    MMSI,Vessel Name,Latitude,Longitude,Speed Over Ground (SOG),Course
+    Over Ground (COG),Received Time<br>
+    249546000,CLIPPER BURGUNDY,54° 27.0511' N,0° 20.1287'
+    W,8.4,325.0,10/03/2011 15:35:29<br>
+    259957000,SKS TRINITY,53° 38.2677' N,0° 11.7286'
+    W,0.0,340.0,10/03/2011 15:35:36<br>
+    233921000,CITY OF PARIS,54° 10.9760' N,0° 0.3980'
+    W,10.9,317.0,10/03/2011 15:35:38<br>
+    308583000,,54° 35.3920' N,0° 31.2870' E,3.3,94.0,10/03/2011 15:35:39<br>
+    249546000,CLIPPER BURGUNDY,54° 27.0705' N,0° 20.1511'
+    W,8.4,326.0,10/03/2011 15:35:40<br>
+    233308000,MAGGIE_M,54° 17.0277' N,0° 23.4676' W,0.1,239.0,10/03/2011
+    15:35:40<br>
+    232001610,UKDMARLIN,54° 0.2900' N,0° 5.2630' E,8.9,155.0,10/03/2011
+    15:35:41<br>
+    235453000,PUTFORD PROTECTOR,53° 44.8100' N,0° 17.5100'
+    W,0.0,171.0,10/03/2011 15:35:41<br>
+    235077712,UKD ORCA,53° 38.7573' N,0° 10.6778' W,0.5,354.0,10/03/2011
+    15:35:42<br>
+    246762000,,53° 39.9770' N,0° 13.7970' W,0.0,144.0,10/03/2011
+    15:35:42<br>
+    230366000,BIRKA EXPRESS,53° 44.3651' N,0° 15.8334'
+    W,0.0,12.0,10/03/2011 15:35:43<br>
+    355754000,PEARL ACE,54° 13.3381' N,0° 54.5610'
+    E,17.4,303.0,10/03/2011 15:35:45<br>
+    <br>
+  </body>
+</html>

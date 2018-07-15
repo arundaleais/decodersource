@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Range">
+    <meta name="MS-HKWD" content="NMEA Output">
+    <title>Range Filtered NMEA Output</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Range Filtered NMEA Output</h3>
+    Extracting Tag values and Range filtering must be done by MMSI
+    because you may select tags or ranges which span two different AIS
+    message types. For example, you may choose to output a vessel's
+    position (AIS message type 1,2 or 3) and at the same time the
+    vessel's length (AIS message type 5). The position is on one message
+    type and the length on another. As it is very unlikely both messages
+    will arrive together, neither message will be output if both
+    position AND length are required for output.<br>
+    The primary reason the Scheduler exists is to resolve this problem.
+    The Scheduler retains the most recent message, of each message type,
+    for the "Time to Live", outputting them in batches of the same MMSI.<br>
+    <br>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr style="font-weight: bold;" align="center">
+          <td colspan="3" rowspan="1" style="vertical-align: top;">Range
+            Filtered NMEA Output<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Output Range Filtered<br>
+          </td>
+          <td style="vertical-align: top;">Scheduled<br>
+          </td>
+          <td style="vertical-align: top;">Output<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">No</td>
+          <td style="vertical-align: top;">No</td>
+          <td style="vertical-align: top;">As received</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">No</td>
+          <td style="vertical-align: top;">Yes</td>
+          <td style="vertical-align: top;">In MMSI order</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Yes</td>
+          <td style="vertical-align: top;">No</td>
+          <td style="vertical-align: top;">Output Range is checked when
+            MMSI changes. Either all or no sentences with the same MMSI
+            are output</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Yes</td>
+          <td style="vertical-align: top;">Yes</td>
+          <td style="vertical-align: top;">In MMSI Order, Output Range
+            is checked when MMSI changes. Either all or no sentences
+            with the same MMSI are output</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    See also <a href="OutputRangeFiltering.html">Output Range
+      Filtering,</a> <a href="NmeaOutput.html">NMEA Output Format</a><br>
+    <br>
+  </body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html;
+      charset=windows-1252">
+    <title>Changes V112 to V119</title>
+    <meta name="GENERATOR" content="OpenOffice.org 3.2 (Win32)">
+    <meta name="CREATED" content="0;0">
+    <meta name="CHANGEDBY" content="Neal Arundale">
+    <meta name="CHANGED" content="20140422;12092200">
+    <meta name="CHANGEDBY" content="Neal Arundale">
+    <meta name="CHANGEDBY" content="Neal Arundale">
+    <style type="text/css">
+	<!--
+		TD P { color: #000000; font-family: "Verdana"; font-size: 12pt }
+		H3 { color: #000000; text-align: center }
+		P { color: #000000; font-family: "Verdana"; font-size: 12pt }
+	-->
+	</style>
+  </head>
+  <body dir="LTR" lang="en-US" text="#000000">
+    <h3 lang="en-GB"><font face="Verdana, sans-serif"><font size="2">Notes
+on
+
+
+          significant Changes since V112<br>
+        </font></font></h3>
+    <p style="margin-bottom: 0cm" align="CENTER" lang="en-GB"><font
+        face="Verdana, sans-serif"><font size="2">No details of these
+          changes are in the help files</font></font></p>
+    <p lang="en-GB"><font face="Verdana, sans-serif"><font size="2"><font
+            color="#ff0000"><b><br>
+              If upgrading from prior to V118 please backup all your
+              initialisation files (.ini in \settings folder)</b></font><br>
+          <br>
+          From V117 my website has been moved from my own webserver at
+          arundale.co.uk to a commercial web provider on the domain
+          nmearouter.com. When I have sorted some issues with the new
+          web server provider, I will be moving it again to my
+          arundale.com domain.<br>
+          <br>
+          This change has meant a number of links have had to be changed
+          which are within the program as well as scripts for generating
+          my email address, which has also changed, although my current
+          email address will continue to be re-routed to my new address.<br>
+          <br>
+          <b>Changes to tags</b><br>
+          Tags are used by almost all users requiring decoded output to
+          either a file or network. They are also used to identify
+          decoded data fields which users require filtering. <br>
+          <br>
+          Because the AIS sentence (when transmitted) has no provision
+          for including a time stamp, there has been a number of
+          requests for AisDecoder to handle data fields that are
+          contained within NMEA sentences that are not AIS sentences, in
+          particular GPS sentences containing time stamps.<br>
+          <br>
+          The use of networked AIS data by shore stations is increasing.
+          This data often contains sentences that originate from a
+          number of different sources which may or may not include an
+          embedded time stamp that has been inserted by the shore
+          station originally receiving the data from the transmitting
+          vessel.<br>
+          <br>
+          When I originally wrote AisDecoder (2009), it was designed to
+          decode the payload (encoded) part of the NMEA sentence
+          containing the AIS specific data. The tags were used to
+          identify data fields contained in the payload part of the
+          sentence and was not designed to handle the NMEA fields
+          outside the payload.<br>
+          <br>
+          Similarly the input filtering was designed to filter data
+          contained within the payload.<br>
+          <br>
+          From V118 the tags can be generated from any NMEA&nbsp; field
+          including non-AIS sentences and fields contained within the
+          NMEA comment block.<br>
+          <br>
+          These changes affect both the generation of the tags and input
+          filter, particularly if your setup requests synchronisation of
+          the input filter to the tags.<br>
+          <br>
+          It has also required some detailed changes to the
+          initialisation files. Although I have attempted to convert an
+          "old" format initialisation file to the new format when the
+          file is first loaded, I may not have been successful in all
+          cases. I therefore strongly recommend you backup any old
+          format files you are using before reading the file into V117
+          or later as when you save the file, or AisDecoder does this
+          silently for you, your old file could get overwritten. The new
+          format file may or may not later work with an earlier version
+          of AisDecoder, it depends on exactly what settings are in use
+          in your initialisation file.<br>
+          &nbsp; <br>
+          It is also possible an old format file, even when loaded, does
+          not work as expected. If this occurs you may need to remove
+          the existing tags and re-create them from the detail display.<br>
+          <br>
+          <b>Use of Tags- Logical Names</b><br>
+          You should be able to set up a unique tag for any NMEA field
+          of Payload Field.<br>
+          When you create a tag from the detail display, AisDecoder
+          creates a unique internal (physical) tag for the field. This
+          tag is NOT the same as the logical name you give to the tag.
+          AisDecoder generates a default physical name for the tag which
+          you can change when you create the tag by altering the default
+          logical name before you click OK on the "Input Field" display.
+          Note you cannot edit the logical name later, you must delete
+          the tag and re-create it with the new name.<br>
+          <br>
+          If after filtering any sentence contains data which matches
+          your (logical) tag name, the value associated with your tag
+          name is updated. <br>
+          <br>
+          Example 1<br>
+          Ais message type 1,2,3 and 18 both contain Latitude and
+          Longitude. If you wish to output the latest position for both
+          Class A and Class B vessels in the same Output field (eg same
+          column on a spreadsheet), you should change the default name
+          to the same logical name for Latitude (eg Lat) for all 4
+          message types, similarly a different name for Longitude (eg
+          Lon).<br>
+          <br>
+          Example 2<br>
+          Ais Message 23 contains a box defined by 2 Latitudes and 2
+          Longitudes<br>
+          In the case it would be nonsensical to combine the latitudes
+          and longitudes in 2 logical names, even though the default
+          generates 2 names, you need to rename the default name to your
+          own logical name.</font></font></p>
+    <table border="0" cellpadding="2" cellspacing="2" width="437">
+      <tbody>
+        <tr valign="TOP">
+          <td>
+            <p lang="en-GB"><font face="Verdana, sans-serif"><font
+                  size="2">Default Name</font></font></p>
+          </td>
+          <td>
+            <p lang="en-GB"><font face="Verdana, sans-serif"><font
+                  size="2">Logical Name</font></font></p>
+          </td>
+          <td>
+            <p lang="en-GB"><font face="Verdana, sans-serif"><font
+                  size="2">Description</font></font></p>
+          </td>
+        </tr>
+        <tr valign="TOP">
+          <td>
+            <p lang="en-GB"><font face="Verdana, sans-serif"><font
+                  size="2">Lon_2</font></font></p>
+          </td>
+          <td>
+            <p lang="en-GB"><font face="Verdana, sans-serif"><font
+                  size="2">Lon_NE</font></font></p>
+          </td>
+          <td>
+            <p lang="en-GB"><font face="Verdana, sans-serif"><font
+                  size="2">NE longitude</font></font></p>
+          </td>
+        </tr>
+        <tr valign="TOP">
+          <td>
+            <p lang="en-GB"><font face="Verdana, sans-serif"><font
+                  size="2">Lat_2</font></font></p>
+          </td>
+          <td>
+            <p lang="en-GB"><font face="Verdana, sans-serif"><font
+                  size="2">Lat_NE</font></font></p>
+          </td>
+          <td>
+            <p lang="en-GB"><font face="Verdana, sans-serif"><font
+                  size="2">NE latitude</font></font></p>
+          </td>
+        </tr>
+        <tr valign="TOP">
+          <td>
+            <p lang="en-GB"><font face="Verdana, sans-serif"><font
+                  size="2">Lon_2</font></font></p>
+          </td>
+          <td>
+            <p lang="en-GB"><font face="Verdana, sans-serif"><font
+                  size="2">Lon_SW</font></font></p>
+          </td>
+          <td>
+            <p lang="en-GB"><font face="Verdana, sans-serif"><font
+                  size="2">SW longitude</font></font></p>
+          </td>
+        </tr>
+        <tr valign="TOP">
+          <td>
+            <p lang="en-GB"><font face="Verdana, sans-serif"><font
+                  size="2">Lat_2</font></font></p>
+          </td>
+          <td>
+            <p lang="en-GB"><font face="Verdana, sans-serif"><font
+                  size="2">Lat_SW</font></font></p>
+          </td>
+          <td>
+            <p lang="en-GB"><font face="Verdana, sans-serif"><font
+                  size="2">SW latitude</font></font></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p lang="en-GB"><font face="Verdana, sans-serif"><font size="2"><b><br>
+            Use of Tags-Values</b></font></font></p>
+    <p lang="en-GB"><font face="Verdana, sans-serif"><font size="2"><br>
+          Each logical tag has only one value associated with the tag.<br>
+          The value of the tag is set when a valid filtered sentence
+          containing a tag is received.<br>
+          The value is cleared when the tag value is output.<br>
+          <br>
+          Example 1<br>
+          If you are outputting individual sentences to a CSV file.<br>
+          The tag value will be cleared each time a complete sentence is
+          output. If the sentence is a multi-part AIS sentence this will
+          be when the last part has been output for this Sequential
+          Message ID.<br>
+          <br>
+          Example 2<br>
+          If you are using Scheduled Output with output on MMSI change
+          set.<br>
+          The tag value will be cleared when the latest sentence
+          containing the tag for this MMSI is older than the Time To
+          Live.&nbsp; <br>
+          <br>
+          <b>Time Stamps</b><br>
+          Because there is no global standard for Time Stamping NMEA
+          messages, a number of different systems are being used to both
+          position a time stamp within an NMEA data stream as well as
+          the actual format of the time stamp itself.<br>
+          <br>
+          <b>Time Stamp Format</b><br>
+          There are 2 fundamental formats<br>
+          <br>
+          1.&nbsp;&nbsp;&nbsp; Plain Date/Time&nbsp;&nbsp;&nbsp; eg 3
+          September 2013 11:22:33<br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; This could be in any
+          acceptable local format<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; 3/9/13&nbsp;&nbsp;&nbsp;
+          11:22:33&nbsp;&nbsp;&nbsp; (European)<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; 9/3/13&nbsp;&nbsp;&nbsp;
+          11:22:33&nbsp;&nbsp;&nbsp; (American)<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; 20130903 112233&nbsp;&nbsp;&nbsp;
+          (Maritime)&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+          <br>
+          2.&nbsp;&nbsp;&nbsp; Unix format&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; eg&nbsp; 1382564803<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is the number of
+          seconds past 1-Jan-1970<br>
+          <br>
+          In addition there is potential confusion if Local Time rather
+          than UTC is used for the displayed Date/Time<br>
+          <br>
+          <b>Time Stamp Field Position</b><br>
+          <br>
+          1.&nbsp;&nbsp;&nbsp; Basic AIS sentence without time stamp<br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+          !AIVDM,1,1,,A,13P;JOh02kC:SehNt493:R`h0D03,0*7F<br>
+          <br>
+          2.&nbsp;&nbsp;&nbsp; Appended to NMEA sentence<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          !AIVDM,1,1,,A,13P;JOh02kC:SehNt493:R`h0D03,0*7F,18/11/2013
+          15:39:38<br>
+          <br>
+          3&nbsp;&nbsp;&nbsp; Prefixed to NMEA sentence<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1382054400
+          !AIVDM,1,1,,A,13P;JOh02kC:SehNt493:R`h0D03,0*7F<br>
+          <br>
+          4.&nbsp;&nbsp;&nbsp; Embedded in NMEA sentence<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          $PGHP,1,2013,9,30,22,18,33,15,316,2,316000002,1AIS_S,7F*02<br>
+          <br>
+          5.&nbsp;&nbsp;&nbsp; Included in NMEA Comment Block (note this
+          actual data does not comply with the IEC61162 spec)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \s:rEV01,c:
+          1382054400*58\!AIVDM,1,1,,A,13P;JOh02kC:SehNt493:R`h0D03,0*7F<br>
+          <br>
+          6.&nbsp;&nbsp;&nbsp; 2 Unix Time stamps appended to NMEA
+          sentence<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+!AIVDM,1,1,,A,13P;JOh02kC:SehNt493:R`h0D03,0*7F,1382054402,1382054400<br>
+          <br>
+          The changes made to the tags enable any of these time stamps
+          to be tagged and hence extracted to an output file.<br>
+          <br>
+          <b>Input Filter Changes</b><br>
+          In order to enable tagging fields other than AIS payload
+          fields, the input filter has been changed.<br>
+          <br>
+          All the sample initialisation files have been changed to use
+          the new format.<br>
+          <br>
+          The fields common to all AIS payloads can set up once for all
+          AIS sentence types, previously these had to be repeated for
+          each AIS sentence type.<br>
+          These Fields are AIS Message type, Repeat Indicator,
+          Originating MMSI, MID<br>
+          <br>
+          Decoded NMEA sentences $GPZDA, $GPGGA, $GPRMC and $PGHP have
+          been added to the input filter.<br>
+          <br>
+          Other NMEA sentences will be added to the input filter if
+          Synchronise Input Filter to Tags is ticked and a NMEA Sentence
+          field is tagged.<br>
+          <br>
+          If a from MMSI is specified, the AIS payload is only partially
+          decoded, speeding up the filtering when very large log files
+          are filtered for specific vessels.<br>
+          <br>
+          <b>Multi-Part AIS Sentences</b><br>
+          Because NMEA sentences are limited to a maximum length of 82
+          characters, an AIS payload may be split over more than one
+          NMEA sentence. AisDecoder recombines the split payload into a
+          single AIS payload.<br>
+          The AIS specification contains a very simple way of checking
+          which NMEA sentences contain the relevant parts of the same
+          payload. Most of the time this works well, but in the event of
+          one of the relevant parts missing or being separated by other
+          multi-part NMEA sentences, it can be impossible to reconcile
+          which NMEA sentences to recombine. This is becoming an
+          increasing problem when data is networked from a number of
+          different sources. I have changed the algorithm to reduce the
+          likelihood of this being done incorrectly.<br>
+          <br>
+          The NMEA comment block is currently treated as being part of
+          the prefixed sentence. As yet I have not implemented handling
+          Groups<br>
+          <br>
+          The $PGHP sentence is treated as encapsulating the following
+          NMEA sentence only.<br>
+          <br>
+          <b>Generation of NMEA GPS sentences ($GPGLL) from AIS
+            sentences (!AIVDM)</b><br>
+          AisDecoder can generate GPS sentences from AIS sentences. If
+          you wish to do this in order to display AIS data from a moving
+          AIS transponder to a GIS plotter, please email me and I'll
+          explain how to do this.<br>
+          <br>
+          You can use AisDecoder to spoof OwnShips position using this
+          technique, in order to emulate the view on an onboard
+          chartplotter, for example an inshore lifeboat. would see on
+          board; a chart plotter expects to see !AIVDO sentences. A
+          better solution is to use NmeaRouter which will spoof !AIVDO
+          OwnShip messages at 3 second intervals.<br>
+          &nbsp;<br>
+          <b>Filtering by Range from OwnShip<br>
+          </b>!AIVDO sentences are now detected as being MyShip. This
+          allows the output to be filtered by range from MyShip, so you
+          may for example eliminate vessels further than a few miles
+          being output.<br>
+          <br>
+          <b>Shell</b> <b>on Output File Close</b><br>
+          Shell on Output File Close function added to enable another
+          program to process the output file.<br>
+          <br>
+          <img src="pics/ais_decoder_v3_options_shell.gif"
+            name="graphics1" align="BOTTOM" border="0" height="93"
+            width="176"><br>
+          <br>
+          This is currently being tested, please contact me if you wish
+          to use this added functionality. (V119)</font></font></p>
+    <p lang="en-GB"><font face="Verdana, sans-serif"><font size="2"><b>Output
+Range
+
+
+            Filtering</b></font></font> <font face="Verdana,
+        sans-serif"><font size="2"><b>(V123)</b></font></font><font
+        face="Verdana, sans-serif"><font size="2"><br>
+          The Range refers to the Max &amp; Min values set on Options
+          &gt; Output Tags and Range. It is not the distance of the
+          vessel from OwnShip.<br>
+          If you set a Range for the vessels position (Latitude and/or
+          Longitude) on any AIS sentence type and tick the Range
+          Filtered box, the Range Filter will now be applied to all
+          output. The vessels position is taken as the last position
+          received for the MMSI being output.<br>
+          <img
+            src="pics/ais_decoder_v3_options_outputfilteredlatlonrange.gif"
+            name="graphics2" align="BOTTOM" border="0" height="293"
+            width="284"></font></font></p>
+    <p lang="en-GB"><font face="Verdana, sans-serif"><font size="2">The
+          all AIS messages output are checked against the last position
+          report received for the MMSI of the vessel sending the AIS
+          message being output. <br>
+          The last position received is taken for ALL messages received,
+          even if the message has been rejected by the Input Filter.</font></font></p>
+    <p lang="en-GB"><font face="Verdana, sans-serif"><font size="2">In
+          the above example you would need to set the lat/lon max and
+          min to the required values to delimit the box containing the
+          vessels you wished outputting.</font></font></p>
+    <p lang="en-GB"><font face="Verdana, sans-serif"><font size="2">Range
+Filtering
+
+
+          by Lat/Lon is applied for all Output - NMEA, CSV or Tagged,
+          Scheduled or Unscheduled. It may be selected or not selected
+          separately for File or UDP output. </font></font> </p>
+    <p lang="en-GB"><font face="Verdana, sans-serif"><font size="2"><b>NMEA
+Output
+
+
+            (V123)<br>
+          </b>Prior to V123 you could not filter using Tags and output
+          NMEA without using the Scheduler.<br>
+          From V123 NMEA can now be filtered and output without using
+          the Scheduler.</font></font></p>
+    <p lang="en-GB"><font face="Verdana, sans-serif"><font size="2"><b>OpenCPN
+
+
+            V3.2.2<br>
+          </b></font></font><font face="Verdana, sans-serif"><font
+          size="2">The functionality of OpenCPN in both handling of AIS
+          messages and Input options has been greatly expanded.<br>
+          OpenCPN now accepts UDP input, which is the simplest method to
+          use to pass data from AisDecoder to OpenCPN, and eliminates
+          the requirement to use Virtual Comm Ports (VCP) to send data
+          from AisDecoder to OpenCPN.<br>
+          The AisDecoder installation package now includes a sample
+          initialisation file OpenCPN.ini <br>
+          <br>
+        </font></font><font face="Verdana, sans-serif"><font size="2"><b>CSV
+Output
+
+
+          </b></font></font><font face="Verdana, sans-serif"><font
+          size="2">further explanation<br>
+        </font></font><font size="2">There are two methods of outputting
+        CSV.<br>
+        1.&nbsp;&nbsp;&nbsp; You can output all message fields (in
+        column 2 of the detailed display) as CSV<br>
+        2.&nbsp;&nbsp;&nbsp; You can output only those fields which are
+        relevant to your application. These may be any field (row or
+        column) of the detailed display.<br>
+        <br>
+        Option 1 is unlikely to be useful because both different
+        messages and the same message can contain different numbers and
+        content of each field, which may depend on the content of other
+        fields in the messages. This requires any program processing the
+        CSV file to understand the message content. It does however
+        enable you collect the entire decoded message.<br>
+        If the CSV file is imported into a spreadsheet, the same column
+        will contain different data fields, also,&nbsp; the same data
+        fields may be in different columns.<br>
+        <br>
+        If NO tags are defined, method 1 will be output, if one or more
+        tags are defined, method 2 will be used.<br>
+        To output (as CSV) only selected fields you need to set up Tags
+        for all required fields.<br>
+      </font></p>
+    <p lang="en-GB"><font face="Verdana, sans-serif"><font size="2"><b>Maximum
+
+
+            File Sizes</b></font></font><font face="Verdana, sans-serif"><font
+          size="2"><br>
+        </font></font><font size="2">Because of 32 bit address limit the
+        maximum permitted file sizes were initially limited to around 2
+        GB. The huge increase in volumes of AIS data has required file
+        size handling to be increased to approx 400 Terra Bytes. This
+        was introduced from V131<br>
+      </font></p>
+    <p lang="en-GB"><font size="2"><b>Maximum Speed o</b><b>f</b><b> </b><b>P</b><b>rocessing</b><br>
+        The basic decoding speed is around 200k sentences/min on a 2GHz
+        PC. However this speed will be degraded dependant on the amount
+        of additional work the PC is requested to undertake by
+        additional settings. In particular displaying output can
+        seriously degrade the speed. The easiest way to understand cause
+        and effect of various settings is to use the Windows Task
+        Manager to monitor the CPU performance. There is also a limit to
+        the amount of data that can be received on a network connection.
+        TCP is not necessarily slower than UDP because the data is
+        transmitted in larger blocks.<br>
+      </font></p>
+    <p lang="en-GB"><font size="2">&nbsp;<br>
+      </font></p>
+  </body>
+</html>

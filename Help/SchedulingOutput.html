@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Schedule">
+    <title>Scheduling Output</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Scheduling Output<br>
+    </h3>
+    <div style="text-align: center;"><img style="width: 343px; height:
+        153px;" alt="" src="pics/AisDecoderDiagram.bmp"><br>
+    </div>
+    The functional diagram above shows the longest path messages may
+    take before being output. Dependant on your options, messages may
+    miss any or all of the possible stages.<br>
+    <br>
+    The Scheduler outputs messages in batches at timed intervals in MMSI
+    number order. This allows the data from different AIS message types
+    to be combined together by Vessel. For example, static vessel data
+    such as Length, Beam, Call Sign are transmitted in a different
+    message and at different intervals to navigational data such as
+    Latitude, Longitude. Speed or Course.<br>
+    <br>
+    <div style="text-align: center;"><img style="width: 127px; height:
+        81px;" alt="" src="pics/ais_decoder_v3_options_scheduler.gif"><br>
+    </div>
+    The data from these different messages are combined together in one
+    decoded output for the one vessel, which could be one line of CSV
+    data, or one entry in a tagged file.<br>
+    <br>
+    AIS messages are held in the Scheduler's buffer for a fixed time,
+    the default being 15 minutes. If you are plotting a vessel's
+    position using any GIS system, the vessel will remain on the GIS
+    display for 15 minutes after the last position message was received
+    for any given vessel.<br>
+    <br>
+    If you are outputting tagged fields, the value of the latest tagged
+    field will be output.<br>
+    <br>
+    The Output Filter test is normally applied to all the data
+    pertaining to the same MMSI in a block, so all the data for the one
+    vessel is output or no data for the vessel is output.<br>
+    <br>
+    This behaviour causes a problem if a log file, with no time stamps,
+    is processed by the Scheduler because all the messages for the same
+    MMSI will appear to have been received at the same time. The result
+    is only the last message will actually be output. This behaviour can
+    be changed by unticking the <a href="OptionsTags.html">MMSI change</a>
+    box, so all complete messages are processed individually, even for
+    the same MMSI.<br>
+    <br>
+    See also <a href="OptionsScheduler.html">Options - Scheduler</a><br>
+    &nbsp;<br>
+    <br>
+  </body>
+</html>

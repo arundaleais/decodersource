@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="NMEA Output">
+    <title>NMEA Output</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>NMEA Output<br>
+    </h3>
+    <font size="-2"><b>AIS</b><br>
+      !AIVDM,1,1,,B,34QsE4P000OvgWnNh&lt;FElCKR06HS,0*44<br>
+      !AIVDO,1,1,,,11mJmdwP?w&lt;tSF0l4Q@&gt;4?wv0&gt;`&lt;,0*66<br>
+      <b>Time Stamped</b><br>
+      !AIVDM,1,1,,B,34QsE4P000OvgWnNh&lt;FElCKR06HS,0*44,28/11/2015
+      14:49:48<br>
+      !AIVDM,2,1,0,A,53a`I802&lt;PjU084`00118T@F0tJ18uA@E8@4l0152;5@@6v70?AEDSl3,0*2E,28/11/2015
+
+      14:49:49<br>
+      !AIVDM,2,2,0,A,klU8;H25C385UP0,2*42,28/11/2015 14:49:49<br>
+      <b>NMEA GPS</b><br>
+      $GPRMC,101538.00,A,5116.80067,N,00227.93862,W,0.008,,130514,,,D*68<br>
+$GPGSV,4,1,15,05,36,185,39,07,04,062,38,08,30,058,41,09,40,062,46*7A<br>
+      $GPGLL,5116.80067,N,00227.93862,W,101538.00,A,D*7B<br>
+$GPGGA,111617.00,5116.80048,N,00227.93899,W,2,10,0.83,121.7,M,48.4,M,,0000*49<br>
+    </font><br>
+    NMEA is output to <a href="OptionsLogFile.html">Input Log</a>
+    files, which allow you to select all received messages or Input
+    Filtered messages. You can input filter messages by Message type,
+    DAC, FI and MMSI<br>
+    <br>
+    NMEA data is never output as decoded data.<br>
+    <br>
+    If you wish to output NMEA data which is dependent on individual
+    fields which are not filtered by the input filter this can still be
+    done by setting the output as NMEA.<br>
+    <br>
+    <div style="text-align: center;"><img style="width: 179px; height:
+        54px;" alt="" src="pics/ais_decoder_v3_options_outputnmea.gif"><br>
+    </div>
+    To append the time stamp of the original NMEA message, tick the +
+    Time Stamp box.<br>
+    <br>
+    If you are outputting NMEA messages which and are not using the
+    Scheduler, you may be intermixing AIS sentences with GPS sentences.<br>
+    <div style="text-align: center;"><img alt=""
+        src="pics/ais_decoder_v3_options_scheduler.gif"><br>
+    </div>
+    <br>
+    Sentences are normally buffered and output when the MMSI changes.
+    You can stop this behaviour by un-ticking MMSI change.<br>
+    <br>
+    You can <a href="SchedulingOutput.html">Schedule</a> NMEA output by
+    ticking the Schedule box.<br>
+    In this case note the NMEA sentences are output in MMSI order and
+    NOT in the order the sentences are received.<br>
+    <br>
+    You can also <a href="TaggingOverview.html">Set Tags</a> for NMEA
+    output; the NMEA sentences for a MMSI will be output if the MMSI
+    passes the Tag Range check. All AIS and NMEA messages that are on
+    the <a href="OptionsInputFilter.html">Input Filter</a> may be
+    Tagged.<br>
+    <br>
+    See also <a href="RangeFilteredNmea.html">Range Filtered NMEA
+      Output</a>, <a href="OutputWindows.html">Output Windows</a><br>
+    <br>
+  </body>
+</html>

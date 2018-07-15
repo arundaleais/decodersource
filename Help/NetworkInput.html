@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <title>NetworkInput</title>
+  <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center; }
+-->
+  </style>
+</head>
+
+<body>
+<h3>Network Data Input</h3>
+<br>
+The Network Protocol must be UDP or TCP.<br>
+<br>
+<img alt="" src="pics/ais_decoder_v3_options_input.gif"><br>
+If UDP only the Port number on which you are receiving UDP data is required,
+the data may be arriving from more than one host. There is no communication
+from your PC to the host(s) sending the data.<br>
+<br>
+If TCP a Port and a Host must be set, as your PC will be communicating to the
+Host sending the data, to verify the data has been received correctly. The TCP
+Host can be either an IP address (xxx.xxx.xxx.xxx) or a Name (any.server.com).
+If you use a name, the name will be resolved to an IP address by any DNS server
+available to your PC. Normally this will be the DNS server you have set up when
+you configured your internet connection to your ISP.<br>
+<br>
+If you are receiving input from an AIS Network Receiver, consult your receiver
+manual on how to set up an output port on your receiver. The input port on
+AisDecoder must be the same port number.<br>
+<br>
+If you are receiving network data from the internet, the port number must be
+the same as is being sent by the Server supplying you the data.<br>
+<br>
+If you are receiving UDP data direct from your PC, for example from another
+program (eg ShipPlotter), the other program should be set up to send UDP data
+to IP address 127.0.0.1 This IP address is always the local PC (even if your PC
+has another IP address on the Local Newtwork) The port numbers must be the same
+on both programs.<br>
+<br>
+If you are receiving data from a different PC on your Local network, the Server
+PC will send the data to the Local IP address of the PC receiving the data. 
+
+<p></p>
+
+<p><img alt="" src="pics/ais_decoder_v3_control_input_network.gif"><br>
+On the Control/Stats Window tick Input &gt; TCP and/or UDP<br>
+<br>
+<br>
+</p>
+
+<p></p>
+</body>
+</html>

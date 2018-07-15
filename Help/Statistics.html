@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <title>Statistics</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Statistics<br>
+    </h3>
+    <div style="text-align: center;"><img alt=""
+        src="pics/ais_decoder_v3_control_stats.gif"><br>
+      <div align="left">Max counter size is 400 x 10^9<br>
+      </div>
+      <br>
+    </div>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr style="font-weight: bold;" align="center">
+          <td colspan="2" rowspan="1" style="vertical-align: top;">Statistics
+Pane
+            on Control/Stats Window<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">Total Bytes RX<br>
+          </td>
+          <td valign="top">are the total number of 8 bit bytes received
+            prior to input processing, since AisDecoder was started<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">Buffered Bytes<br>
+          </td>
+          <td valign="top">are the number of bytes received and buffered
+            prior to passing to the NMEA complete sentence buffer<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Received</td>
+          <td style="vertical-align: top;">are the number of NMEA
+            sentences
+            entering the decoder. As each
+            part of a multi-part AIS message consists of a separate AIS
+            message,
+            each part is counted separately</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Waiting</td>
+          <td style="vertical-align: top;">are the number of messages
+            being
+            held in the receives sentence buffer awaiting decoding</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Processed</td>
+          <td style="vertical-align: top;">are the number of incoming
+            NMEA
+            sentences which have been decoded</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Filtered</td>
+          <td style="vertical-align: top;">are the number of NMEA
+            sentences
+            that have been accepted by the input filter </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Scheduled</td>
+          <td style="vertical-align: top;">are the number of sentences
+            currently being held in the
+            Scheduler buffer, these will be output when the next
+            scheduled time
+            interval is reached</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Outputted<br>
+          </td>
+          <td style="vertical-align: top;">are the total number of NMEA
+            sentences that have been output to both a file and by UDP<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Last Output</td>
+          <td style="vertical-align: top;">are the number of different
+            MMSI's that were last output by the Scheduler</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Named Vessels</td>
+          <td style="vertical-align: top;">are the current number of
+            MMSI's
+            that have a vessel name
+            associated with them that will be used to put a name to a
+            MMSI, if
+            required, on outputting the MMSI. These are the number of <a
+              href="VesselNames.html">cached vessels</a>.<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+  </body>
+</html>

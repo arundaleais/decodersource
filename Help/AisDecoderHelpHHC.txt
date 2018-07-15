@@ -1,0 +1,150 @@
+		<param name="Name" value="Ais Decoder Help">
+		<param name="Local" value="Default.html">
+			<param name="Name" value="Getting Started">
+			<param name="Local" value="GettingStarted.html">
+				<param name="Name" value="Overview">
+				<param name="Local" value="Overview.html">
+				<param name="Name" value="Features">
+				<param name="Local" value="Features.html">
+				<param name="Name" value="Quick Start">
+				<param name="Local" value="QuickStart.html">
+				<param name="Name" value="Google Earth View of your data">
+				<param name="Local" value="GoogleEarthView.html">
+			<param name="Name" value="Physical Connection">
+			<param name="Local" value="PhysicalConnection.html">
+				<param name="Name" value="Serial Data">
+				<param name="Local" value="SerialInput.html">
+				<param name="Name" value="Network Data">
+				<param name="Local" value="NetworkInput.html">
+				<param name="Name" value="USB Data">
+				<param name="Local" value="UsbInput.html">
+			<param name="Name" value="Functional Description">
+			<param name="Local" value="FunctioalDescription.html">
+			<param name="Name" value="Control/Stats Window">
+			<param name="Local" value="ControlStatsWindow.html">
+				<param name="Name" value="Statistics">
+				<param name="Local" value="Statistics.html">
+				<param name="Name" value="Nmea Input Window">
+				<param name="Local" value="NmeaWindow.html">
+				<param name="Name" value="Summary Window">
+				<param name="Local" value="SummaryWindow.html">
+				<param name="Name" value="Detail Window">
+				<param name="Local" value="DetailWindow.html">
+				<param name="Name" value="Output Windows">
+				<param name="Local" value="OutputWindows.html">
+				<param name="Name" value="GIS Button">
+				<param name="Local" value="GisWindow.html">
+			<param name="Name" value="Options Window">
+			<param name="Local" value="OptionsWindow.html">
+				<param name="Name" value="Options - Input">
+				<param name="Local" value="OptionsSettings.html">
+				<param name="Name" value="Options - Log File">
+				<param name="Local" value="OptionsLogFile.html">
+				<param name="Name" value="Options - Input Filter">
+				<param name="Local" value="OptionsInputFilter.html">
+				<param name="Name" value="Options - Output Fields and Tags">
+				<param name="Local" value="OptionsOutput FieldsAndTags.html">
+				<param name="Name" value="Options - Output Tags and Range">
+				<param name="Local" value="OptionsOutputTagsAndRange.html">
+				<param name="Name" value="Options - Scheduler">
+				<param name="Local" value="OptionsScheduler.html">
+				<param name="Name" value="Options - Tags">
+				<param name="Local" value="OptionsTags.html">
+				<param name="Name" value="Options - FTP Server">
+				<param name="Local" value="OptionsFtpServer.html">
+				<param name="Name" value="Options - Output">
+				<param name="Local" value="OptionsOutput.html">
+				<param name="Name" value="Options - All Settings">
+				<param name="Local" value="OptionsAllSettings.html">
+				<param name="Name" value="Options - Other">
+				<param name="Local" value="OptionsOther.html">
+			<param name="Name" value="Example Settings">
+			<param name="Local" value="ExampleSettings.html">
+				<param name="Name" value="Default">
+				<param name="Local" value="DefaultSetting.html">
+				<param name="Name" value="Google Earth">
+				<param name="Local" value="GoogleEarthSetting.html">
+				<param name="Name" value="Google Maps">
+				<param name="Local" value="GoogleMapsSetting.html">
+				<param name="Name" value="CSV - All Content">
+				<param name="Local" value="CsvSetting.html">
+				<param name="Name" value="Excel - Using Tags">
+				<param name="Local" value="Excel Setting.html">
+				<param name="Name" value="UDP Tags and Range">
+				<param name="Local" value="UdpTagsandRangeSetting.html">
+				<param name="Name" value="HTML - Using Tags">
+				<param name="Local" value="HtmlSetting.html">
+				<param name="Name" value="ASPX Using Tags">
+				<param name="Local" value="AspxSetting.html">
+				<param name="Name" value="Shipplotter spnmea">
+				<param name="Local" value="spnmeaSetting.html">
+			<param name="Name" value="Output">
+			<param name="Local" value="Output.html">
+				<param name="Name" value="Output Channels">
+				<param name="Local" value="OutputMethod.html">
+					<param name="Name" value="To File">
+					<param name="Local" value="OutputToFile.html">
+					<param name="Local" value="OutputOptions.html">
+					<param name="Name" value="To Network">
+					<param name="Local" value="OutputToClientPC.html">
+					<param name="Local" value="OutputOptions.html">
+					<param name="Name" value="To Web Server">
+					<param name="Local" value="OutputToWebServer.html">
+				<param name="Name" value="Output Format">
+				<param name="Local" value="OutputFormat.html">
+					<param name="Name" value="NMEA">
+					<param name="Local" value="NmeaOutput.html">
+					<param name="Name" value="CSV">
+					<param name="Local" value="CsvOutput.html">
+					<param name="Name" value="HTML">
+					<param name="Local" value="HtmlOutput.html">
+					<param name="Name" value="KML">
+					<param name="Local" value="KmlOutput.html">
+					<param name="Name" value="KMZ">
+					<param name="Local" value="KmzOutput.html">
+					<param name="Name" value="Date &amp; Time">
+					<param name="Local" value="OptionsOutputDates.html">
+				<param name="Name" value="Output Fields">
+				<param name="Local" value="SelectingOutputFields.html">
+					<param name="Name" value="Tagging - Overview">
+					<param name="Local" value="TaggingOverview.html">
+					<param name="Name" value="Outputting Tagged Fields">
+					<param name="Local" value="OutputtingTaggedFields.html">
+					<param name="Name" value="Creating Tags">
+					<param name="Local" value="CreatingTags.html">
+					<param name="Name" value="Vessel Names">
+					<param name="Local" value="VesselNames.html">
+					<param name="Name" value="Deleting Tags">
+					<param name="Local" value="DeletingTags.html">
+				<param name="Name" value="Output Template Files">
+				<param name="Local" value="OutputTemplateFiles.html">
+				<param name="Name" value="Output Range Filtering">
+				<param name="Local" value="OutputRangeFiltering.html">
+					<param name="Name" value="Tagged">
+					<param name="Local" value="RangeFilteredTagged.html">
+					<param name="Name" value="NMEA">
+					<param name="Local" value="RangeFilteredNmea.html">
+				<param name="Name" value="Scheduling Output">
+				<param name="Local" value="SchedulingOutput.html">
+			<param name="Name" value="Miscellaneous">
+			<param name="Local" value="Miscellaneous.html">
+				<param name="Name" value="NMEA GPS Sentences">
+				<param name="Local" value="NmeaGps.html">
+				<param name="Name" value="Start Up Command Options">
+				<param name="Local" value="Command.html">
+				<param name="Name" value="User Profiles">
+				<param name="Local" value="UserProfiles.html">
+				<param name="Name" value="Binary Messages">
+				<param name="Local" value="BinaryMessages.html">
+				<param name="Name" value="Character Encoding">
+				<param name="Local" value="CharacterEncoding.html">
+				<param name="Name" value="Configuring Google Earth">
+				<param name="Local" value="GoogleEarthConfiguring.html">
+				<param name="Name" value="Files and Directories">
+				<param name="Local" value="FilesandDirectories.html">
+				<param name="Name" value="Range from MyShip">
+				<param name="Local" value="RangeFromMyShip.html">
+				<param name="Name" value="Shelling Scripts">
+				<param name="Local" value="ShellOnFileClose.html">
+			<param name="Name" value="Glossary">
+			<param name="Local" value="Glossary.html">

@@ -1,0 +1,14 @@
+open ftp.arundale.com
+stfinge1
+open363dir
+hash
+!dir
+cd /public_html/docs/ais/help
+dir
+binary
+put AisDecoder.chm
+put RangeFromMyShip.ini.zip
+put ShellOnFileClose.zip
+
+bye
+

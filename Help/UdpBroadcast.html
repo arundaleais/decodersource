@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252">
+  <title>Broadcast UDP</title>
+  <meta name="AUTHOR" content="Neal Arundale">
+  <meta name="CREATED" content="20140827;9270000">
+  <meta name="CHANGEDBY" content="Neal Arundale">
+  <meta name="CHANGED" content="20161027;14253927">
+  <meta name="MS-HKWD" content="Broadcast UDP">
+  <style type="text/css">
+ </style>
+</head>
+
+<body dir="ltr" text="#000000" lang="en-US">
+
+<div align="center">
+<font size="4"><b>Broadcast UDP<br>
+<br>
+</b></font></div>
+
+<p></p>
+
+<p>If you wish to send an AIS data stream to to different devices (eg PC's)
+that co-exist on the same local network, the simplest way is to set the output
+IP address of device outputting the data to the broadcast address of the local
+network.</p>
+
+<p>For example if the local network IP address is 192.168.1.xxx (where xxx is
+the host - which may have been set automatically by DHCP), the broadcast host
+IP is always .255, so the full IP address will be 192.168.1.255</p>
+
+<p></p>
+
+<p>You can check the current device's IP address by getting a Command prompt
+and typing IPCONFIG then return</p>
+
+<p></p>
+
+<p>If the current device's IP address is 192.168.1.6 and the subnet mask is
+255.255.255.0 the local network will be 192.168.1.xxx and the broadcast address
+will be 192.168.1.255</p>
+
+<p></p>
+
+<p>All devices on the local network will see all data that has been sent to the
+Broadcast address.</p>
+
+<p>So all devices in the range 192.168.1.1 to 192.168.1.254 will receive the
+data simultaneously.</p>
+
+<p></p>
+
+<p>The Sender and Receiver's port must be the same on all devices, in effect
+this is the channel that is being used. </p>
+
+<p></p>
+
+<p>Note this will only work with UDP data and NOT with TCP data because TCP
+uses handshaking between sender and receiver (like a phone call) whereas UDP is
+connectionless (like a radio or TV signal).</p>
+
+<p></p>
+
+<p>If your AIS data stream cannot be set to UDP with a broadcast address (.255)
+then you can use NmeaRouter to convert the data stream to a broadcast data
+stream.</p>
+
+<p></p>
+
+<p> </p>
+
+<p>See also <a href="OptionsInput.html">Options - Input</a><br>
+</p>
+</boverview></body>
+</html>

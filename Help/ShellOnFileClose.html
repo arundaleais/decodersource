@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html;
+      charset=windows-1252">
+    <title>Shell on File Close</title>
+    <meta name="GENERATOR" content="OpenOffice 4.1.1 (Win32)">
+    <meta name="CREATED" content="0;0">
+    <meta name="CHANGEDBY" content="Neal Arundale">
+    <meta name="CHANGED" content="20161113;11455342">
+    <meta name="CHANGEDBY" content="Neal Arundale">
+  </head>
+  <body dir="LTR" lang="en-US">
+    <p style="margin-bottom: 0cm" lang="en-GB" align="CENTER"><font
+        face="Verdana, sans-serif"><font size="2"><b>Shell on File Close</b></font></font></p>
+    <p style="margin-bottom: 0cm" lang="en-GB" align="LEFT"><font
+        face="Verdana, sans-serif"><font size="2"><br>
+          If you have problems with the "shelling", could send me a copy
+          of the startup log file and the shell command file.</font></font><br>
+    </p>
+    <p style="margin-bottom: 0cm" lang="en-GB" align="LEFT"><font
+        face="Verdana, sans-serif"><font size="2">To insert decoded data
+          into a database you need to:</font></font></p>
+    <p lang="en-GB" align="LEFT"><font face="Verdana, sans-serif"><font
+          size="2"><b>1.</b>&nbsp;&nbsp;&nbsp; Create a Tag for the and
+          data field you require in your data base</font></font></p>
+    <p lang="en-GB" align="LEFT"><img
+        src="pics/ais_decoder_v3_detail_rightclick_creattag.gif"
+        name="graphics3" alt="" width="531" height="242" border="0"
+        align="left"><br clear="LEFT">
+      <font face="Verdana, sans-serif"><font size="2"><b><br>
+            2.</b>&nbsp;&nbsp;&nbsp; Create a Csv output file</font></font>
+    </p>
+    <p lang="en-GB" align="LEFT"><img
+        src="pics/ais_decoder_v3_options_outputcsv.gif" name="graphics1"
+        alt="" width="190" height="165" border="0" align="left"><br
+        clear="LEFT">
+      <font face="Verdana, sans-serif"><font size="2"><br>
+          <b>3.</b>&nbsp;&nbsp;&nbsp; Schedule the Output</font></font></p>
+    <p lang="en-GB" align="LEFT"><img
+        src="pics/ais_decoder_v3_options_scheduler.gif" name="graphics4"
+        alt="" width="127" height="95" border="0" align="left"><br
+        clear="LEFT">
+      <font face="Verdana, sans-serif"><font size="2"><br>
+          <b>4.&nbsp;&nbsp;&nbsp; </b>Set the Output file to execute a
+          Shell command on close</font></font></p>
+    <p style="margin-bottom: 0cm" lang="en-GB" align="LEFT"><img
+        src="pics/ais_decoder_v3_output_shell.gif" name="graphics2"
+        alt="" width="177" height="93" border="0" align="left"><br
+        clear="LEFT">
+      <font face="Verdana, sans-serif"><font size="2"><br>
+          Keep it simple by using Arundale\Ais Decoder\Settings for the
+          .ini files and Arundale\Ais Decoder\Output for Output files
+          including Shell command and script files (because they will
+          likely be using/creating output files).</font></font></p>
+    <p style="margin-bottom: 0cm" lang="en-GB" align="LEFT"><font
+        face="Verdana, sans-serif"><font size="2"> <b>Example 1</b><br>
+          The example initialisation file (shell.ini) defaults to the
+          Shell file shellcommand.cmd in %appdata%\Arundale\Ais
+          Decoder\Output. You can change this by clicking New File.</font></font></p>
+    <p style="margin-bottom: 0cm" lang="en-GB" align="LEFT"><font
+        face="Verdana, sans-serif"><font size="2">The actual location of
+          %appdata% can be found by &#8594; Run a command shell (start/Run,
+          then "cmd") and type "set appdata" <br>
+          <br>
+          The sample command file (shellcommand.cmd) contains<br>
+          <b>cmd.exe /C "copy "output.csv" "output copy.csv""</b><br>
+          <br>
+          The sample command file (shellcommand.cmd) runs the command
+          string interpreter (cmd.exe) which copies the output file to a
+          renamed file. <br>
+          The Process Directory (the directory of the command prompt) is
+          the same at the directory containing the Shell File. This is
+          to keep the dos prompt in the same security context as the
+          user.<br>
+        </font></font><br>
+    </p>
+    <font face="Verdana, sans-serif"><font size="2">You will need to
+        create your own command file containing your script to insert
+        the appropriate records into your database. </font></font>
+    <p style="margin-bottom: 0cm" lang="en-GB" align="LEFT"><font
+        face="Verdana, sans-serif"><font size="2">Cmd.exe should be used
+          as the command string interpreter (dos prompt).<br>
+          /K keeps the console open after executing the command, when
+          debugged it should be changed to /C, which will close the
+          console after execution of the shell has completed.<br>
+          <br>
+          Note the Shelled process runs synchronously so AisDecoder will
+          be stalled until the shell completes. This is required in
+          order the for the output file not to be re-opened by
+          AisDecoder before the shell process has finished processing
+          the output file. <br>
+        </font></font><br>
+    </p>
+    <font face="Verdana, sans-serif"><font size="2"><b>Example 2</b><br>
+        A second example demonstrates how to name output files after
+        they have been created by datestamping the file. The
+        initialisation file Shell_vbs.ini is used.</font></font>
+    <p style="margin-bottom: 0cm" lang="en-GB" align="LEFT"><font
+        face="Verdana, sans-serif"><font size="2">The file
+          shellcommand_vbs.cmd demonstrates how to run a script (in this
+          case VBS). Place this file in the %appdata%\Arundale\Ais
+          Decoder\Output folder. <br>
+          <br>
+          The file contains<br>
+          <b> cmd.exe /C "logfiledate.vbs"</b><br>
+          and executes the VBS script file within the DOS shell context.</font></font></p>
+    <p style="margin-bottom: 0cm" lang="en-GB" align="LEFT"><font
+        face="Verdana, sans-serif"><font size="2">Place the VBS script
+          file (logfiledate.vbs) in the same folder as the .csv file it
+          is copying.</font></font></p>
+    <p style="margin-bottom: 0cm" lang="en-GB" align="LEFT"><font
+        face="Verdana, sans-serif"><font size="2">The .vbs file contains
+          a script to copy the output file (output.csv), immediately
+          after it is closed (normally by the scheduler), to
+          output_yyyymmdd_hhmmss.csv. This may appear rather complicated
+          but is required in order for internationalisation formatting
+          issues to work properly. </font></font> </p>
+    <p style="margin-bottom: 0cm" lang="en-GB" align="LEFT"><font
+        face="Verdana, sans-serif"><font size="2"><span lang="en-GB">You
+            could use any other scripting language if your PC supports
+            it to for example make an entry into a database<br>
+            &nbsp;<br>
+            <b>Further information</b> can be found below.<br>
+            The Shell uses the windows </span></font></font><a
+href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms682425%28v=vs.85%29.aspx"><font
+          face="Verdana, sans-serif"><font size="2"><span lang="en-GB">CreateProcess
+
+
+
+              api</span></font></font></a><font face="Verdana,
+        sans-serif"><font size="2"><span lang="en-GB"><br>
+            The Security context is as the calling program.<br>
+            Command string interpreter</span></font></font><a
+        href="http://ss64.com/nt/cmd.html"><font face="Verdana,
+          sans-serif"><font size="2"><span lang="en-GB"> CMD.exe</span></font></font></a><font
+        face="Verdana, sans-serif"><font size="2"><span lang="en-GB"><br>
+            More commands</span></font></font><a
+        href="http://technet.microsoft.com/en-us/library/bb490954.aspx"><font
+          face="Verdana, sans-serif"><font size="2"><span lang="en-GB">
+            </span></font></font></a><a
+        href="http://technet.microsoft.com/en-us/library/bb490954.aspx"><font
+          face="Verdana, sans-serif"><font size="2"><span lang="en-GB"><b>Command
+Shell
+
+
+
+                Overview </b></span></font></font></a><font
+        face="Verdana, sans-serif"><font size="2"><span lang="en-GB"><br>
+          </span></font></font><br>
+    </p>
+    <a href="http://arundale.com/docs/ais/help/ShellOnFileClose.zip"><b><font
+          size="2"><font face="Verdana, sans-serif">Download Sample
+            Files</font></font></b></a> in ShellOnFileClose.zip<br>
+    <br>
+    <table width="100%" cellspacing="2" cellpadding="2" border="0">
+      <tbody>
+        <tr>
+          <td valign="top"><b>File</b><br>
+          </td>
+          <td valign="top"><b>Place in Folder</b><br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top"><font face="Verdana, sans-serif"><font
+                size="2">shell.ini</font></font><font face="Verdana,
+              sans-serif"><font size="2"><br>
+              </font></font></td>
+          <td valign="top"><font face="Verdana, sans-serif"><font
+                size="2">%appdata%\Arundale\Ais Decoder\Settings</font></font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font face="Verdana, sans-serif"><font
+                size="2">shellcommand.cmd</font></font><font
+              face="Verdana, sans-serif"><font size="2"><br>
+              </font></font></td>
+          <td valign="top"><font face="Verdana, sans-serif"><font
+                size="2">%appdata%\Arundale\Ais Decoder\Output</font></font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font face="Verdana, sans-serif"><font
+                size="2">shell_vbs.ini</font></font><font face="Verdana,
+              sans-serif"><font size="2"><br>
+              </font></font></td>
+          <td valign="top"><font face="Verdana, sans-serif"><font
+                size="2">%appdata%\Arundale\Ais Decoder\Settings</font></font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font face="Verdana, sans-serif"><font
+                size="2">shellcommand_vbs.cmd</font></font><font
+              face="Verdana, sans-serif"><font size="2"><br>
+              </font></font></td>
+          <td valign="top"><font face="Verdana, sans-serif"><font
+                size="2">%appdata%\Arundale\Ais Decoder\Output</font></font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font face="Verdana, sans-serif"><font
+                size="2">logfiledate.vbs</font></font></td>
+          <td valign="top"><font face="Verdana, sans-serif"><font
+                size="2">%appdata%\Arundale\Ais Decoder\Output</font></font></td>
+        </tr>
+      </tbody>
+    </table>
+    <font face="Verdana, sans-serif"><font size="2"><br>
+      </font></font><font face="Verdana, sans-serif"><font size="2">For
+        simplicity, keep the Command file in the same folder as the
+        output file<br>
+      </font></font><font face="Verdana, sans-serif"><font size="2"><br>
+      </font></font><font face="Verdana, sans-serif"><font size="2"></font></font>
+    <p style="margin-bottom: 0cm" lang="en-GB" align="LEFT"><br>
+    </p>
+    <p lang="en-GB" align="LEFT"><br>
+      <br>
+    </p>
+  </body>
+</html>

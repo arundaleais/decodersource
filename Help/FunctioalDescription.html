@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <meta name="MS-HKWD" content="Window">
+  <meta name="MS-HKWD" content="Filter">
+  <meta name="MS-HKWD" content="Schedule">
+  <meta name="MS-HKWD" content="Field">
+  <meta name="MS-HKWD" content="Tag">
+  <meta name="MS-HKWD" content="Template">
+  <meta name="MS-HKWD" content="Field">
+  <title>Functional Description</title>
+  <style type="text/css">
+<!--
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+</head>
+<body>
+<h3>Functional Description</h3>
+There are two main windows which allow you to alter the behaviour of
+the decoder.<br>
+<ul>
+  <li><a href="ControlStatsWindow.html">Control/Stats</a></li>
+  <ul>
+    <li>Start/Stops/Pauses the decoder</li>
+    <li>Controls various display windows</li>
+    <li>Displays various statistics<br>
+    </li>
+    <li>Access the Options Window</li>
+  </ul>
+  <li><a href="OptionsWindow.html">Options</a></li>
+  <ul>
+    <li>Selects most settings</li>
+    <li>Saves/Retrieves frequent settings <br>
+    </li>
+  </ul>
+</ul>
+<div style="text-align: center;"><img
+ style="width: 343px; height: 153px;" alt=""
+ src="pics/AisDecoderDiagram.bmp"><br>
+</div>
+The incoming NMEA sentences are decoded. The <a
+ href="OptionsInputFilter.html">input filter</a> passes the AIS
+message types you have selected. If <a href="SchedulingOutput.html">scheduled
+output</a> is required, these
+messages are held in the scheduler buffer until the scheduled time.<br>
+If specific AIS fields are required the value of the field is <a
+ href="TaggingOverview.html">tagged</a>.<br>
+If the value of the tag requires filtering, by having a valid range
+set, the range is validated, by the <a href="RangeFilteredTagged.html">tag
+range
+filter</a>.<br>
+The Formatter replaces the tag in the <a
+ href="OutputTemplateFiles.html">tag template</a> file, with the tag
+value.<br>
+The fully formatted and decoded sentence is <a href="Output.html">output</a>
+to a file, by UDP and/or displayed.<br>
+<br>
+</body>
+</html>

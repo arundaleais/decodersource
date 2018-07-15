@@ -1,0 +1,7 @@
+AisDecoder will almost certainly contains bugs, errors, and omissions.
+In addition the information displayed, depends on the data transmitted, and the integrity of the transmission. By its very nature, data transmitted is not guaranteed to be received error free, therefore the decoding will never be error free.
+I make no promises that it will not cause your computer to explode, but if it does, be assured that it was accidental and I am very sorry. However, I won't be sorry enough to pay for any damages: direct, incidental, or imaginary.
+I also reserve the right to charge a royalty and/or licence fee at my discretion.
+By accepting this agreement, you accept the manner in which you use the information is entirely at both your discretion and risk.
+
+Copyright (C) 2007-2015 Neal Arundale

@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html;
+      charset=windows-1252">
+    <title>NMEA &amp; AIS Message Time Stamping</title>
+    <meta name="AUTHOR" content="Neal Arundale">
+    <meta name="CREATED" content="20140827;9270000">
+    <meta name="CHANGEDBY" content="Neal Arundale">
+    <meta name="CHANGED" content="20161027;14253927">
+    <style type="text/css">
+ </style>
+  </head>
+  <body dir="ltr" text="#000000" lang="en-US">
+    <div align="center"> <font size="4"><b>NMEA &amp; AIS Message Time
+          Stamping<br>
+          <br>
+        </b></font></div>
+    Because there is no global standard for Time Stamping NMEA messages,
+    a number of different systems are being used to both position a time
+    stamp within an NMEA data stream as well as the actual format of the
+    time stamp itself.
+    <p></p>
+    <p><b>Time Stamp Format<br>
+      </b> There are 2 fundamental formats </p>
+    <p>1.&nbsp;&nbsp;&nbsp; Plain Date/Time eg <b>3 September 2013
+        11:22:33</b> This could be in any acceptable local format <b>3/9/13
+        11:22:33</b> (European) <b>9/3/13 11:22:33</b> (American) <b>20130903
+        112233</b> (Maritime)</p>
+    <p>2.&nbsp;&nbsp;&nbsp; Unix format eg <b>1382564803</b> This is
+      the number of seconds past <strong><font face="Courier New,
+          monospace">1-Jan-1970</font></strong></p>
+    <p>In addition there is potential confusion if Local Time rather
+      than UTC is used for the displayed Date/Time <br>
+    </p>
+    <p></p>
+    <p><b>Time Stamp Positioning</b> </p>
+    <table width="100%" cellspacing="2" cellpadding="2" border="1">
+      <tbody>
+        <tr>
+          <td valign="top">1.<br>
+          </td>
+          <td valign="top">Basic AIS sentence without time stamp</td>
+          <td valign="top">!AIVDM,1,1,,A,13P;JOh02kC:SehNt493:R`h0D03,0*7F</td>
+        </tr>
+        <tr>
+          <td valign="top">2,<br>
+          </td>
+          <td valign="top">Appended to NMEA sentence </td>
+          <td valign="top">!AIVDM,1,1,,A,13P;JOh02kC:SehNt493:R`h0D03,0*7F<b>,18/11/2013
+
+
+              15:39:38</b></td>
+        </tr>
+        <tr>
+          <td valign="top">3.<br>
+          </td>
+          <td valign="top">Prefixed to NMEA sentence</td>
+          <td valign="top"><b>1382054400</b>
+            !AIVDM,1,1,,A,13P;JOh02kC:SehNt493:R`h0D03,0*7F</td>
+        </tr>
+        <tr>
+          <td valign="top">4.<br>
+          </td>
+          <td valign="top">Embedded in NMEA sentence eg&nbsp;
+            (ExactEarth)<br>
+          </td>
+          <td valign="top">$PGHP,1,<b>2013,9,30,22,18,33,15,316</b>,2,316000002,1AIS_S,7F*02</td>
+        </tr>
+        <tr>
+          <td valign="top">5.<br>
+          </td>
+          <td valign="top">Included in NMEA Comment Block (OrbComm)</td>
+          <td valign="top">\s:rEV01,<b>c: 1382054400</b>*58\!AIVDM,1,1,,A,13P;JOh02kC:SehNt493:R`h0D03,0*7F</td>
+        </tr>
+        <tr>
+          <td valign="top">6.<br>
+          </td>
+          <td valign="top">2 Unix Time stamps appended to NMEA</td>
+          <td valign="top">!AIVDM,1,1,,A,13P;JOh02kC:SehNt493:R`h0D03,0*7F<b>,1382054402,1382054400</b></td>
+        </tr>
+        <tr>
+          <td valign="top">7.<br>
+          </td>
+          <td valign="top">Prefixed in proprietary format (SAAB)<br>
+          </td>
+          <td valign="top"><b>2014-01-23T12:00:00Z;</b><span>!BSVDM,1,1,,A,13bJ@R00000AQIrMH;?eM1I405Kd,0*53<br>
+            </span></td>
+        </tr>
+        <tr>
+          <td valign="top">8.<br>
+          </td>
+          <td valign="top">Encapsulated NMEA (CLS/Argos)<span
+              style="color:#1F497D"></span></td>
+          <td valign="top"><span>$AITAG <b>1402560214</b>,2272<br>
+            </span><span>!AIVDM,1,1,,A,15Mqdu0P00JdGf0G@E&gt;h0?w20&gt;`&lt;,0*5C</span><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p></p>
+    <p><b>Time Stamp Processing by AisDecoder</b> <br>
+    </p>
+    <p>The Time Stamp is displayed as the Received Time UTC. AisDecoder
+      attempts to identify a time stamp included in the NMEA AIS
+      sentence, in the following order. </p>
+    <ol>
+      <li>From the Comment Block</li>
+      <li>From a NMEA sentence Prefix
+        <ol>
+          <li>Using a date formatted using the Windows Locale of the PC</li>
+          <li>A Numeric date in Unix time (Format 3 above)</li>
+          <li>Using the proprietry Format 7 above</li>
+        </ol>
+      </li>
+      <li>From the last word added after the CRC check
+        <ol>
+          <li>Using a date formatted using the Windows Locale of the PC
+            (Format 2 above)</li>
+          <li>A Numeric date in Unix time (Format 6 above)</li>
+        </ol>
+      </li>
+      <li>Using the Current UTC date/time assuming the Windows Locale of
+        the users PC</li>
+    </ol>
+    If the data is networked across time zones this will be the time the
+    data is received by the PC.
+    <p></p>
+    The Locale of the PC is used to (for example) differentiate between
+    American and European date formatting (2/7/14 – 2nd July or February
+    7th ?). <br>
+    <br>
+    <b>Background to AIS Time Stamping</b><br>
+    <boverview>&lt; b=""&gt; AIS was developed purely for Collision
+      Avoidance at Sea, and became mandatory as part of the SOLAS
+      (Safety of Life at Sea) regulations which through the IMO
+      (International Maritime Organisation) regulate world wide all
+      vessels at sea.<br>
+      As such AIS is a real time system, supplementing radar. It was
+      never intended to be used for monitoring and tracking, therefore
+      it does not contain any built in time stamp. The CURRENT position
+      of other vessels in immediate proximity of Own Ship is the only
+      relevant data.<br>
+      <br>
+      It is only users that are trying to use AIS data for purposes
+      other than it's prime purpose of Collision Avoidance that are
+      looking for TimeStamps.<br>
+      <br>
+      Time Stamps are normally added when a user receives data broadcast
+      by a AIS transponder on a vessel. There is no standard as to how
+      this time stamp is added, it is up to individual manufacturers to
+      decided how (in their receivers) they wish to time stamp the data
+      received.<br>
+      <br>
+      Note: the Seconds in some AIS message fields is not a time stamp.
+      It is used to organise the transmission of AIS data from the
+      various vessels within range of one another without each vessel
+      transmitting data at the same time. Many position reports do not
+      contain this field, it depends on the state the transponder is in
+      when it wished to transmit data. If you wish for a more detailed
+      explanation see ITU R-REC-M.1371.<br>
+      <br>
+      To build a pathway of vessels' positions you need accurate time
+      stamping added by the AIS receiver. In the case of satellite data,
+      the satellite is the receiver so you have to go with the satellite
+      provider’s method of time stamping. If you were receiving
+      real-time data you could add the time stamp yourself, but as
+      satellite data from all AIS satellites presently in use has to be
+      download in batches when the satellite is in range of a ground
+      station, so the basic time stamping must be done by the receiver
+      in the satellite.<br>
+      <br>
+      Comment Blocks are a relatively new addition to the NMEA
+      specification - they are NEVER transmitted, the receiver has to
+      add a comment block.<br>
+      Very few receivers will be adding comment blocks at the moment,
+      but clearly their use is expected to grow as it is the first real
+      attempt at introducing a standard way of adding time stamps.
+      <p>I have also been asked numerous times - Can the time stamp
+        encoded wothin some AIS messages be used. These time stamps are
+        used purely by the AIS system to allocate/deallocate the slots
+        used by the system, they are not complete stamps and cannot in
+        practice be usefully used. They are likely to cause more
+        confusion.<br>
+        <br>
+        Before you ask <font size="5"><b>(!)</b></font> there is no
+        chance of time stamps being transmitted in the future as
+        bandwidth is far more important,&nbsp; in any case a time stamp
+        can always be added by the receiver rather than the transmitter.
+        The time delay between transmission and reception is irrelevant.<br>
+        <br>
+        <img src="pics/ais_decoder_v3_options_timestamps.gif" alt=""
+          width="856" height="477"><br>
+      </p>
+      <p>By default AisDecoder appends a time stamp as the sentence is
+        received. This time stamp is always held internally as UTC. If
+        you use local time, on daylight saving time changes, you will
+        either duplicate or lose a complete hour.<br>
+      </p>
+      <p>See also <a href="OptionsOutputDates.html">Output Format Date
+          &amp; Time</a><br>
+      </p>
+    </boverview>
+  </body>
+</html>

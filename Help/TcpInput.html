@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252">
+  <title>TCP Input</title>
+  <meta name="AUTHOR" content="Neal Arundale">
+  <meta name="CREATED" content="20140827;9270000">
+  <meta name="CHANGEDBY" content="Neal Arundale">
+  <meta name="CHANGED" content="20161027;14253927">
+<meta name="MS-HKWD" content="TCP Input Authentication">  <style type="text/css">
+ </style>
+</head>
+
+<body dir="ltr" text="#000000" lang="en-US">
+
+<div align="center">
+<font size="4"><b>TCP Input<br>
+<br>
+</b></font></div>
+
+<p>If TCP input is selected, initially AisDecoder will attempt to make a
+connection to the remote connection as a Client, if this fails it will then try
+as a Server. These will alternate until successful.</p>
+
+<p></p>
+
+<p>If the remote Server requires authentication by a Username &amp; Password,
+you must create a Login Command File.</p>
+
+<p>The Login Command File should contain the relevant commands required by the
+Server to authenticate the user in order for the Server to commence sending
+data to AisDecoder.</p>
+
+<p></p>
+
+<p>The Login Command File must be named TcpLogin.cmd and must reside in the
+%APPDATA%\Arundale\Ais Decoder\Files\ directory.</p>
+
+<p>For example file is:-</p>
+
+<p>C:\Documents and Settings\UserName\ApplicationData\Arundale\Ais
+Decoder\Files\TcpLogin.cmd</p>
+
+<p>Containing:-</p>
+
+<p>User UserName<br>
+Pass Password</p>
+
+<p>as required by the Server.</p>
+
+<p>See also <a href="OptionsOther.html">Options - Other</a><br>
+</p>
+</boverview></body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="UDP Output">
+    <meta name="MS-HKWD" content="File Output">
+    <title>Options - Output</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Options - Output<br>
+    </h3>
+    <div style="text-align: center;"><img alt=""
+        src="pics/ais_decoder_v3_options_filteredoutput.gif"><br>
+    </div>
+    There are two Output "Channels". One outputs to a file, and the
+    other
+    to an IP address using UDP. The options for both are the same.<br>
+    <br>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr style="font-weight: bold;" align="center">
+          <td colspan="2" rowspan="1" style="vertical-align: top;">Options
+-
+            Output<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><span style="text-decoration:
+              underline;"></span><a href="OptionsOutputDates.html">Time
+              Stamp</a><br>
+          </td>
+          <td style="vertical-align: top;">sets the output format for
+            received and created dates, except the log file date stamp
+            will always
+            be the PC's regional setting.<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Cache Vessel Names<br>
+          </td>
+          <td style="vertical-align: top;">Vessel Names will be retained
+            between sessions. If a vessel name changes the new name will
+            be used.<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">File/UDP Output</td>
+          <td style="vertical-align: top;">turns on the output </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><a
+              href="OutputToWebServer.html">FTP</a></td>
+          <td style="vertical-align: top;">sends then Output File to FTP
+            server (Website)</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">NMEA</td>
+          <td style="vertical-align: top;">NMEA sentences are output.</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">+ Time Stamp</td>
+          <td style="vertical-align: top;">the NMEA output will be time
+            stamped</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><a href="CsvOutput.html">CSV</a></td>
+          <td style="vertical-align: top;">All Tag values will be output
+            in
+            CSV format. If CSV output is selected with Tagged, you have
+            the option
+            of adding a header at the top of the file. This is useful if
+            the CSV
+            file is to be imported into <a href="Excel%20Setting.html">Excel</a>.<br>
+            The default
+            delimiter is a Comma. If the delimiter character is found
+            within the
+            value of a tag, the tag value will be quoted (within " ").
+            GIS
+            filtering is applied to CSV output as well as Tagged output.
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><a name="tagged"></a><a
+              href="OutputtingTaggedFields.html">Tagged</a></td>
+          <td style="vertical-align: top;">Tags in the Tag Template file
+            are replaced with the Tag value before output</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><a
+              href="OutputTemplateFiles.html">GIS Filtering</a></td>
+          <td style="vertical-align: top;">The MMSI will only be output
+            if
+            both a Latitude and a Longitude have a value for the current
+            MMSI.<br>
+            A Special Tag &lt;IconHeading&gt; will also be created</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><a
+              href="OptionsScheduler.html">Scheduled</a></td>
+          <td style="vertical-align: top;">The data will be output in
+            batches at the Scheduled Interval<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><a
+              href="OutputRangeFiltering.html">Range Filtered</a></td>
+          <td style="vertical-align: top;">The value of <span
+              style="font-weight: bold;">all</span> Tags must be within
+            the values
+            set in the Output Tags and Range list for <span
+              style="font-weight: bold;">any</span> data for the current
+            MMSI to be
+            output.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <div style="text-align: center;"><img alt=""
+        src="pics/ais_decoder_v3_options_outputfile.gif"><br>
+    </div>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr style="font-weight: bold;" align="center">
+          <td colspan="2" rowspan="1" style="vertical-align: top;">Options
+-
+            File Output<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">File Name<br>
+          </td>
+          <td style="vertical-align: top;">If NMEA output the default
+            name
+            will be output.nmea<br>
+            If CSV output the default name will be output.csv<br>
+            IF Tagged output the default name will be the same as the
+            Tag Template
+            File<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Set Output File<br>
+          </td>
+          <td style="vertical-align: top;">Allows you to select your own
+            file name<br>
+            If the file extension is KMZ, the output file will be Zipped
+            Up.<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">Rollover</td>
+          <td valign="top">Start a new Output File (with a
+            new name) daily at midnight. Only allowed if output file is
+            not
+            scheduled.</td>
+        </tr>
+        <tr>
+          <td valign="top">Set Shell Cmd File<br>
+          </td>
+          <td valign="top">Select the command file (script) you wish to
+            run every time the output file is closed<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Shell<br>
+          </td>
+          <td style="vertical-align: top;">Tick to start processing the
+            command file<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <div style="text-align: center;"><img alt=""
+        src="pics/ais_decoder_v3_options_outputudp.gif"><br>
+    </div>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr style="font-weight: bold;" align="center">
+          <td colspan="2" rowspan="1" style="vertical-align: top;">Options
+-
+            UDP Output<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">IP<br>
+          </td>
+          <td style="vertical-align: top;">The IP Address of the UDP
+            Client to send the data to. This can be on this PC (use
+            127.0.0.1) or the local network (LAN) or the internet (WLAN)<br>
+            You may use an internet address (eg arundale.com) or IP
+            address (eg 111.222.333.444)<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Port<br>
+          </td>
+          <td style="vertical-align: top;">The UDP Port number to use<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+  </body>
+</html>

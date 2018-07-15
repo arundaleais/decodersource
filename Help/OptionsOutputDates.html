@@ -1,0 +1,649 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Dates">
+    <meta name="MS-HKWD" content="Time Stamps">
+    <title>Date and Time</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Date and Time<br>
+    </h3>
+    <br>
+    <div style="text-align: center;"><img style="width: 190px; height:
+        36px;" alt="" src="pics/ais_decoder_v3_options_dates.gif"><br>
+      <br>
+    </div>
+    The time and date stamp appended to the log file will always be UTC
+    formatted with your PC's date and time settings.<br>
+    <br>
+    You can set the format that is output to the Detail display and the
+    any tags created from the detail display including CSV output by
+    setting the format in the dates box.<br>
+    <br>
+    This format must conform to "windows" formatting.<br>
+    <br>
+    These Microsoft examples assume the system date is using USA
+    formatting (mm/dd/yyyy hh:nn:mm AM/PM)<br>
+    <br>
+    <table>
+      <tbody>
+        <tr>
+          <th>
+            <p>Format specifier</p>
+          </th>
+          <th>
+            <p>Description</p>
+          </th>
+          <th>
+            <p>Examples</p>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <p>"d"</p>
+          </td>
+          <td>
+            <p>The day of the month, from 1 through 31. </p>
+          </td>
+          <td>
+            <p>6/1/2009 1:45:30 PM -&gt; 1</p>
+            <p>6/15/2009 1:45:30 PM -&gt; 15</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"dd"</p>
+          </td>
+          <td>
+            <p>The day of the month, from 01 through 31.</p>
+          </td>
+          <td>
+            <p>6/1/2009 1:45:30 PM -&gt; 01</p>
+            <p>6/15/2009 1:45:30 PM -&gt; 15</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"ddd"</p>
+          </td>
+          <td>
+            <p>The abbreviated name of the day of the week.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM -&gt; Mon (en-US)</p>
+            <p>6/15/2009 1:45:30 PM -&gt; &#1055;&#1085; (ru-RU)</p>
+            <p>6/15/2009 1:45:30 PM -&gt; lun. (fr-FR)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"dddd"</p>
+          </td>
+          <td>
+            <p>The full name of the day of the week.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM -&gt; Monday (en-US)</p>
+            <p>6/15/2009 1:45:30 PM -&gt; &#1087;&#1086;&#1085;&#1077;&#1076;&#1077;&#1083;&#1100;&#1085;&#1080;&#1082; (ru-RU)</p>
+            <p>6/15/2009 1:45:30 PM -&gt; lundi (fr-FR)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"f"</p>
+          </td>
+          <td>
+            <p>The tenths of a second in a date and time value.</p>
+          </td>
+          <td>
+            <p>6/15/2009 13:45:30.617 -&gt; 6</p>
+            <p>6/15/2009 13:45:30.050 -&gt; 0 </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"ff"</p>
+          </td>
+          <td>
+            <p>The hundredths of a second in a date and time value.</p>
+          </td>
+          <td>
+            <p>6/15/2009 13:45:30.617 -&gt; 61</p>
+            <p>6/15/2009 13:45:30.005 -&gt; 00</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"fff"</p>
+          </td>
+          <td>
+            <p>The milliseconds in a date and time value.</p>
+          </td>
+          <td>
+            <p>6/15/2009 13:45:30.617 -&gt; 617</p>
+            <p>6/15/2009 13:45:30.0005 -&gt; 000</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"ffff"</p>
+          </td>
+          <td>
+            <p>The ten thousandths of a second in a date and time value.</p>
+          </td>
+          <td>
+            <p>6/15/2009 13:45:30.6175 -&gt; 6175</p>
+            <p>6/15/2009 13:45:30.00005 -&gt; 0000</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"fffff"</p>
+          </td>
+          <td>
+            <p>The hundred thousandths of a second in a date and time
+              value.</p>
+          </td>
+          <td>
+            <p>6/15/2009 13:45:30.61754 -&gt; 61754</p>
+            <p>6/15/2009 13:45:30.000005 -&gt; 00000</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"ffffff"</p>
+          </td>
+          <td>
+            <p>The millionths of a second in a date and time value.</p>
+          </td>
+          <td>
+            <p>6/15/2009 13:45:30.617542 -&gt; 617542</p>
+            <p>6/15/2009 13:45:30.0000005 -&gt; 000000</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"fffffff"</p>
+          </td>
+          <td>
+            <p>The ten millionths of a second in a date and time value.</p>
+          </td>
+          <td>
+            <p>6/15/2009 13:45:30.6175425 -&gt; 6175425</p>
+            <p>6/15/2009 13:45:30.0001150 -&gt; 0001150</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"F"</p>
+          </td>
+          <td>
+            <p>If non-zero, the tenths of a second in a date and time
+              value.</p>
+          </td>
+          <td>
+            <p>6/15/2009 13:45:30.617 -&gt; 6</p>
+            <p>6/15/2009 13:45:30.050 -&gt; (no output)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"FF"</p>
+          </td>
+          <td>
+            <p>If non-zero, the hundredths of a second in a date and
+              time value.</p>
+          </td>
+          <td>
+            <p>6/15/2009 13:45:30.617 -&gt; 61</p>
+            <p>6/15/2009 13:45:30.005 -&gt; (no output)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"FFF"</p>
+          </td>
+          <td>
+            <p>If non-zero, the milliseconds in a date and time value.</p>
+          </td>
+          <td>
+            <p>6/15/2009 13:45:30.617 -&gt; 617</p>
+            <p>6/15/2009 13:45:30.0005 -&gt; (no output)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"FFFF"</p>
+          </td>
+          <td>
+            <p>If non-zero, the ten thousandths of a second in a date
+              and time value.</p>
+          </td>
+          <td>
+            <p>6/1/2009 13:45:30.5275 -&gt; 5275</p>
+            <p>6/15/2009 13:45:30.00005 -&gt; (no output)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"FFFFF"</p>
+          </td>
+          <td>
+            <p>If non-zero, the hundred thousandths of a second in a
+              date and time value.</p>
+          </td>
+          <td>
+            <p>6/15/2009 13:45:30.61754 -&gt; 61754</p>
+            <p>6/15/2009 13:45:30.000005 -&gt; (no output)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"FFFFFF"</p>
+          </td>
+          <td>
+            <p>If non-zero, the millionths of a second in a date and
+              time value.</p>
+          </td>
+          <td>
+            <p>6/15/2009 13:45:30.617542 -&gt; 617542</p>
+            <p>6/15/2009 13:45:30.0000005 -&gt; (no output)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"FFFFFFF"</p>
+          </td>
+          <td>
+            <p>If non-zero, the ten millionths of a second in a date and
+              time value.</p>
+          </td>
+          <td>
+            <p>6/15/2009 13:45:30.6175425 -&gt; 6175425</p>
+            <p>6/15/2009 13:45:30.0001150 -&gt; 000115</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"g", "gg"</p>
+          </td>
+          <td>
+            <p>The period or era.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM -&gt; A.D.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"h"</p>
+          </td>
+          <td>
+            <p>The hour, using a 12-hour clock from 1 to 12.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 AM -&gt; 1</p>
+            <p>6/15/2009 1:45:30 PM -&gt; 1</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"hh"</p>
+          </td>
+          <td>
+            <p>The hour, using a 12-hour clock from 01 to 12.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 AM -&gt; 01</p>
+            <p>6/15/2009 1:45:30 PM -&gt; 01</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"H"</p>
+          </td>
+          <td>
+            <p>The hour, using a 24-hour clock from 0 to 23.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 AM -&gt; 1</p>
+            <p>6/15/2009 1:45:30 PM -&gt; 13</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"HH"</p>
+          </td>
+          <td>
+            <p>The hour, using a 24-hour clock from 00 to 23.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 AM -&gt; 01</p>
+            <p>6/15/2009 1:45:30 PM -&gt; 13</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"K"</p>
+          </td>
+          <td>
+            <p>Time zone information.</p>
+          </td>
+          <td>
+            <p>With <span>DateTime</span> values:</p>
+            <p>6/15/2009 1:45:30 PM, Kind Unspecified -&gt; </p>
+            <p>6/15/2009 1:45:30 PM, Kind Utc -&gt; Z</p>
+            <p>6/15/2009 1:45:30 PM, Kind Local -&gt; -07:00 (depends on
+              local computer settings)</p>
+            <p>With <span>DateTimeOffset</span> values:</p>
+            <p>6/15/2009 1:45:30 AM -07:00 --&gt; -07:00</p>
+            <p>6/15/2009 8:45:30 AM +00:00 --&gt; +00:00</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"m"</p>
+          </td>
+          <td>
+            <p>The minute, from 0 through 59.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:09:30 AM -&gt; 9</p>
+            <p>6/15/2009 1:09:30 PM -&gt; 9</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"mm"</p>
+          </td>
+          <td>
+            <p>The minute, from 00 through 59.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:09:30 AM -&gt; 09</p>
+            <p>6/15/2009 1:09:30 PM -&gt; 09</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"M"</p>
+          </td>
+          <td>
+            <p>The month, from 1 through 12.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM -&gt; 6</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"MM"</p>
+          </td>
+          <td>
+            <p>The month, from 01 through 12.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM -&gt; 06</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"MMM"</p>
+          </td>
+          <td>
+            <p>The abbreviated name of the month. </p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM -&gt; Jun (en-US)</p>
+            <p>6/15/2009 1:45:30 PM -&gt; juin (fr-FR)</p>
+            <p>6/15/2009 1:45:30 PM -&gt; Jun (zu-ZA)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"MMMM"</p>
+          </td>
+          <td>
+            <p>The full name of the month.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM -&gt; June (en-US)</p>
+            <p>6/15/2009 1:45:30 PM -&gt; juni (da-DK)</p>
+            <p>6/15/2009 1:45:30 PM -&gt; uJuni (zu-ZA)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"s"</p>
+          </td>
+          <td>
+            <p>The second, from 0 through 59.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:09 PM -&gt; 9</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"ss"</p>
+          </td>
+          <td>
+            <p>The second, from 00 through 59.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:09 PM -&gt; 09</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"t"</p>
+          </td>
+          <td>
+            <p>The first character of the AM/PM designator.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM -&gt; P (en-US)</p>
+            <p>6/15/2009 1:45:30 PM -&gt; &#21320; (ja-JP)</p>
+            <p>6/15/2009 1:45:30 PM -&gt; (fr-FR)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"tt"</p>
+          </td>
+          <td>
+            <p>The AM/PM designator.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM -&gt; PM (en-US)</p>
+            <p>6/15/2009 1:45:30 PM -&gt; &#21320;&#24460; (ja-JP)</p>
+            <p>6/15/2009 1:45:30 PM -&gt; (fr-FR)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"y"</p>
+          </td>
+          <td>
+            <p>The year, from 0 to 99.</p>
+          </td>
+          <td>
+            <p>1/1/0001 12:00:00 AM -&gt; 1</p>
+            <p>1/1/0900 12:00:00 AM -&gt; 0</p>
+            <p>1/1/1900 12:00:00 AM -&gt; 0</p>
+            <p>6/15/2009 1:45:30 PM -&gt; 9</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"yy"</p>
+          </td>
+          <td>
+            <p>The year, from 00 to 99.</p>
+          </td>
+          <td>
+            <p>1/1/0001 12:00:00 AM -&gt; 01</p>
+            <p>1/1/0900 12:00:00 AM -&gt; 00</p>
+            <p>1/1/1900 12:00:00 AM -&gt; 00</p>
+            <p>6/15/2009 1:45:30 PM -&gt; 09</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"yyy"</p>
+          </td>
+          <td>
+            <p>The year, with a minimum of three digits.</p>
+          </td>
+          <td>
+            <p>1/1/0001 12:00:00 AM -&gt; 001</p>
+            <p>1/1/0900 12:00:00 AM -&gt; 900</p>
+            <p>1/1/1900 12:00:00 AM -&gt; 1900</p>
+            <p>6/15/2009 1:45:30 PM -&gt; 2009</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"yyyy"</p>
+          </td>
+          <td>
+            <p>The year as a four-digit number.</p>
+          </td>
+          <td>
+            <p>1/1/0001 12:00:00 AM -&gt; 0001</p>
+            <p>1/1/0900 12:00:00 AM -&gt; 0900</p>
+            <p>1/1/1900 12:00:00 AM -&gt; 1900</p>
+            <p>6/15/2009 1:45:30 PM -&gt; 2009</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"yyyyy"</p>
+          </td>
+          <td>
+            <p>The year as a five-digit number.</p>
+          </td>
+          <td>
+            <p>1/1/0001 12:00:00 AM -&gt; 00001</p>
+            <p>6/15/2009 1:45:30 PM -&gt; 02009</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"z"</p>
+          </td>
+          <td>
+            <p>Hours offset from UTC, with no leading zeros.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM -07:00 -&gt; -7</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"zz"</p>
+          </td>
+          <td>
+            <p>Hours offset from UTC, with a leading zero for a
+              single-digit value.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM -07:00 -&gt; -07</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"zzz"</p>
+          </td>
+          <td>
+            <p>Hours and minutes offset from UTC.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM -07:00 -&gt; -07:00</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>":"</p>
+          </td>
+          <td>
+            <p>The time separator.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM -&gt; : (en-US)</p>
+            <p>6/15/2009 1:45:30 PM -&gt; . (it-IT)</p>
+            <p>6/15/2009 1:45:30 PM -&gt; : (ja-JP)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"/"</p>
+          </td>
+          <td>
+            <p>The date separator.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM -&gt; / (en-US)</p>
+            <p>6/15/2009 1:45:30 PM -&gt; - (ar-DZ)</p>
+            <p>6/15/2009 1:45:30 PM -&gt; . (tr-TR)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>"<span class="parameter">string</span>"</p>
+            <p>'<span class="parameter">string</span>'</p>
+          </td>
+          <td>
+            <p>Literal string delimiter. </p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM ("arr:" h:m t) -&gt; arr: 1:45 P</p>
+            <p>6/15/2009 1:45:30 PM ('arr:' h:m t) -&gt; arr: 1:45 P</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>%</p>
+          </td>
+          <td>
+            <p>Defines the following character as a custom format
+              specifier.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM (%h) -&gt; 1</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>\</p>
+          </td>
+          <td>
+            <p>The escape character.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 PM (h \h) -&gt; 1 h</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Any other character</p>
+          </td>
+          <td>
+            <p>The character is copied to the result string unchanged.</p>
+          </td>
+          <td>
+            <p>6/15/2009 1:45:30 AM (arr hh:mm t) -&gt; arr 01:45 A</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+  </body>
+</html>

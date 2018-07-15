@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Template">
+    <meta name="MS-HKWD" content="GIS">
+    <meta name="MS-HKWD" content="Icon">
+    <meta name="MS-HKWD" content="Range">
+    <title>Output Template Files</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Output Template Files<br>
+    </h3>
+    <div style="text-align: center;"><br>
+      <img style="width: 343px; height: 153px;" alt=""
+        src="pics/AisDecoderDiagram.bmp"><br>
+    </div>
+    Any tags you have defined will be replaced in the Template with the
+    value of the tag when the Vessel is output to the Tagged Output
+    File. For example if in the Template file you have added a tag
+    &lt;lat&gt;, &lt;lat&gt; will be replaced with the value for the
+    Vessel, so if the latitude of the Vessel was 53.1234, &lt;lat&gt;
+    would be replaced with 53.1234.<br>
+    <br>
+    <a name="range"></a>The Maximum and Minimum Range values may be
+    inserted into the Tagged Output File by using the tag name with _min
+    or _max appended. For example if the minimum latitude range for the
+    &lt;lat&gt; tag was 53.0, &lt;lat_min&gt; would be replaced with
+    53.0.<br>
+    <br>
+    <a name="icon"></a>A Special Tag &lt;IconHeading&gt; is created, if
+    GIS has been ticked on output, which will contain the ships Heading
+    (HDG) if it is available, otherwise it will contain the vessels
+    Course Over Ground (COG), this is because some vessels do not output
+    heading and it enables the Icon on GIS displays to be oriented to
+    the COG rather than the Heading (HDG). This conforms to IALA
+    Guidelines on Presentation.<br>
+    &nbsp;<br>
+    All tags are case sensitive.<br>
+    <br>
+    The Tag token delimiters are normally<font size="+1"> <b>&lt;</b></font>
+    and <font size="+1"><b>&gt; </b></font>however if you are
+    outputting an XML file an XML parser will fail because the tokens
+    will not have a closing tag. You may use the alternative delimiters
+    <font size="+1"><b>[</b></font> and <font size="+1"><b>]</b></font>.
+    If you do you must not intermix &lt; with ] because the template
+    file will be scanned to determine which delimiter you are using and
+    will only recognise one type either &lt;&gt; or [].<br>
+    <br>
+    See also <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/TaggingOverview.html">Tagging
+
+
+
+
+      -Overview</a>, <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/SelectingOutputFields.html">Selecting
+
+
+
+
+      Output Fields</a>, <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/CreatingTags.html">Creating
+
+
+
+
+      Tags</a>, <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/DeletingTags.html">Deleting
+
+
+
+
+      Tags</a>, <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/OutputtingTaggedFields.html">Outputting
+
+
+
+
+
+      Fields and Tags</a><br>
+    <br>
+  </body>
+</html>

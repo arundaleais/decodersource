@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <meta name="MS-HKWD" content="FTP">
+  <title>Output Windows</title>
+  <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+</head>
+<body>
+<h3>Output Windows</h3>
+<div style="text-align: left;"><img style="width: 73px; height: 83px;"
+ alt="" src="pics/ais_decoder_v3_control_output_windows.gif"><br>
+</div>
+<span style="font-weight: bold;">File Output<br>
+</span>Displays Output being sent to the Output File<br>
+<img style="width: 555px; height: 216px;" alt=""
+ src="pics/ais_decoder_v3_output_csv.gif"><br>
+<span style="font-weight: bold;">UDP Output<br>
+</span>Displays Output being sent by UDP<br>
+<img style="width: 528px; height: 199px;" alt=""
+ src="pics/ais_decoder_v3_output_udp.gif"><br>
+<span style="font-weight: bold;">FTP Output<br>
+</span>Displays the FTP log of the File being sent by FTP<br>
+<img  alt=""
+ src="pics/ais_decoder_v3_output_ftp.gif"><br>
+<br>
+<span style="font-weight: bold;">FTP Errors</span><br>
+These are logged to <a href="FilesandDirectories.html">error.log</a>
+file<br>
+<pre><small>02/09/2011 21:57:24<br>FTP Error<br>02/09/2011 21:57:01 Local<br>Remote Host: 80.176.254.178:21<br>User Name: webftp<br>Password: <br>&gt; CD "/var/www/html/web/docs/ais"<br>Waiting for response<br>Command CD Timeout (10 seconds) timed out after 20.96875 seconds<br>Command CD - Aborted after 2 secs<br>&gt; CLOSE<br>FTP operations failed after 22.96875 seconds<br><br>02/09/2011 23:21:34<br>FTP Error<br>02/09/2011 23:21:00 Local<br>Remote Host: 80.176.254.178:21<br>User Name: webftp<br>Password:<br>&gt; CD "/var/www/html/web/docs/ais"<br>Waiting for response<br>&gt; PUT "C:\Documents and Settings\jna\Application Data\Arundale\Ais Decoder\Output\yorkshirecoast.kmz" "yorkshirecoast.kmz"<br>Waiting for response<br>Command PUT Timeout (30 seconds) timed out after 30.10938 seconds<br>FTP State Error 12002 Timeout Aborting<br>Command PUT - Aborted after 32.10938 secs<br>&gt; CLOSE<br>FTP operations failed after 33.40625 seconds<br><br></small></pre>
+This should enable you to debug any web upload problems
+<br>
+<br>
+</body>
+</html>

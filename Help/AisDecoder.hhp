@@ -1,0 +1,101 @@
+[OPTIONS]
+Auto Index=Yes
+Compatibility=1.1 or later
+Compiled file=AisDecoder.chm
+Contents file=AisDecoder.hhc
+Default Window=Forward
+Default topic=Default.html
+Display compile progress=Yes
+Full text search stop list file=AisDecoder.stp
+Full-text search=Yes
+Index file=AisDecoder.hhk
+Language=0x809 English (United Kingdom)
+Title=AisDecoder
+
+[WINDOWS]
+Forward=,"AisDecoder.hhc","AisDecoder.hhk","Default.html",,,,,,0x22520,,0x300e,,,,,,,,0
+
+
+[FILES]
+Overview.html
+SerialInput.html
+UsbInput.html
+ControlStatsWindow.html
+OptionsWindow.html
+DetailWindow.html
+GisWindow.html
+NmeaWindow.html
+SummaryWindow.html
+Statistics.html
+Blank.html
+DefaultSetting.html
+GoogleEarthSetting.html
+GoogleMapsSetting.html
+NmeaOutput.html
+CsvOutput.html
+HtmlOutput.html
+KmlOutput.html
+SelectingOutputFields.html
+SchedulingOutput.html
+KmzOutput.html
+OptionsSettings.html
+OptionsLogFile.html
+OptionsInputFilter.html
+OptionsOutput FieldsAndTags.html
+OptionsOutputTagsAndRange.html
+OptionsScheduler.html
+OptionsTags.html
+OptionsFtpServer.html
+OptionsOutput.html
+PhysicalConnection.html
+Output.html
+OutputMethod.html
+OutputFormat.html
+OutputToFile.html
+OutputToClientPC.html
+OutputToWebServer.html
+TaggingOverview.html
+OutputtingTaggedFields.html
+CreatingTags.html
+OutputRangeFiltering.html
+OptionsAllSettings.html
+ExampleSettings.html
+Features.html
+GettingStarted.html
+QuickStart.html
+HowTo.html
+DeletingTags.html
+OutputTemplateFiles.html
+RangeFilteredNmea.html
+RangeFilteredTagged.html
+Miscellaneous.html
+Glossary.html
+VesselNames.html
+FunctioalDescription.html
+GoogleEarthView.html
+Excel Setting.html
+CsvSetting.html
+UdpTagsandRangeSetting.html
+HtmlSetting.html
+AspxSetting.html
+OutputOptions.html
+NmeaGps.html
+Command.html
+BinaryMessages.html
+UserProfiles.html
+Default.html
+OptionsOutputDates.html
+spnmeaSetting.html
+CharacterEncoding.html
+GoogleEarthConfiguring.html
+OptionsOther.html
+FilesandDirectories.html
+OutputWindows.html
+RangeFromMyShip.html
+ShellOnFileClose.html
+NetworkInput.html
+ControlInputFile.html
+Time Stamps.html
+
+[INFOTYPES]
+

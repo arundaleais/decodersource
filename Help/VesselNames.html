@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="Tag">
+    <title>Vessel Names</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>Vessel Names<br>
+    </h3>
+    AisDecoder will extract the vessel name for all AIS messages
+    received which may contain the vessel name - even if the message
+    containing the vessel name is excluded by the input filter.<br>
+    <br>
+    The vessel name list is re-started each time the Decoder is started
+    and is updated every time a message containing the vessel name is
+    received. This ensures the vessel name you see is the name that is
+    currently being transmitted.<br>
+    <div style="text-align: center;"><br>
+    </div>
+    If you require the vessel name on every CSV or Tagged output (and
+    you probably will), you must tag the vessel name that is displayed
+    next to the Vessel Name in bold, immediately before AIS Message Type
+    on every Detail AIS message type you select for other field tags.<br>
+    <br>
+    <div style="text-align: center;"><img alt=""
+        src="pics/ais_decoder_v3_detail_vessel.gif"><br>
+    </div>
+    <br>
+    This vessel name is displayed on every AIS message detail, if it has
+    been received, including other AIS message types.<br>
+    <br>
+    Do not Tag the second Vessel Name (not in bold) on the static data
+    message (AIS message type 5), unless you <b>only</b> want the
+    vessel name outputting when AIS message type 5 is output.<br>
+    <br>
+    See also&nbsp; <a
+href="file:///E:/My%20Documents/ais/DecoderSource/Help/CreatingTags.html">Creating
+
+      Tags</a>,<br>
+  </body>
+</html>

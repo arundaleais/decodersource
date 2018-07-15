@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="MS-HKWD" content="CSV Output">
+    <title>CSV Output</title>
+    <style type="text/css">
+body {font-family: Verdana; font-size: small; color: black; }
+h3 {text-align: center;}
+  </style>
+  </head>
+  <body>
+    <h3>CSV Output<br>
+    </h3>
+    <font size="-2">538003323,26/05/2014
+      09:05:44,AUTUMN,54.43464,-0.2594617,314.4,14.4<br>
+      311012400,26/05/2014 09:05:45,POLARCUS
+      NAILA,54.52063,0.1212717,88.4,4.2<br>
+      308574000,26/05/2014
+      09:05:45,HILDEGAARD,54.05229,0.161215,339.7,6.8<br>
+      235069106,26/05/2014 09:05:45,MAGIC,54.16152,-0.180425,266.7,8.3<br>
+      248219000,26/05/2014 09:05:46,OPAL,54.51847,0.1776917,89.8,4.2<br>
+      308574000,26/05/2014
+      09:05:46,HILDEGAARD,54.05235,0.1611783,340.5,6.8<br>
+      308574000,26/05/2014
+      09:05:47,HILDEGAARD,54.05238,0.16116,340.8,6.8<br>
+      538003323,26/05/2014
+      09:05:49,AUTUMN,54.43493,-0.2599583,314.5,14.5<br>
+      305707000,26/05/2014 09:05:50,MARUS,54.11828,-0.08674,148.1,11.9<br>
+      311571000,26/05/2014 09:05:54,GRENA,54.20757,-0.18416,292.0,8.3<br>
+    </font><br>
+    The Decoder will output ALL fields or specified fields you require
+    to be output to a csv file.<br>
+    <br>
+    The Decoder will output all decoded value fields as CSV, if CSV
+    output is selected and <span style="font-weight: bold;">NO</span>
+    field Tags are selected. See <a href="CsvSetting.html">Output ALL
+      fields</a><br>
+    <br>
+    To output specified fields you need to "tag" the fields you require
+    outputting individually for each AIS message type you are interested
+    in.<br>
+    Click on the field you are interested in on the detail window and
+    set the outputs to File and Display in the Options window.<br>
+    This field will be output in the first "column" of the csv file.<br>
+    <br>
+    For example if you wish to output the MMSI from AIS Message type 1<br>
+    <table style="text-align: left; width: 100%;" cellspacing="2"
+      cellpadding="2" border="0">
+      <tbody>
+        <tr>
+          <td style="vertical-align: top;">1.</td>
+          <td style="vertical-align: top;">On the Control/Stats Window<br>
+            click Options </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">2.</td>
+          <td style="vertical-align: top;">On the Options Window<br>
+            In the Accept Input Filter box<br>
+            Tick AIS Message 1 &nbsp;&nbsp;&nbsp; <br>
+            Click OK&nbsp; </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">3.</td>
+          <td style="vertical-align: top;">On the Control/Stats Window<br>
+            Ensure the Display - Summary - Input Filtered button is
+            selected<br>
+            Click Start<br>
+            After a message has been displayed in the Summary Window<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">4.</td>
+          <td style="vertical-align: top;">On the Summary Window<br>
+            Click any message line<br>
+            The Detail Display for this AIS message will be displayed<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">5.</td>
+          <td style="vertical-align: top;">On the Detail Window<br>
+            Click the Cell containing the MMSI number (this will be in
+            the second column).<br>
+            The Input Field Window will be displayed <br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">6.</td>
+          <td style="vertical-align: top;">On the Input Field Window<br>
+            Note you can rename the default field names to combine or
+            split them on output)<br>
+            Click OK <br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">7.</td>
+          <td style="vertical-align: top;">Repeat from step 5 to set up
+            additional fields </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">8.</td>
+          <td style="vertical-align: top;">Repeat from step 2 for
+            additional message types <br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    This all sounds very complicated, but if you try it, it should be
+    fairly obvious<br>
+    <br>
+  </body>
+</html>

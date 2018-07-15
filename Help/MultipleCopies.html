@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252">
+  <title>Running Multiple Copies of AisDecoder</title>
+  <meta name="AUTHOR" content="Neal Arundale">
+  <meta name="CREATED" content="20140827;9270000">
+  <meta name="CHANGEDBY" content="Neal Arundale">
+  <meta name="CHANGED" content="20161027;14253927">
+  <meta name="MS-HKWD" content="Multiple Copies of AisDecoder">
+  <style type="text/css">
+ </style>
+</head>
+
+<body dir="ltr" text="#000000" lang="en-US">
+
+<div align="center">
+<font size="4"><b>Multiple Copies of AisDecoder<br>
+<br>
+</b></font></div>
+
+<p>If multiple copies of AisDecoder are running on the same device (PC)</p>
+
+<p><span style="font-weight:bold;">Input Restrictions</span></p>
+
+<p>The Network input port must be unique for each copy. For an exception see <a
+href="#TCP">TCP</a> below.</p>
+
+<p>You cannot use the same input port UDP for input on the same PC even if it
+is using a broadcast IP address (eg 192.168.1.255)</p>
+
+<p>You can also run AisDecoder on the same PC if using <a name="TCP"
+id="TCP"><span style="font-weight:bold;">TCP</span></a> for input from the same
+server using the same port provided the server allows multiple connections to
+the same IP address. This depends on the configuration on the server. This is
+permissible because the specified port is only used to make the initial
+connection following which the sever and client (your PC), negotiate a
+mutuallly agreed free port. Suppliers of AIS data over the internet are
+unlikely to allow multiple connections (at no charge) due to server loading
+issues.</p>
+
+<p>If multiple copies of AisDecoder are running on different devices on the
+same local network:-</p>
+
+<p>You can use the same port for UDP if is using the broadcast address (eg
+192.168.1.255) <span style="font-weight:bold;">and</span> AisDecoder is running
+on a different PC on the same local network.</p>
+
+<p><span style="font-weight:bold;">File Restrictions</span></p>
+
+<p>I have introduced a versioning naming convention to try and resolve output
+file name conflicts.</p>
+
+<p>If AisDecoder detects a file is already in use it will add a version number
+by appending ;nnn to the file name immediately prior to the first extension
+name dot.</p>
+
+<p>eg if the first file name is nmea.log the second will be nmea;1.log</p>
+
+<p>This will only occur if the program cannot open the second file due to it
+being already in use.</p>
+
+<p>If Cache Vessel Names is ticked on the Options window, AisDecoder will
+update the disk copy of these names from memory both hourly and when AisDecoder
+is terminated. When AisDecoder is started, AisDecoder reads the disk file into
+memory. Any new names received while AisDecoder is running will only be updated
+in memory.</p>
+
+<p>This can result in vessel names received by one of two copies of AisDecoder
+running simultaneously not being updated on disk.</p>
+
+<p>See also <a href="UdpBroadcast.html">Options - UdpBroadcast</a><br>
+</p>
+</boverview></body>
+</html>

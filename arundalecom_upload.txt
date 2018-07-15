@@ -1,0 +1,16 @@
+! rem This is a comment
+! :: and this is also a comment
+open ftp.arundale.com
+stfinge1
+open363dir
+hash
+cd public_html/docs/downloads
+! rem  - Runs the specified command on the local computer
+!dir
+binary
+put AisDecoder_setup_3.5.151.exe
+ascii
+bye
+
+put AisDecoder_setup_3.5.151.exe
+put ais_decoder_v3_updates.html
